@@ -1,0 +1,29 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+description: "Relacje z instalacji smart home u klientów — zdjęcia i opisy realizacji."
+---
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Blog</h1>
+    <p class="section-lead">Relacje z instalacji u klientów — zdjęcia, opis realizacji i zastosowanych rozwiązań.</p>
+
+    <div class="blog-list">
+      {% for post in site.posts %}
+      <article class="blog-card">
+        <a href="{{ post.url }}">
+          {% if post.image %}<img src="{{ post.image }}" alt="" class="blog-card-image" loading="lazy">{% endif %}
+          <div class="blog-card-body">
+            <p class="post-meta">{{ post.date | date: "%d.%m.%Y" }}{% if post.location %} · 📍 {{ post.location }}{% endif %}</p>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          </div>
+        </a>
+      </article>
+      {% else %}
+      <p>Pierwsze relacje z instalacji pojawią się tutaj wkrótce.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -16,34 +16,37 @@ nav.querySelectorAll("a").forEach((link) => {
 });
 
 const contactForm = document.querySelector(".contact-form");
-const formStatus = document.getElementById("formStatus");
 
-contactForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const submitButton = contactForm.querySelector("button[type=submit]");
-  submitButton.disabled = true;
-  formStatus.textContent = "Wysyłanie…";
-  formStatus.className = "form-status";
+if (contactForm) {
+  const formStatus = document.getElementById("formStatus");
 
-  try {
-    const response = await fetch(contactForm.action, {
-      method: "POST",
-      body: new FormData(contactForm),
-      headers: { Accept: "application/json" },
-    });
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const submitButton = contactForm.querySelector("button[type=submit]");
+    submitButton.disabled = true;
+    formStatus.textContent = "Wysyłanie…";
+    formStatus.className = "form-status";
 
-    if (response.ok) {
-      formStatus.textContent = "Dziękuję za wiadomość! Odpowiem najszybciej, jak to możliwe.";
-      formStatus.classList.add("form-status-success");
-      contactForm.reset();
-    } else {
-      formStatus.textContent = "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na e-mail.";
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        formStatus.textContent = "Dziękuję za wiadomość! Odpowiem najszybciej, jak to możliwe.";
+        formStatus.classList.add("form-status-success");
+        contactForm.reset();
+      } else {
+        formStatus.textContent = "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na e-mail.";
+        formStatus.classList.add("form-status-error");
+      }
+    } catch {
+      formStatus.textContent = "Brak połączenia. Spróbuj ponownie lub napisz bezpośrednio na e-mail.";
       formStatus.classList.add("form-status-error");
+    } finally {
+      submitButton.disabled = false;
     }
-  } catch {
-    formStatus.textContent = "Brak połączenia. Spróbuj ponownie lub napisz bezpośrednio na e-mail.";
-    formStatus.classList.add("form-status-error");
-  } finally {
-    submitButton.disabled = false;
-  }
-});
+  });
+}
