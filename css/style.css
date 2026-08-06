@@ -62,7 +62,9 @@ a { color: inherit; text-decoration: none; }
 
 .logo-icon { flex-shrink: 0; }
 
-.logo span { color: var(--accent); }
+.logo-text { color: var(--text); }
+
+.logo .accent { color: var(--accent); }
 
 .nav {
   display: flex;
@@ -204,31 +206,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--text-muted);
   max-width: 640px;
   margin: 0 0 48px;
-}
-
-.stats {
-  display: flex;
-  gap: 48px;
-  list-style: none;
-  padding: 0;
-  margin: 40px 0 0;
-  flex-wrap: wrap;
-}
-
-.stats li {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.stats strong {
-  font-size: 2rem;
-  color: var(--accent);
-}
-
-.stats span {
-  color: var(--text-muted);
-  font-size: 0.9rem;
 }
 
 .tech-logos {
@@ -441,5 +418,4 @@ a { color: inherit; text-decoration: none; }
   .nav.open { display: flex; }
   .nav-toggle { display: flex; }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  .stats { gap: 28px; }
 }
