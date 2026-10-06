@@ -1,7 +1,12 @@
 title: Smartowo
 description: "Inteligentne instalacje Smart Home — Wrocław i okolice"
+url: "https://smartowo.pl"
+lang: pl
 markdown: kramdown
 permalink: /blog/:slug/
+
+plugins:
+  - jekyll-sitemap
 
 exclude:
   - README.md

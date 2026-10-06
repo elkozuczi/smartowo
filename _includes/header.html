@@ -1,7 +1,8 @@
-<header class="site-header">
+<a class="skip-link" href="#top">Przejdź do treści</a>
+<header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a href="/#top" class="logo">
-      <svg class="logo-icon" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+    <a href="/" class="logo" aria-label="Smartowo — strona główna">
+      <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
         <rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="#3ad0c2" stroke-width="2"/>
         <path d="M9 17l7-5.5 7 5.5" fill="none" stroke="#3ad0c2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M11.5 16v7.5h9V16" fill="none" stroke="#3ad0c2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -9,14 +10,14 @@
       </svg>
       <span class="logo-text">Smart<span class="accent">owo</span></span>
     </a>
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Główna nawigacja">
       <a href="/#o-mnie">O mnie</a>
-      <a href="/#projekty">Projekty</a>
       <a href="/#uslugi">Usługi</a>
-      <a href="/blog/">Blog</a>
-      <a href="/#kontakt">Kontakt</a>
+      <a href="/#projekty">Projekty</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#kontakt" class="btn btn-primary">Umów konsultację</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+    <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
   </div>

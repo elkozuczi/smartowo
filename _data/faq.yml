@@ -1,0 +1,17 @@
+- q: "Czy montaż wymaga kucia ścian?"
+  a: "Nie. Pracuję w modelu retrofit — moduły montuję w istniejących puszkach elektrycznych, za zwykłymi włącznikami i gniazdami. Wykończenie wnętrz pozostaje nienaruszone, dlatego instalację można wykonać także w mieszkaniu, w którym już mieszkasz."
+
+- q: "Czy mogę dalej używać zwykłych włączników?"
+  a: "Tak. Włączniki działają tak jak dotychczas, a dodatkowo zyskujesz sterowanie z telefonu, głosem i przez automatyzacje. Domownicy nie muszą niczego się uczyć od nowa."
+
+- q: "Co się stanie, gdy internet przestanie działać?"
+  a: "Instalacja opiera się na Home Assistant działającym lokalnie u Ciebie w domu, więc automatyzacje i sterowanie w sieci domowej działają dalej bez dostępu do internetu. Bez internetu nie zadziała jedynie zdalny dostęp spoza domu."
+
+- q: "Mam już jakieś urządzenia smart. Czy da się je wykorzystać?"
+  a: "W większości przypadków tak. Home Assistant integruje urządzenia wielu producentów, więc istniejący sprzęt łączę z nowymi elementami w jeden spójny system zamiast go wymieniać."
+
+- q: "Ile kosztuje inteligentny dom?"
+  a: "To zależy od zakresu — inaczej wycenia się sterowanie ogrzewaniem w mieszkaniu, a inaczej pełną automatykę domu. Po krótkiej rozmowie o Twoich potrzebach przygotowuję konkretną propozycję z doborem sprzętu i wyceną."
+
+- q: "Gdzie realizujesz instalacje?"
+  a: "Działam we Wrocławiu i okolicach (województwo dolnośląskie). Konsultację i wstępne omówienie projektu możemy też przeprowadzić zdalnie."

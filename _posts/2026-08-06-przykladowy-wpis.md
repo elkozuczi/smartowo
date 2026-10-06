@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: "Przykładowy wpis — jak wygląda relacja z instalacji"
 location: "Wrocław"
