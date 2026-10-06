@@ -776,18 +776,45 @@ p { text-wrap: pretty; }
   position: absolute;
   top: 12px;
   right: 12px;
-  z-index: 1;
-  background: rgba(11, 17, 32, 0.75);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 5px;
+  background: rgba(11, 17, 32, 0.6);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+  border: 1px solid rgba(231, 236, 247, 0.12);
   color: var(--text-muted);
-  font-size: 0.7rem;
+  border-radius: 999px;
+  cursor: help;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.media-note svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* Tekst schowany do ikony, rozwija się po najechaniu na kartę lub fokusie */
+.media-note-text {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 999px;
+  transition: max-width 0.35s var(--ease), margin 0.35s var(--ease);
 }
+
+.card:hover .media-note,
+.feature:hover .media-note,
+.media-note:hover,
+.media-note:focus-visible { opacity: 1; background: rgba(11, 17, 32, 0.85); }
+
+.card:hover .media-note-text,
+.feature:hover .media-note-text,
+.media-note:hover .media-note-text,
+.media-note:focus .media-note-text { max-width: 110px; margin: 0 4px 0 6px; }
 
 .card-icon {
   position: absolute;
