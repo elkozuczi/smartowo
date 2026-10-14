@@ -3,7 +3,7 @@ layout: page
 title: "Polityka prywatności"
 permalink: /polityka-prywatnosci/
 description: "Informacje o przetwarzaniu danych osobowych na stronie smartowo.pl."
-updated: 2026-10-06
+updated: 2026-10-14
 ---
 
 Szanuję Twoją prywatność. Poniżej znajdziesz informacje o tym, jakie dane osobowe zbieram za pośrednictwem strony smartowo.pl, w jakim celu i jakie masz prawa. Dokument spełnia obowiązek informacyjny z art. 13 RODO (Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679).
@@ -19,16 +19,17 @@ W sprawach dotyczących danych osobowych możesz się ze mną skontaktować:
 
 ## 2. Jakie dane zbieram i w jakim celu
 
-**Formularz kontaktowy.** Gdy wysyłasz wiadomość przez formularz, przetwarzam podane przez Ciebie dane: imię i nazwisko, adres e-mail, numer telefonu (jeśli go podasz) oraz treść wiadomości. Wykorzystuję je wyłącznie po to, aby odpowiedzieć na Twoje zapytanie, a jeśli o to poprosisz — przygotować ofertę lub wycenę.
+**Formularz kontaktowy.** Gdy wysyłasz zapytanie przez formularz, przetwarzam podane przez Ciebie dane: imię, numer telefonu, zaznaczony zakres prac oraz — jeśli je podasz — miejscowość i treść wiadomości. Wykorzystuję je wyłącznie po to, aby odpowiedzieć na Twoje zapytanie, a jeśli o to poprosisz — przygotować ofertę lub wycenę.
 
 **Kontakt e-mailowy i telefoniczny.** Jeśli piszesz lub dzwonisz bezpośrednio, przetwarzam dane, które przekażesz w trakcie korespondencji lub rozmowy, w tym samym celu.
 
-Podanie danych jest dobrowolne, ale bez adresu e-mail lub numeru telefonu nie będę w stanie odpowiedzieć na wiadomość.
+Podanie danych jest dobrowolne, ale bez numeru telefonu nie będę w stanie odpowiedzieć na zapytanie z formularza.
 
 ## 3. Podstawa prawna
 
 - **art. 6 ust. 1 lit. b RODO** — podjęcie działań na Twoje żądanie przed zawarciem umowy (np. przygotowanie oferty lub wyceny),
-- **art. 6 ust. 1 lit. f RODO** — mój prawnie uzasadniony interes, jakim jest udzielenie odpowiedzi na wiadomość i prowadzenie z Tobą korespondencji.
+- **art. 6 ust. 1 lit. f RODO** — mój prawnie uzasadniony interes, jakim jest udzielenie odpowiedzi na wiadomość i prowadzenie z Tobą korespondencji,
+- **art. 6 ust. 1 lit. a RODO** — Twoja zgoda na cookies analityczne i marketingowe (szczegóły w punkcie 7).
 
 ## 4. Jak długo przechowuję dane
 
@@ -40,7 +41,9 @@ Nie sprzedaję i nie udostępniam Twoich danych w celach marketingowych. Dane mo
 
 - **Formspree, Inc.** — obsługa formularza kontaktowego i przekazanie wiadomości na moją skrzynkę e-mail,
 - **GitHub, Inc.** — hosting strony internetowej (serwer może rejestrować techniczne dane połączenia, np. adres IP),
-- **dostawca poczty e-mail** — przechowywanie korespondencji.
+- **dostawca poczty e-mail** — przechowywanie korespondencji,
+- **Google Ireland Limited** — statystyki odwiedzin (Google Analytics) i pomiar skuteczności reklam Google, wyłącznie po wyrażeniu zgody,
+- **Meta Platforms Ireland Limited** — pomiar skuteczności reklam na Facebooku i Instagramie (piksel Meta), wyłącznie po wyrażeniu zgody.
 
 Część z tych podmiotów ma siedzibę w Stanach Zjednoczonych. Przekazanie danych poza Europejski Obszar Gospodarczy odbywa się na podstawie decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony (EU-U.S. Data Privacy Framework) lub standardowych klauzul umownych zatwierdzonych przez Komisję Europejską.
 
@@ -59,9 +62,22 @@ Aby skorzystać z tych praw, napisz na [kontakt@smartowo.pl](mailto:kontakt@smar
 
 Masz także prawo wnieść skargę do organu nadzorczego — **Prezesa Urzędu Ochrony Danych Osobowych** (ul. Stawki 2, 00-193 Warszawa, [uodo.gov.pl](https://uodo.gov.pl)), jeśli uważasz, że przetwarzanie Twoich danych narusza przepisy RODO.
 
-## 7. Pliki cookies i analityka
+## 7. Pliki cookies i analityka {#cookies}
 
-Strona nie wykorzystuje plików cookies analitycznych ani marketingowych i nie korzysta z narzędzi śledzących (takich jak Google Analytics czy piksel Facebooka). Nie podejmuję wobec Ciebie zautomatyzowanych decyzji ani nie profiluję Twoich danych.
+Przy pierwszej wizycie pytam Cię o zgodę na pliki cookies. Strona działa tak samo niezależnie od Twojej decyzji.
+
+**Jeśli zaakceptujesz**, korzystam z:
+
+- **Google Analytics 4** — anonimowe statystyki: które podstrony są odwiedzane, skąd przychodzą odwiedzający, ile osób wysyła formularz lub klika w numer telefonu,
+- **piksela Meta** — sprawdzenie, czy reklamy na Facebooku i Instagramie przynoszą zapytania, oraz docieranie z reklamami do osób, które odwiedziły stronę.
+
+Narzędzia te zapisują w przeglądarce pliki cookies i mogą przetwarzać m.in. identyfikatory urządzenia, adres IP i informacje o odwiedzanych podstronach. Dane w Google Analytics są przechowywane przez 14 miesięcy.
+
+**Jeśli odrzucisz**, piksel Meta nie jest wczytywany, a Google nie zapisuje cookies analitycznych ani reklamowych — może jedynie otrzymywać anonimowe sygnały bez identyfikatorów (tzw. tryb zgody Google), które nie pozwalają Cię rozpoznać.
+
+Swoją decyzję możesz w każdej chwili zmienić, klikając **„Ustawienia cookies”** w stopce strony. Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania, którego dokonano przed jej wycofaniem. Możesz też usunąć cookies w ustawieniach przeglądarki.
+
+Strona zapamiętuje Twój wybór w pamięci przeglądarki (localStorage). Nie podejmuję wobec Ciebie zautomatyzowanych decyzji wywołujących skutki prawne.
 
 ## 8. Zmiany polityki prywatności
 

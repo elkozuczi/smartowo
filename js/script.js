@@ -65,6 +65,70 @@ if (sections.length && "IntersectionObserver" in window) {
   sections.forEach((s) => spy.observe(s));
 }
 
+// Zgoda na cookies (Google Consent Mode v2 + Meta Pixel)
+const cookieBanner = document.getElementById("cookieBanner");
+
+const showCookieBanner = (show) => {
+  if (!cookieBanner) return;
+  cookieBanner.hidden = !show;
+  document.body.classList.toggle("cookie-open", show);
+};
+
+const setConsent = (value) => {
+  try { localStorage.setItem("sm_consent", value); } catch {}
+  if (typeof gtag === "function") {
+    gtag("consent", "update", {
+      ad_storage: value,
+      ad_user_data: value,
+      ad_personalization: value,
+      analytics_storage: value,
+    });
+  }
+  if (value === "granted" && typeof smLoadPixel === "function") smLoadPixel();
+  if (value === "denied" && window.fbq) fbq("consent", "revoke");
+  showCookieBanner(false);
+};
+
+if (cookieBanner) {
+  let stored = null;
+  try { stored = localStorage.getItem("sm_consent"); } catch {}
+  if (!stored) showCookieBanner(true);
+
+  cookieBanner.querySelectorAll("[data-consent]").forEach((button) => {
+    button.addEventListener("click", () => setConsent(button.dataset.consent));
+  });
+
+  document.querySelectorAll("[data-cookie-settings]").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      showCookieBanner(true);
+    });
+  });
+}
+
+// Pomiar: kliknięcia w telefon i WhatsApp
+const trackEvent = (gaEvent, params, metaEvent) => {
+  if (typeof gtag === "function") gtag("event", gaEvent, params);
+  if (metaEvent && window.fbq) fbq("track", metaEvent, params);
+};
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a[href^='tel:'], a[href*='wa.me/']");
+  if (!link) return;
+  const isWhatsApp = link.href.includes("wa.me/");
+  trackEvent(isWhatsApp ? "click_whatsapp" : "click_phone", { page_path: location.pathname }, "Contact");
+});
+
+// Pomiar: zgłoszenie z formularza (tylko po faktycznym wysłaniu, nie przy samym wejściu na /dziekuje/)
+if (location.pathname.startsWith("/dziekuje")) {
+  let leadSource = null;
+  try {
+    leadSource = sessionStorage.getItem("sm_lead");
+    sessionStorage.removeItem("sm_lead");
+  } catch {}
+  if (leadSource) trackEvent("generate_lead", { lead_source: leadSource }, "Lead");
+}
+
 // Formularz kontaktowy (Formspree)
 const contactForm = document.querySelector(".contact-form");
 
@@ -86,6 +150,7 @@ if (contactForm) {
       });
 
       if (response.ok) {
+        try { sessionStorage.setItem("sm_lead", contactForm.elements.zrodlo?.value || "formularz"); } catch {}
         window.location.href = "/dziekuje/";
         return;
       } else {
