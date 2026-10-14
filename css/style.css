@@ -1030,6 +1030,21 @@ p { text-wrap: pretty; }
 
 .choice input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+.area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.area-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.area-col h3 { margin: 0 0 12px; font-size: 1.1rem; }
+
+.area-col p { margin: 0; color: var(--text-muted); }
+
+@media (max-width: 960px) { .area-grid { grid-template-columns: 1fr; } }
+
 .card-link { display: inline-block; margin-top: 18px; color: var(--accent); font-weight: 600; font-size: 0.95rem; }
 
 .card-link:hover { text-decoration: underline; text-underline-offset: 3px; }
