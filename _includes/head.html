@@ -6,6 +6,7 @@
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ page_description }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
+{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
 <meta name="theme-color" content="#0b1120">
 <meta name="color-scheme" content="dark">
 
@@ -36,6 +37,12 @@
   "image": "{{ '/assets/img/og-smartowo.jpg' | absolute_url }}",
   "email": "kontakt@smartowo.pl",
   "telephone": "+48604447928",
+  "sameAs": [
+    "https://www.facebook.com/smartowo",
+    "https://www.instagram.com/smartowo_pl/",
+    "https://maps.app.goo.gl/yJfC5CXdY5jXK7KN8"
+  ],
+  "hasMap": "https://maps.app.goo.gl/yJfC5CXdY5jXK7KN8",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Wrocław",

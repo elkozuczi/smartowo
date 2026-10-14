@@ -86,15 +86,14 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        formStatus.textContent = "Dziękuję za wiadomość! Odpowiem najszybciej, jak to możliwe.";
-        formStatus.classList.add("form-status-success");
-        contactForm.reset();
+        window.location.href = "/dziekuje/";
+        return;
       } else {
-        formStatus.textContent = "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na e-mail.";
+        formStatus.textContent = "Coś poszło nie tak. Spróbuj ponownie lub zadzwoń: 604 447 928.";
         formStatus.classList.add("form-status-error");
       }
     } catch {
-      formStatus.textContent = "Brak połączenia. Spróbuj ponownie lub napisz bezpośrednio na e-mail.";
+      formStatus.textContent = "Brak połączenia. Spróbuj ponownie lub zadzwoń: 604 447 928.";
       formStatus.classList.add("form-status-error");
     } finally {
       submitButton.disabled = false;

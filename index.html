@@ -9,19 +9,19 @@ home: true
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span>Smart Home · Wrocław i okolice</p>
-        <h1 id="hero-title" class="reveal" style="--d:.08s">Inteligentne domy, <span class="accent">szyte na&nbsp;miarę.</span></h1>
+        <h1 id="hero-title" class="reveal" style="--d:.08s">Inteligentny dom w&nbsp;Twoim obecnym mieszkaniu. <span class="accent">Bez kucia, bez remontu, w&nbsp;1–2&nbsp;dni.</span></h1>
         <p class="hero-lead reveal" style="--d:.16s">
-          Projektuję i wdrażam automatykę domową — oświetlenie, ogrzewanie, rolety
-          i bezpieczeństwo w jednym, spójnym systemie. Dla klientów indywidualnych
-          i deweloperów, z indywidualnym podejściem do każdego projektu.
+          Moduły montuję w istniejących puszkach — oświetlenie, ogrzewanie, rolety
+          i bezpieczeństwo w jednym, spójnym systemie. Zwykłe włączniki działają dalej,
+          a automatyka działa nawet bez internetu.
         </p>
         <p class="hero-badge reveal" style="--d:.24s">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8z"/></svg>
-          Retrofit — montaż na istniejącej instalacji, bez kucia ścian
+          Jeden opiekun projektu — od konsultacji po wsparcie po wdrożeniu
         </p>
         <div class="hero-actions reveal" style="--d:.32s">
           <a href="#kontakt" class="btn btn-primary">
-            Umów konsultację
+            Bezpłatna konsultacja (30 min)
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a href="#projekty" class="btn btn-ghost">Zobacz projekty</a>
@@ -344,6 +344,12 @@ home: true
               </a>
             </li>
             <li>
+              <a href="https://wa.me/48604447928?text=Dzie%C5%84%20dobry%2C%20mam%20pytanie%20o%20smart%20home." target="_blank" rel="noopener" data-track="whatsapp">
+                <span class="icon-badge" aria-hidden="true">{% include icon-whatsapp.svg %}</span>
+                <span><small>WhatsApp</small><strong>Napisz na WhatsAppie</strong></span>
+              </a>
+            </li>
+            <li>
               <a href="mailto:kontakt@smartowo.pl">
                 <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
                 <span><small>E-mail</small><strong>kontakt@smartowo.pl</strong></span>
@@ -362,21 +368,32 @@ home: true
           <input type="hidden" name="_subject" value="Nowe zapytanie ze smartowo.pl">
           <div class="form-row">
             <div class="field">
-              <label for="name">Imię i nazwisko</label>
-              <input type="text" id="name" name="name" autocomplete="name" required>
+              <label for="name">Imię</label>
+              <input type="text" id="name" name="name" autocomplete="given-name" required>
             </div>
             <div class="field">
-              <label for="phone">Telefon <span class="opt">(opcjonalnie)</span></label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
             </div>
           </div>
+          <fieldset class="field field-choices">
+            <legend>Co chcesz zautomatyzować?</legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="zakres[]" value="Oświetlenie"><span>Oświetlenie</span></label>
+              <label class="choice"><input type="checkbox" name="zakres[]" value="Ogrzewanie"><span>Ogrzewanie</span></label>
+              <label class="choice"><input type="checkbox" name="zakres[]" value="Rolety"><span>Rolety</span></label>
+              <label class="choice"><input type="checkbox" name="zakres[]" value="Bezpieczeństwo"><span>Bezpieczeństwo</span></label>
+              <label class="choice"><input type="checkbox" name="zakres[]" value="Opieka nad seniorem"><span>Opieka nad seniorem</span></label>
+              <label class="choice"><input type="checkbox" name="zakres[]" value="Jeszcze nie wiem"><span>Jeszcze nie wiem</span></label>
+            </div>
+          </fieldset>
           <div class="field">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="_replyto" autocomplete="email" required>
+            <label for="city">Miejscowość / osiedle <span class="opt">(opcjonalnie)</span></label>
+            <input type="text" id="city" name="miejscowosc" autocomplete="address-level2" placeholder="Np. Wrocław, Jagodno">
           </div>
           <div class="field">
-            <label for="message">Wiadomość</label>
-            <textarea id="message" name="message" rows="5" placeholder="Np. mieszkanie 60 m², chcę sterować ogrzewaniem i oświetleniem…" required></textarea>
+            <label for="message">Kilka słów o domu <span class="opt">(opcjonalnie)</span></label>
+            <textarea id="message" name="message" rows="3" placeholder="Np. mieszkanie 60 m², chcę sterować ogrzewaniem i oświetleniem…"></textarea>
           </div>
 
           <div class="hp" aria-hidden="true">
@@ -386,12 +403,12 @@ home: true
 
           <div class="form-footer">
             <button type="submit" class="btn btn-primary">
-              Wyślij wiadomość
+              Poproś o oddzwonienie
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
             <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           </div>
-          <p class="form-note">Dane z formularza wykorzystam wyłącznie do odpowiedzi na Twoją wiadomość. Szczegóły w <a href="/polityka-prywatnosci/">polityce prywatności</a>.</p>
+          <p class="form-note">Oddzwonię w ciągu 1 dnia roboczego. Dane z formularza wykorzystam wyłącznie do odpowiedzi na Twoje zapytanie. Szczegóły w <a href="/polityka-prywatnosci/">polityce prywatności</a>.</p>
         </form>
       </div>
     </div>
