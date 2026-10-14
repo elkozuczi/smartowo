@@ -280,6 +280,7 @@ home: true
               <li>Powiadomienia</li>
               <li>Bezpieczeństwo</li>
             </ul>
+            <a href="/senior/" class="card-link">Zobacz, jak to działa <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
@@ -364,52 +365,7 @@ home: true
           </ul>
         </div>
 
-        <form class="contact-form" action="https://formspree.io/f/meajqdvn" method="POST">
-          <input type="hidden" name="_subject" value="Nowe zapytanie ze smartowo.pl">
-          <div class="form-row">
-            <div class="field">
-              <label for="name">Imię</label>
-              <input type="text" id="name" name="name" autocomplete="given-name" required>
-            </div>
-            <div class="field">
-              <label for="phone">Telefon</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
-            </div>
-          </div>
-          <fieldset class="field field-choices">
-            <legend>Co chcesz zautomatyzować?</legend>
-            <div class="choices">
-              <label class="choice"><input type="checkbox" name="zakres[]" value="Oświetlenie"><span>Oświetlenie</span></label>
-              <label class="choice"><input type="checkbox" name="zakres[]" value="Ogrzewanie"><span>Ogrzewanie</span></label>
-              <label class="choice"><input type="checkbox" name="zakres[]" value="Rolety"><span>Rolety</span></label>
-              <label class="choice"><input type="checkbox" name="zakres[]" value="Bezpieczeństwo"><span>Bezpieczeństwo</span></label>
-              <label class="choice"><input type="checkbox" name="zakres[]" value="Opieka nad seniorem"><span>Opieka nad seniorem</span></label>
-              <label class="choice"><input type="checkbox" name="zakres[]" value="Jeszcze nie wiem"><span>Jeszcze nie wiem</span></label>
-            </div>
-          </fieldset>
-          <div class="field">
-            <label for="city">Miejscowość / osiedle <span class="opt">(opcjonalnie)</span></label>
-            <input type="text" id="city" name="miejscowosc" autocomplete="address-level2" placeholder="Np. Wrocław, Jagodno">
-          </div>
-          <div class="field">
-            <label for="message">Kilka słów o domu <span class="opt">(opcjonalnie)</span></label>
-            <textarea id="message" name="message" rows="3" placeholder="Np. mieszkanie 60 m², chcę sterować ogrzewaniem i oświetleniem…"></textarea>
-          </div>
-
-          <div class="hp" aria-hidden="true">
-            <label for="gotcha">Nie wypełniaj tego pola</label>
-            <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
-          </div>
-
-          <div class="form-footer">
-            <button type="submit" class="btn btn-primary">
-              Poproś o oddzwonienie
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-          </div>
-          <p class="form-note">Oddzwonię w ciągu 1 dnia roboczego. Dane z formularza wykorzystam wyłącznie do odpowiedzi na Twoje zapytanie. Szczegóły w <a href="/polityka-prywatnosci/">polityce prywatności</a>.</p>
-        </form>
+        {% include contact-form.html %}
       </div>
     </div>
   </section>
