@@ -27,8 +27,9 @@
     <input type="text" id="city" name="miejscowosc" autocomplete="address-level2" placeholder="Np. Wrocław, Jagodno">
   </div>
   <div class="field">
+    {% assign default_message = include.default_message | default: 'Dzień dobry, proszę o kontakt w sprawie automatyki domu.' %}
     <label for="message">{{ include.message_label | default: 'Kilka słów o domu' }} <span class="opt">(opcjonalnie)</span></label>
-    <textarea id="message" name="message" rows="3" placeholder="{{ include.placeholder | default: 'Np. mieszkanie 60 m², chcę sterować ogrzewaniem i oświetleniem…' }}"></textarea>
+    <textarea id="message" name="message" rows="3" placeholder="{{ include.placeholder | default: 'Np. mieszkanie 60 m², chcę sterować ogrzewaniem i oświetleniem…' }}" data-default="{{ default_message }}">{{ default_message }}</textarea>
   </div>
 
   <div class="hp" aria-hidden="true">

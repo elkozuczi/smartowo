@@ -137,6 +137,9 @@ if (contactForm) {
 
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    // Formspree nie przyjmuje zgłoszeń z pustą wiadomością
+    const message = contactForm.elements.message;
+    if (message && !message.value.trim()) message.value = message.dataset.default || "Proszę o kontakt.";
     const submitButton = contactForm.querySelector("button[type=submit]");
     submitButton.disabled = true;
     formStatus.textContent = "Wysyłanie…";
