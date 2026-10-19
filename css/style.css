@@ -635,6 +635,40 @@ p { text-wrap: pretty; }
   pointer-events: none;
 }
 
+/* Przykładowe powiadomienia (alert braku ruchu) */
+.notif-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 48px 40px;
+  background: radial-gradient(circle at 70% 30%, var(--accent-soft), transparent 70%), var(--bg-alt);
+  border-left: 1px solid var(--border);
+}
+
+.notif {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.notif strong { display: block; font-size: 0.95rem; color: var(--text); }
+
+.notif span { color: var(--text-muted); }
+
+.notif-alert { border-color: rgba(245, 180, 80, 0.55); }
+
+.notif-alert .chip-icon { background: rgba(245, 180, 80, 0.14); color: #f5b450; }
+
+.notif-caption { margin: 6px 0 0; font-size: 0.8rem; color: var(--text-muted); text-align: center; }
+
 .grid { display: grid; gap: 24px; }
 
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
@@ -1272,6 +1306,7 @@ p { text-wrap: pretty; }
   .feature { grid-template-columns: 1fr; }
   .feature-media { min-height: 260px; order: -1; }
   .feature-media::before { background: linear-gradient(0deg, var(--surface), transparent 40%); }
+  .notif-panel { border-left: none; border-top: 1px solid var(--border); padding: 32px 24px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .contact-panel { grid-template-columns: 1fr; }
   .contact-aside { border-right: none; border-bottom: 1px solid var(--border); }
