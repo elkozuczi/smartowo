@@ -669,6 +669,30 @@ p { text-wrap: pretty; }
 
 .notif-caption { margin: 6px 0 0; font-size: 0.8rem; color: var(--text-muted); text-align: center; }
 
+/* Cennik */
+.price-card { display: flex; flex-direction: column; }
+
+.service .price-sub { margin: 0 0 18px; }
+
+.service .price {
+  margin: 0 0 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.service .price small { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0; }
+
+.price-card .checklist { margin-bottom: 8px; }
+
+.price-card .card-link { margin-top: auto; padding-top: 18px; }
+
+.price-note { margin: 28px 0 0; text-align: center; font-size: 0.9rem; color: var(--text-muted); }
+
 .grid { display: grid; gap: 24px; }
 
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
