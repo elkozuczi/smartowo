@@ -106,6 +106,26 @@ if (cookieBanner) {
   });
 }
 
+// Pasek „Zadzwoń” poza godzinami (pn–pt 8–18, czas polski) prowadzi do formularza
+const callBarPhone = document.querySelector(".call-bar-phone");
+
+if (callBarPhone) {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Warsaw", weekday: "short", hour: "numeric", hourCycle: "h23" })
+      .formatToParts(new Date())
+      .map((p) => [p.type, p.value])
+  );
+  const hour = Number(parts.hour);
+  const isOpen = !["Sat", "Sun"].includes(parts.weekday) && hour >= 8 && hour < 18;
+
+  if (!isOpen) {
+    callBarPhone.href = document.getElementById("kontakt") ? "#kontakt" : "/#kontakt";
+    callBarPhone.removeAttribute("data-track");
+    callBarPhone.setAttribute("aria-label", "Zostaw numer — oddzwonię w godzinach pracy");
+    callBarPhone.querySelector(".call-bar-label").textContent = "Zostaw numer — oddzwonię";
+  }
+}
+
 // Pomiar: kliknięcia w telefon i WhatsApp
 const trackEvent = (gaEvent, params, metaEvent) => {
   if (typeof gtag === "function") gtag("event", gaEvent, params);

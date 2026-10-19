@@ -1019,6 +1019,8 @@ p { text-wrap: pretty; }
 
 .contact-list strong { font-weight: 600; }
 
+.contact-list .hours { display: block; color: var(--text-muted); font-size: 0.85rem; }
+
 .contact-form {
   display: flex;
   flex-direction: column;
