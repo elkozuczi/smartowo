@@ -1,0 +1,19 @@
+{%- assign p = site.data.produkty[include.id] -%}
+{%- if p -%}
+<aside class="produkt" data-afiliacja-blok>
+  {% if p.zdjecie %}<img src="{{ p.zdjecie }}" alt="{{ p.nazwa }}" class="produkt-img" loading="lazy">{% endif %}
+  <div class="produkt-body">
+    <p class="produkt-nazwa">{{ p.nazwa }}</p>
+    {%- assign opis = include.opis | default: p.opis -%}
+    {% if opis %}<p class="produkt-opis">{{ opis }}</p>{% endif %}
+    {% if p.cena %}<p class="produkt-cena">{{ p.cena }}</p>{% endif %}
+    <div class="produkt-linki">
+      {%- for l in p.linki %}
+      <a href="{% include produkt-url.html link=l %}" class="btn {% if forloop.first %}btn-primary{% else %}btn-ghost{% endif %}" target="_blank" rel="sponsored nofollow noopener" data-afiliacja="{{ include.id }}" data-sklep="{{ l.sklep }}">Zobacz w sklepie {{ l.sklep }}</a>
+      {%- endfor %}
+    </div>
+  </div>
+</aside>
+{%- else -%}
+<p class="produkt-brak">⚠ Brak produktu „{{ include.id }}” w _data/produkty.yml</p>
+{%- endif -%}

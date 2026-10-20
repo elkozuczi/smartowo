@@ -3,7 +3,7 @@ layout: page
 title: "Polityka prywatności"
 permalink: /polityka-prywatnosci/
 description: "Informacje o przetwarzaniu danych osobowych na stronie smartowo.pl."
-updated: 2026-10-14
+updated: 2026-10-20
 ---
 
 Szanuję Twoją prywatność. Poniżej znajdziesz informacje o tym, jakie dane osobowe zbieram za pośrednictwem strony smartowo.pl, w jakim celu i jakie masz prawa. Dokument spełnia obowiązek informacyjny z art. 13 RODO (Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679).
@@ -68,7 +68,7 @@ Przy pierwszej wizycie pytam Cię o zgodę na pliki cookies. Strona działa tak 
 
 **Jeśli zaakceptujesz**, korzystam z:
 
-- **Google Analytics 4** — anonimowe statystyki: które podstrony są odwiedzane, skąd przychodzą odwiedzający, ile osób wysyła formularz lub klika w numer telefonu,
+- **Google Analytics 4** — anonimowe statystyki: które podstrony są odwiedzane, skąd przychodzą odwiedzający, ile osób wysyła formularz, klika w numer telefonu lub w linki do produktów na blogu,
 - **piksela Meta** — sprawdzenie, czy reklamy na Facebooku i Instagramie przynoszą zapytania, oraz docieranie z reklamami do osób, które odwiedziły stronę.
 
 Narzędzia te zapisują w przeglądarce pliki cookies i mogą przetwarzać m.in. identyfikatory urządzenia, adres IP i informacje o odwiedzanych podstronach. Dane w Google Analytics są przechowywane przez 14 miesięcy.
@@ -79,6 +79,12 @@ Swoją decyzję możesz w każdej chwili zmienić, klikając **„Ustawienia coo
 
 Strona zapamiętuje Twój wybór w pamięci przeglądarki (localStorage). Nie podejmuję wobec Ciebie zautomatyzowanych decyzji wywołujących skutki prawne.
 
-## 8. Zmiany polityki prywatności
+## 8. Linki afiliacyjne {#afiliacja}
+
+We wpisach na blogu umieszczam linki partnerskie (afiliacyjne) do sklepów internetowych, m.in. w ramach Programu Partnerskiego Amazon EU oraz sieci afiliacyjnych. Takie linki są oznaczone informacją na początku wpisu. Jeśli klikniesz link i dokonasz zakupu, sklep wypłaca mi prowizję — cena dla Ciebie pozostaje taka sama.
+
+Po kliknięciu w link przechodzisz na stronę sklepu, który może zapisać w Twojej przeglądarce własne pliki cookies, aby przypisać zakup do mojego polecenia. Za to przetwarzanie odpowiada sklep lub operator programu partnerskiego, na zasadach opisanych w jego polityce prywatności. Nie otrzymuję Twoich danych osobowych i nie wiem, kto dokonał zakupu — dostaję wyłącznie anonimowe raporty o liczbie kliknięć, zamówionych produktach i wysokości prowizji.
+
+## 9. Zmiany polityki prywatności
 
 Polityka może być aktualizowana, np. w razie zmiany używanych narzędzi lub przepisów. Aktualna wersja jest zawsze dostępna na tej stronie.

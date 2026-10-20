@@ -1,0 +1,2 @@
+{%- comment -%}Zwraca adres linku: z ASIN buduje link Amazon z tagiem partnera z _config.yml, w innym razie bierze url.{%- endcomment -%}
+{%- if include.link.asin -%}https://www.amazon.pl/dp/{{ include.link.asin }}{% if site.amazon_tag and site.amazon_tag != "" %}?tag={{ site.amazon_tag }}{% endif %}{%- else -%}{{ include.link.url }}{%- endif -%}

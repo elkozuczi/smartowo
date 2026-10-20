@@ -5,6 +5,9 @@ url: "https://smartowo.pl"
 # Analityka — zgodę obsługuje baner cookies (_includes/cookie-banner.html)
 ga4_id: "G-Y72D0YBJMR"
 meta_pixel_id: "1772773163949047"
+
+# Program Partnerski Amazon — identyfikator partnera (np. "smartowo-21"), doklejany do linków z ASIN w _data/produkty.yml
+amazon_tag: "smartowo-21"
 lang: pl
 markdown: kramdown
 permalink: /blog/:slug/

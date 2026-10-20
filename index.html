@@ -144,6 +144,9 @@ home: true
             <li>Zwykłe włączniki działają jak dotychczas</li>
             <li>Bez pyłu, bez malowania, bez przerwy w mieszkaniu</li>
           </ul>
+          {%- for wpis in site.posts -%}{%- if wpis.url == "/blog/sterowanie-roletami-z-telefonu-shelly-2pm/" %}
+          <a href="{{ wpis.url }}" class="card-link">Zobacz przykład: rolety sterowane z telefonu <span aria-hidden="true">→</span></a>
+          {%- endif -%}{%- endfor %}
         </div>
         <div class="feature-media">
           <img

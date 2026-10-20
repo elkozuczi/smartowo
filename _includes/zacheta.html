@@ -1,0 +1,11 @@
+{%- comment -%}
+Zachęta do zamówienia montażu w treści wpisu. Przycisk przewija do formularza pod wpisem (#kontakt).
+Użycie: {% include zacheta.html %}
+        {% include zacheta.html tytul="..." tekst="..." przycisk="..." miejsce="po-montazu" %}
+miejsce — etykieta do pomiaru GA4 (zdarzenie click_cta_montaz), żeby było wiadomo, która zachęta działa.
+{%- endcomment -%}
+<aside class="zacheta" aria-label="Montaż we Wrocławiu i okolicach">
+  <p class="zacheta-tytul">{{ include.tytul | default: "Nie chcesz robić tego sam? Zrobię to za Ciebie" }}</p>
+  <p class="zacheta-tekst">{{ include.tekst | default: "Montuję smart home we Wrocławiu i okolicach — dobiorę sprzęt, zamontuję go bez kucia ścian i skonfiguruję tak, żeby po prostu działał." }}</p>
+  <a href="#kontakt" class="btn btn-primary" data-cta="{{ include.miejsce | default: 'tekst' }}">{{ include.przycisk | default: "Zamów montaż" }}</a>
+</aside>

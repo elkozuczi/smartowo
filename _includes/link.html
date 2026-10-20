@@ -1,0 +1,7 @@
+{%- assign p = site.data.produkty[include.id] -%}
+{%- if p and p.linki -%}
+{%- assign pierwszy = p.linki | first -%}
+<a href="{% include produkt-url.html link=pierwszy %}" target="_blank" rel="sponsored nofollow noopener" data-afiliacja="{{ include.id }}" data-sklep="{{ pierwszy.sklep }}">{{ include.tekst | default: p.nazwa }}</a>
+{%- else -%}
+<span class="produkt-brak">⚠ Brak produktu „{{ include.id }}”</span>
+{%- endif -%}

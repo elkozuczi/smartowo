@@ -1,0 +1,578 @@
+# Baza produktów używanych w artykułach na blogu.
+#
+# Klucz (np. shelly-2pm-gen4) to identyfikator, którego używasz w artykule:
+#   {% include produkt.html id="shelly-2pm-gen4" %}                         → karta produktu z przyciskami
+#   {% include produkt.html id="shelly-2pm-gen4" opis="Steruje roletą w salonie." %}  → karta z własnym opisem
+#   {% include link.html id="shelly-2pm-gen4" %}                            → link w tekście (nazwa produktu)
+#   {% include link.html id="shelly-2pm-gen4" tekst="ten moduł" %}          → link w tekście z własnym opisem
+#
+# Pola:
+#   nazwa     — wymagane
+#   kategoria — tylko do porządku w tym pliku (nie wyświetla się)
+#   opis      — krótki opis na karcie; w artykule lepiej podać własny parametrem opis="..."
+#   zdjecie   — ścieżka do własnego zdjęcia w /assets/produkty/ (opcjonalne).
+#               Nie kopiuj zdjęć ze sklepów — regulamin Amazon tego zabrania.
+#   cena      — orientacyjna cena (opcjonalne). Nie podawaj, jeśli jedynym linkiem jest Amazon:
+#               program partnerski Amazon zabrania pokazywania cen nieaktualizowanych automatycznie.
+#   linki     — lista sklepów; pierwszy to główny przycisk karty i link w tekście.
+#               Amazon:      - sklep: "Amazon"  + asin: "B0..."   (tag partnera dokleja się z _config.yml → amazon_tag)
+#               Inne sklepy: - sklep: "Botland" + url: "https://..." (gotowy link afiliacyjny)
+#
+# Oferty Amazon.pl wybrane i sprawdzone 2026-10-20: dla każdego modelu najtańsza oferta od zaufanego
+# sprzedawcy (Shelly Europe, APRIMS, Amazon, Morele), najczęściej z wysyłką przez Amazon.
+# Na Amazon ten sam produkt ma często kilka ofert z cenami różniącymi się nawet 4× — przed użyciem
+# w artykule warto rzucić okiem, czy wybrana oferta jest wciąż korzystna.
+
+# ── Przekaźniki do puszki: światło, gniazda, urządzenia ──────────────────────
+
+shelly-1-gen3:
+  nazwa: "Shelly 1 Gen3"
+  kategoria: przekaźniki
+  opis: "Przekaźnik 1-kanałowy 16 A ze stykiem bezpotencjałowym, Wi-Fi i Bluetooth. Do światła, bramy, pieca."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0D8YPW46Y"   # APRIMS, wysyłka Amazon
+
+shelly-1-mini-gen3:
+  nazwa: "Shelly 1 Mini Gen3"
+  kategoria: przekaźniki
+  opis: "Najmniejszy przekaźnik 1-kanałowy 8 A — mieści się za włącznikiem w płytkiej puszce."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CQCHS2QS"   # APRIMS, wysyłka Amazon
+
+shelly-1-mini-gen4:
+  nazwa: "Shelly 1 Mini Gen4"
+  kategoria: przekaźniki
+  opis: "Mini przekaźnik 1-kanałowy 8 A z Wi-Fi, Zigbee i Matter."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DZHZDJXT"   # APRIMS, wysyłka Amazon
+
+shelly-1l-gen3:
+  nazwa: "Shelly 1L Gen3"
+  kategoria: przekaźniki
+  opis: "Przekaźnik 1-kanałowy do instalacji bez przewodu neutralnego (z bypassem w zestawie)."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0F4XTC2G4"   # APRIMS, wysyłka Amazon
+
+shelly-1l-gen4:
+  nazwa: "Shelly 1L Gen4"
+  kategoria: przekaźniki
+  opis: "Przekaźnik 1-kanałowy bez przewodu neutralnego, najnowsza generacja z Matter i Zigbee."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0H9XVSNZR"   # Shelly Europe, wysyłka Amazon
+
+shelly-1pm-gen3:
+  nazwa: "Shelly 1PM Gen3"
+  kategoria: przekaźniki
+  opis: "Przekaźnik 1-kanałowy 16 A z pomiarem zużycia energii."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0D8YPG797"   # APRIMS, wysyłka Amazon
+
+shelly-1pm-gen4:
+  nazwa: "Shelly 1PM Gen4"
+  kategoria: przekaźniki
+  opis: "Przekaźnik 1-kanałowy 16 A z pomiarem energii, Wi-Fi, Zigbee i Matter."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DZJ13813"   # Morele, wysyłka 2–3 dni
+
+shelly-1pm-mini-gen3:
+  nazwa: "Shelly 1PM Mini Gen3"
+  kategoria: przekaźniki
+  opis: "Mini przekaźnik 1-kanałowy 8 A z pomiarem energii — za włącznik lub do puszki."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CRRT6HCB"   # APRIMS, wysyłka Amazon
+
+shelly-1pm-mini-gen4:
+  nazwa: "Shelly 1PM Mini Gen4"
+  kategoria: przekaźniki
+  opis: "Mini przekaźnik 1-kanałowy 8 A z pomiarem energii, Wi-Fi, Zigbee i Matter."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DZHYKFZ8"   # APRIMS, wysyłka Amazon
+
+shelly-2l-gen3:
+  nazwa: "Shelly 2L Gen3"
+  kategoria: przekaźniki
+  opis: "Przekaźnik 2-kanałowy do instalacji bez przewodu neutralnego (z bypassem) — np. włącznik świecznikowy."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0F4R4K7JR"   # APRIMS, wysyłka Amazon
+
+shelly-2l-gen4:
+  nazwa: "Shelly 2L Gen4"
+  kategoria: przekaźniki
+  opis: "Przekaźnik 2-kanałowy bez przewodu neutralnego, najnowsza generacja z Matter i Zigbee."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0H9XXGMRG"   # Shelly Europe, wysyłka Amazon
+
+shelly-i4-gen3:
+  nazwa: "Shelly i4 Gen3"
+  kategoria: przekaźniki
+  opis: "Moduł z 4 wejściami na przyciski — wywołuje sceny i automatyzacje, sam niczego nie załącza."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0D9JPDVN1"   # APRIMS, wysyłka Amazon
+
+shelly-plus-i4-dc:
+  nazwa: "Shelly Plus i4 DC"
+  kategoria: przekaźniki
+  opis: "Wersja i4 zasilana napięciem stałym 5–24 V DC."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0BLLZSSXG"
+
+shelly-plus-uni:
+  nazwa: "Shelly Plus Uni"
+  kategoria: przekaźniki
+  opis: "Uniwersalny moduł niskonapięciowy (zasilanie 8–24 V) — do bram, domofonów, czujników."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CQD1Z2K8"
+
+# ── Rolety i bramy ────────────────────────────────────────────────────────────
+
+shelly-2pm-gen3:
+  nazwa: "Shelly 2PM Gen3"
+  kategoria: rolety
+  opis: "Sterownik rolety lub dwa niezależne obwody po 16 A, z pomiarem energii."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DGXHS18R"   # APRIMS, wysyłka Amazon
+
+shelly-2pm-gen4:
+  nazwa: "Shelly 2PM Gen4"
+  kategoria: rolety
+  opis: "Sterownik rolety lub dwa obwody po 16 A z pomiarem energii, Wi-Fi, Zigbee i Matter."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DZJ1W814"   # APRIMS, wysyłka Amazon
+
+shelly-wall-switch-2:
+  nazwa: "Shelly Przełącznik ścienny z 2 przyciskami"
+  kategoria: rolety
+  opis: "Płaski łącznik do modułów Shelly z uchwytem na przekaźnik — do sterowania roletą w płytkiej puszce. Ramka osobno."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0BGCB3GRH"   # czarny, wysyłka Amazon; białego brak na amazon.pl (2026-10-20)
+    - sklep: "Shelly"
+      url: "https://www.shelly.com/pl/products/shelly-wall-switch-with-2-buttons-white"   # biały, link bez afiliacji
+
+shelly-wall-frame-1:
+  nazwa: "Shelly Wall Frame 1 (ramka pojedyncza)"
+  kategoria: rolety
+  opis: "Biała ramka pojedyncza do przełączników ściennych Shelly."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0B9LCP84J"   # 2026-10-20: brak głównej oferty, 2 oferty sprzedawców od 44 zł — sprawdzić przed publikacją
+
+# ── Ściemniacze i oświetlenie ─────────────────────────────────────────────────
+
+shelly-dimmer-2:
+  nazwa: "Shelly Dimmer 2"
+  kategoria: oświetlenie
+  opis: "Ściemniacz do puszki, działa bez przewodu neutralnego."
+  linki:
+    - sklep: "Amazon"
+      asin: "B081FH1Z8Y"   # sprzedaje Amazon
+
+shelly-dimmer-gen3:
+  nazwa: "Shelly Dimmer Gen3"
+  kategoria: oświetlenie
+  opis: "Ściemniacz Wi-Fi do puszki, z pomiarem mocy."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DT7GKJM4"   # Eltrox
+
+shelly-dimmer-gen4:
+  nazwa: "Shelly Dimmer Gen4"
+  kategoria: oświetlenie
+  opis: "Ściemniacz LED do 150 W z Wi-Fi, Zigbee i Matter."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0G2Y1JKY9"   # APRIMS, wysyłka Amazon
+
+shelly-dimmer-0-10v-pm-gen3:
+  nazwa: "Shelly Dimmer 0/1-10V PM Gen3"
+  kategoria: oświetlenie
+  opis: "Sterownik ściemniania zasilaczy LED i opraw z wejściem 0–10 V / 1–10 V."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0D9JQTP8B"   # APRIMS, wysyłka Amazon
+
+shelly-plus-rgbw-pm:
+  nazwa: "Shelly Plus RGBW PM"
+  kategoria: oświetlenie
+  opis: "Sterownik taśm LED 12–24 V: białych, RGB lub RGBW."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CXN2B9RS"
+
+shelly-duo-bulb-e27-gen3:
+  nazwa: "Shelly Duo Bulb E27 Gen3"
+  kategoria: oświetlenie
+  opis: "Żarówka E27 z regulacją jasności i barwy bieli 2700–6500 K."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0GTMQHPR5"   # Shelly Europe, wysyłka Amazon
+
+shelly-multicolor-bulb-e27-gen3:
+  nazwa: "Shelly Multicolor Bulb E27 Gen3"
+  kategoria: oświetlenie
+  opis: "Kolorowa żarówka RGBW E27 z Wi-Fi, Bluetooth i Matter."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0GTMTGTNN"   # Shelly Europe, wysyłka Amazon
+
+# ── Gniazdka i listwy ─────────────────────────────────────────────────────────
+
+shelly-plug-s-mtr-gen3:
+  nazwa: "Shelly Plug S MTR Gen3"
+  kategoria: gniazdka
+  opis: "Kompaktowe gniazdko z pomiarem energii i podświetleniem LED."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DJFQXTY2"   # APRIMS, wysyłka Amazon
+
+shelly-plug-m-gen3:
+  nazwa: "Shelly Plug M Gen3"
+  kategoria: gniazdka
+  opis: "Gniazdko z pomiarem energii, 16 A, z obsługą Matter."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0GHZ2JZMN"   # Shelly Europe, wysyłka Amazon
+
+shelly-az-plug:
+  nazwa: "Shelly AZ Plug"
+  kategoria: gniazdka
+  opis: "Gniazdko z pomiarem energii."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CQPCX7RN"   # Shelly Europe, wysyłka Amazon
+
+shelly-outdoor-plug-s-gen3:
+  nazwa: "Shelly Outdoor Plug S Gen3"
+  kategoria: gniazdka
+  opis: "Podwójne gniazdko zewnętrzne — na taras, do oświetlenia ogrodu lub pompy."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0FC6Q66MT"   # APRIMS, wysyłka Amazon
+
+shelly-power-strip-4-gen4:
+  nazwa: "Shelly Power Strip 4 Gen4"
+  kategoria: gniazdka
+  opis: "Listwa z 4 niezależnie sterowanymi gniazdami."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0FRG224SL"   # sprzedaje Amazon
+
+# ── Pomiar energii ────────────────────────────────────────────────────────────
+
+shelly-pm-mini-gen3:
+  nazwa: "Shelly PM Mini Gen3"
+  kategoria: energia
+  opis: "Mini miernik energii jednego obwodu do 16 A — mieści się w puszce."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CQCNKVD4"   # APRIMS, wysyłka Amazon
+
+shelly-em-mini-gen4:
+  nazwa: "Shelly EM Mini Gen4"
+  kategoria: energia
+  opis: "Mini licznik energii z Wi-Fi, Zigbee i Matter."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DZHY3VNB"   # APRIMS, wysyłka Amazon
+
+shelly-em-gen3:
+  nazwa: "Shelly EM Gen3"
+  kategoria: energia
+  opis: "Licznik energii z cęgami 50 A — np. do pomiaru zużycia domu lub produkcji z fotowoltaiki."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DKFY2ZNV"   # APRIMS, wysyłka Amazon
+
+shelly-3em-63w-gen3:
+  nazwa: "Shelly 3EM-63W Gen3"
+  kategoria: energia
+  opis: "Licznik energii 1- i 3-fazowej do 63 A na szynę DIN."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DVT74ZJS"   # APRIMS, wysyłka Amazon
+
+shelly-3em-63t-gen3:
+  nazwa: "Shelly 3EM-63T Gen3"
+  kategoria: energia
+  opis: "Licznik energii 1- i 3-fazowej do 63 A na szynę DIN."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DVT9SKNT"   # APRIMS, wysyłka Amazon
+
+shelly-pro-3em:
+  nazwa: "Shelly Pro 3EM"
+  kategoria: energia
+  opis: "Trójfazowy licznik energii na szynę DIN z Wi-Fi i LAN, z przekładnikami 63 A."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DJF6VQHK"   # APRIMS, wysyłka Amazon
+
+shelly-pro-em-50:
+  nazwa: "Shelly Pro EM-50"
+  kategoria: energia
+  opis: "Licznik energii na szynę DIN z cęgami 50 A i stykiem do sterowania stycznikiem."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CH1JW2CW"   # Morele
+
+# ── Czujniki ──────────────────────────────────────────────────────────────────
+
+shelly-ht-gen3:
+  nazwa: "Shelly H&T Gen3"
+  kategoria: czujniki
+  opis: "Czujnik temperatury i wilgotności z wyświetlaczem, Wi-Fi, na baterie."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CX9G64FW"   # sprzedaje Amazon
+
+shelly-blu-ht-zb:
+  nazwa: "Shelly BLU H&T ZB"
+  kategoria: czujniki
+  opis: "Czujnik temperatury i wilgotności z wyświetlaczem, Bluetooth i Zigbee."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0G4W8JVPS"   # Shelly Europe, wysyłka Amazon
+
+shelly-blu-door-window:
+  nazwa: "Shelly BLU Door/Window"
+  kategoria: czujniki
+  opis: "Czujnik otwarcia drzwi i okien na Bluetooth, z pomiarem natężenia światła."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0C717KCK5"   # APRIMS, wysyłka Amazon
+
+shelly-blu-door-window-mini-zb:
+  nazwa: "Shelly BLU Door/Window Mini ZB"
+  kategoria: czujniki
+  opis: "Miniaturowy czujnik otwarcia na Bluetooth i Zigbee."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0H8F3PLQY"   # Shelly Europe, wysyłka Amazon
+
+shelly-blu-motion:
+  nazwa: "Shelly BLU Motion"
+  kategoria: czujniki
+  opis: "Czujnik ruchu i natężenia światła na Bluetooth, na baterie."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CJ7WN68K"   # Morele
+
+shelly-blu-motion-zb:
+  nazwa: "Shelly BLU Motion ZB"
+  kategoria: czujniki
+  opis: "Czujnik ruchu PIR na Bluetooth i Zigbee."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0H4GD6GGK"
+
+shelly-presence-gen4:
+  nazwa: "Shelly Presence Gen4"
+  kategoria: czujniki
+  opis: "Czujnik obecności — wykrywa też osoby siedzące bez ruchu. Zasięg do ok. 42 m²."
+  linki:
+    - sklep: "Amazon"
+      asin: "B099ZS9LJ8"   # Shelly Europe, wysyłka Amazon
+
+shelly-flood-gen4:
+  nazwa: "Shelly Flood Gen4"
+  kategoria: czujniki
+  opis: "Czujnik zalania z przewodem sondy — pod zmywarkę, pralkę, do kotłowni."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0FPG9SGLJ"   # APRIMS, wysyłka Amazon
+
+shelly-flood-s-gen4:
+  nazwa: "Shelly Flood S Gen4"
+  kategoria: czujniki
+  opis: "Kompaktowy czujnik zalania z wbudowanym brzęczykiem."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0H3QG45XL"   # Shelly Europe, wysyłka Amazon
+
+shelly-plus-smoke:
+  nazwa: "Shelly Plus Smoke"
+  kategoria: czujniki
+  opis: "Czujka dymu zgodna z EN 14604, bateria na ok. 5 lat, powiadomienia na telefon."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0C6QRHHQW"   # APRIMS, wysyłka Amazon
+
+shelly-gas-lpg:
+  nazwa: "Shelly Gas (LPG)"
+  kategoria: czujniki
+  opis: "Czujnik wycieku gazu LPG z powiadomieniami na telefon."
+  linki:
+    - sklep: "Amazon"
+      asin: "B09Q7V6R1K"   # sprzedaje Amazon
+
+# ── Przyciski i piloty ────────────────────────────────────────────────────────
+
+shelly-blu-button-tough-1:
+  nazwa: "Shelly BLU Button Tough 1"
+  kategoria: przyciski
+  opis: "Bezprzewodowy przycisk Bluetooth — do scen, przy łóżku, jako przycisk alarmowy."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CXN2L3HR"   # APRIMS, wysyłka Amazon
+
+shelly-blu-rc-button-4-zb:
+  nazwa: "Shelly BLU RC Button 4 ZB"
+  kategoria: przyciski
+  opis: "Bezprzewodowy pilot z 4 przyciskami (Bluetooth i Zigbee), każdy z wielokrotnym kliknięciem — do 16 akcji. Uchwyt magnetyczny na puszkę lub ścianę."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0G5364CNG"   # 2026-10-20: brak aktywnej oferty — sprawdzić przed publikacją
+    - sklep: "Shelly"
+      url: "https://www.shelly.com/pl/products/shelly-blu-rc-button-4-zb"   # link bez afiliacji
+
+shelly-blu-remote-control-zb:
+  nazwa: "Shelly BLU Remote Control ZB"
+  kategoria: przyciski
+  opis: "Pilot do sterowania światłem, roletami i scenami (Bluetooth i Zigbee)."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0FW59J9TM"
+
+# ── Ogrzewanie ────────────────────────────────────────────────────────────────
+
+shelly-blu-trv-gateway:
+  nazwa: "Shelly BLU TRV + BLU Gateway Gen3"
+  kategoria: ogrzewanie
+  opis: "Zestaw: termostatyczna głowica grzejnikowa i bramka Bluetooth do połączenia z siecią."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DJDP4JY4"
+
+shelly-blu-gateway:
+  nazwa: "Shelly BLU Gateway"
+  kategoria: ogrzewanie
+  opis: "Bramka Bluetooth–Wi-Fi na USB — łączy czujniki i głowice BLU z siecią."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CH18NPHZ"   # sprzedaje Amazon
+
+# ── Panele ścienne ────────────────────────────────────────────────────────────
+
+shelly-wall-display-x2i:
+  nazwa: "Shelly Wall Display X2i"
+  kategoria: panele
+  opis: "Ścienny panel dotykowy do sterowania domem, z termostatem i przekaźnikiem."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0G3WVLRMT"   # Morele
+
+shelly-wall-display-xl:
+  nazwa: "Shelly Wall Display XL"
+  kategoria: panele
+  opis: "Duży panel ścienny do sterowania całym domem."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0FPG5W8GF"   # Morele
+
+# ── Seria Pro: rozdzielnica (szyna DIN) ───────────────────────────────────────
+
+shelly-pro-1:
+  nazwa: "Shelly Pro 1"
+  kategoria: pro-din
+  opis: "Przekaźnik 1-kanałowy na szynę DIN z Wi-Fi, LAN i Bluetooth."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0B4HMM362"   # Morele
+
+shelly-pro-2:
+  nazwa: "Shelly Pro 2"
+  kategoria: pro-din
+  opis: "Przekaźnik 2-kanałowy na szynę DIN z Wi-Fi, LAN i Bluetooth."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0B4HLKXDJ"   # Morele
+
+shelly-pro-2pm:
+  nazwa: "Shelly Pro 2PM"
+  kategoria: pro-din
+  opis: "Przekaźnik 2-kanałowy na szynę DIN z pomiarem energii — także do rolet."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0B4HHMP6B"   # sprzedaje Amazon
+
+shelly-pro-3:
+  nazwa: "Shelly Pro 3"
+  kategoria: pro-din
+  opis: "Przekaźnik 3-kanałowy na szynę DIN ze stykami bezpotencjałowymi."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0BHKWSGPB"   # Morele
+
+shelly-pro-4pm:
+  nazwa: "Shelly Pro 4PM"
+  kategoria: pro-din
+  opis: "Przekaźnik 4-kanałowy na szynę DIN z pomiarem energii i wyświetlaczem."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0BD8PQFC5"
+
+shelly-pro-dual-cover-pm:
+  nazwa: "Shelly Pro Dual Cover/Shutter PM"
+  kategoria: pro-din
+  opis: "Sterownik dwóch rolet na szynę DIN z Wi-Fi, LAN i Bluetooth."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0C9YNPNNZ"   # Morele
+
+shelly-pro-dimmer-1pm:
+  nazwa: "Shelly Pro Dimmer 1PM"
+  kategoria: pro-din
+  opis: "Ściemniacz na szynę DIN z Wi-Fi, LAN i Bluetooth."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CV8N3XBN"   # APRIMS, wysyłka Amazon
+
+shelly-pro-dimmer-0-10v-pm:
+  nazwa: "Shelly Pro Dimmer 0/1-10V PM"
+  kategoria: pro-din
+  opis: "Sterownik ściemniania 0–10 V / 1–10 V na szynę DIN."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0DJDHPGK8"
+
+# ── Akcesoria ─────────────────────────────────────────────────────────────────
+
+shelly-plus-add-on:
+  nazwa: "Shelly Plus Add-On"
+  kategoria: akcesoria
+  opis: "Nakładka do przekaźników Plus/Gen3 — podłączenie czujników temperatury DS18B20, DHT22 i wejść."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0BRBMKB53"   # Morele
+
+shelly-ds18b20:
+  nazwa: "Shelly czujnik temperatury DS18B20"
+  kategoria: akcesoria
+  opis: "Przewodowa sonda temperatury z wtykiem jack 3,5 mm."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0G8J4CFGS"   # Ponera, wysyłka Amazon
+
+shelly-rc-snubber:
+  nazwa: "Shelly RC Snubber"
+  kategoria: akcesoria
+  opis: "Tłumik przepięć — eliminuje migotanie LED i zakłócenia przy obciążeniach indukcyjnych."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0CH3B8KT4"   # Ponera, wysyłka Amazon

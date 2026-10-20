@@ -1,0 +1,29 @@
+<section id="kontakt" class="section section-alt post-cta" aria-labelledby="kontakt-title">
+  <div class="container">
+    <div class="contact-panel">
+      <div class="contact-aside">
+        <span class="section-num">Montaż we Wrocławiu i okolicach</span>
+        <h2 id="kontakt-title" class="section-title">{{ page.cta_tytul | default: "Nie chcesz montować sam? Zrobię to za Ciebie" }}</h2>
+        <p>{{ page.cta_tekst | default: "Dobiorę sprzęt, zamontuję go bez kucia ścian i skonfiguruję tak, żeby po prostu działał. Zostaw numer — oddzwonię i bezpłatnie doradzę, od czego zacząć." }}</p>
+        <ul class="contact-list">
+          <li>
+            <a href="tel:+48604447928" data-track="phone">
+              <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <span><small>Telefon</small><strong>+48 604 447 928</strong><span class="hours">Pn–pt 8:00–18:00</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/48604447928?text=Dzie%C5%84%20dobry%2C%20mam%20pytanie%20o%20smart%20home." target="_blank" rel="noopener" data-track="whatsapp">
+              <span class="icon-badge" aria-hidden="true">{% include icon-whatsapp.svg %}</span>
+              <span><small>WhatsApp</small><strong>Napisz na WhatsAppie</strong></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {%- capture cta_source %}blog: {{ page.slug }}{% endcapture %}
+      {%- capture cta_message %}Dzień dobry, czytałem/am wpis „{{ page.title }}” i proszę o kontakt.{% endcapture %}
+      {% include contact-form.html source=cta_source default_message=cta_message %}
+    </div>
+  </div>
+</section>

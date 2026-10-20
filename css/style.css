@@ -37,6 +37,7 @@ body {
 }
 
 img, svg { max-width: 100%; display: block; }
+img { height: auto; }
 
 a { color: inherit; text-decoration: none; }
 
@@ -1430,3 +1431,101 @@ p { text-wrap: pretty; }
 .footer-bottom a:hover { color: var(--accent); }
 
 .post-title + .post-meta { margin: -16px 0 32px; }
+
+/* Wpis — zdjęcie główne i informacja o linkach afiliacyjnych */
+.post-hero {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin: 0 0 24px;
+}
+
+.afiliacja-info {
+  margin: 0 0 32px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.afiliacja-info strong { color: var(--text); }
+
+/* Zachęta do montażu w treści wpisu (_includes/zacheta.html) */
+.zacheta {
+  margin: 32px 0;
+  padding: 22px 24px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(58, 208, 194, 0.35);
+  border-radius: var(--radius);
+}
+
+.zacheta-tytul {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.zacheta-tekst {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+}
+
+/* Karta produktu (_includes/produkt.html) */
+.produkt {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 28px 0;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.25s ease;
+}
+
+.produkt:hover { border-color: rgba(58, 208, 194, 0.5); }
+
+.post-content .produkt-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: 0;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+
+.produkt-body { flex: 1; min-width: 0; }
+
+.post-content .produkt-nazwa { margin: 0 0 4px; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+
+.post-content .produkt-opis { margin: 0 0 8px; font-size: 0.92rem; }
+
+.post-content .produkt-cena { margin: 0 0 12px; color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+
+.produkt-linki { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+
+.post-content .produkt-linki .btn { padding: 10px 20px; font-size: 0.88rem; text-decoration: none; }
+
+.post-content .produkt-linki .btn-primary { color: var(--bg); }
+
+.post-content .produkt-linki .btn-ghost { color: var(--text); }
+
+.produkt-brak { color: #ff8a80; font-weight: 600; }
+
+/* CTA pod wpisem */
+.post-cta { padding: 80px 0; }
+
+@media (max-width: 640px) {
+  .produkt { flex-direction: column; align-items: stretch; text-align: left; }
+  .post-content .produkt-img { width: 100%; height: 180px; }
+  .post-content .produkt-linki .btn { flex: 1 1 100%; }
+  .post-cta { padding: 56px 0; }
+}

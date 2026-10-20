@@ -149,6 +149,24 @@ if (location.pathname.startsWith("/dziekuje")) {
   if (leadSource) trackEvent("generate_lead", { lead_source: leadSource }, "Lead");
 }
 
+// Pomiar: kliknięcia w linki afiliacyjne (który produkt i sklep, z którego wpisu)
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a[data-afiliacja]");
+  if (!link) return;
+  trackEvent("click_affiliate", {
+    produkt: link.dataset.afiliacja,
+    sklep: link.dataset.sklep,
+    page_path: location.pathname,
+  });
+});
+
+// Pomiar: kliknięcia w zachętę do montażu w treści wpisu (_includes/zacheta.html)
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a[data-cta]");
+  if (!link) return;
+  trackEvent("click_cta_montaz", { miejsce: link.dataset.cta, page_path: location.pathname });
+});
+
 // Formularz kontaktowy (Formspree)
 const contactForm = document.querySelector(".contact-form");
 
