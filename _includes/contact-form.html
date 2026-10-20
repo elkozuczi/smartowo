@@ -23,8 +23,8 @@
     </div>
   </fieldset>
   <div class="field">
-    <label for="city">Miejscowość / osiedle <span class="opt">(opcjonalnie)</span></label>
-    <input type="text" id="city" name="miejscowosc" autocomplete="address-level2" placeholder="Np. Wrocław, Jagodno">
+    <label for="city">Miejscowość / osiedle</label>
+    <input type="text" id="city" name="miejscowosc" autocomplete="address-level2" placeholder="Np. Wrocław, Jagodno" required>
   </div>
   <div class="field">
     {% assign default_message = include.default_message | default: 'Dzień dobry, proszę o kontakt w sprawie automatyki domu.' %}

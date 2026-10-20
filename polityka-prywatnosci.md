@@ -19,7 +19,7 @@ W sprawach dotyczących danych osobowych możesz się ze mną skontaktować:
 
 ## 2. Jakie dane zbieram i w jakim celu
 
-**Formularz kontaktowy.** Gdy wysyłasz zapytanie przez formularz, przetwarzam podane przez Ciebie dane: imię, numer telefonu, zaznaczony zakres prac oraz — jeśli je podasz — miejscowość i treść wiadomości. Wykorzystuję je wyłącznie po to, aby odpowiedzieć na Twoje zapytanie, a jeśli o to poprosisz — przygotować ofertę lub wycenę.
+**Formularz kontaktowy.** Gdy wysyłasz zapytanie przez formularz, przetwarzam podane przez Ciebie dane: imię, numer telefonu, miejscowość, zaznaczony zakres prac oraz treść wiadomości. Wykorzystuję je wyłącznie po to, aby odpowiedzieć na Twoje zapytanie, a jeśli o to poprosisz — przygotować ofertę lub wycenę.
 
 **Kontakt e-mailowy i telefoniczny.** Jeśli piszesz lub dzwonisz bezpośrednio, przetwarzam dane, które przekażesz w trakcie korespondencji lub rozmowy, w tym samym celu.
 
