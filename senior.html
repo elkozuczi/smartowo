@@ -137,6 +137,9 @@ description: "Dyskretne czujniki w mieszkaniu rodziców i powiadomienia na Twój
             <li>Pamięta ostatni ruch nawet po chwilowym zaniku prądu</li>
             <li>Bez kamer i bez abonamentu, a na czas wyjazdu rodziców alert łatwo wstrzymać w aplikacji</li>
           </ul>
+          {%- for wpis in site.posts -%}{%- if wpis.url == "/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/" %}
+          <a href="{{ wpis.url }}" class="card-link">Zobacz prawdziwą instalację: alert braku ruchu u mamy we Wrocławiu <span aria-hidden="true">→</span></a>
+          {%- endif -%}{%- endfor %}
         </div>
         <div class="notif-panel" aria-label="Przykładowe powiadomienia na telefonie">
           <div class="notif notif-alert">

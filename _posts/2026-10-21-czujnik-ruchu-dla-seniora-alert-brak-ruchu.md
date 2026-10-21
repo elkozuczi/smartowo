@@ -1,7 +1,8 @@
 ---
 published: false
 layout: post
-title: "Czujnik ruchu dla seniora: alert, gdy rano nie było ruchu"
+title: "Czujnik ruchu dla seniora: alert, gdy rano brak ruchu"
+location: "Wrocław, Olimpia Port"
 description: "Powiadomienie na telefon, gdy mama rano się nie poruszyła. Czujnik ruchu Shelly BLU i aplikacja Shelly — bez kamer, bez abonamentu, bez Home Assistant."
 excerpt: "Rodzina martwiła się o mamę w podeszłym wieku. Teraz, jeśli rano do 10:00 nie było w mieszkaniu ruchu, dzieci dostają powiadomienie na telefon. Bez kamer, montaż w godzinę."
 # image: /assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/glowne.webp
@@ -12,7 +13,7 @@ cta_tekst: "Montuję czujniki w mieszkaniu rodziców i konfiguruję powiadomieni
 
 Dzwonisz do mamy codziennie rano, „żeby tylko sprawdzić”? A gdy nie odbiera, od razu robi się nerwowo — może jest w łazience, może wyszła po bułki, a może coś się stało.
 
-Z taką sytuacją zgłosiła się do mnie rodzina, która martwiła się o swoją mamę ze względu na jej podeszły wiek. Dzieci chciały po prostu wiedzieć, że rano wszystko jest w porządku — bez kamer i bez dzwonienia co rano.
+Z taką sytuacją zgłosiła się do mnie rodzina z Wrocławia, która martwiła się o swoją mamę ze względu na jej podeszły wiek. Mama mieszka na osiedlu Olimpia Port. Dzieci chciały po prostu wiedzieć, że rano wszystko jest w porządku — bez kamer i bez dzwonienia co rano.
 
 Zamontowałem czujnik ruchu w przedpokoju i ustawiłem jedną regułę: jeśli rano do 10:00 nikt się w mieszkaniu nie poruszył, na telefony dzieci przychodzi powiadomienie. Do tego czujnik zalania w kuchni i czujniki otwarcia drzwi wejściowych i balkonowych. Regułę liczy mały skrypt na module Shelly, a powiadomienia wysyła aplikacja Shelly — **Home Assistant nie był potrzebny**.
 
