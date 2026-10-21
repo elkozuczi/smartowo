@@ -2,7 +2,8 @@
 published: false
 layout: post
 title: "Sterowanie roletami z telefonu bez kucia — Shelly 2PM"
-description: "Jak zautomatyzowałem rolety Shelly 2PM: otwieranie o wschodzie, zamykanie o zachodzie słońca, jeden przycisk do wszystkich rolet i integracja z Home Assistant."
+location: "Wrocław, Swojczyce"
+description: "Sterowanie roletami z telefonu bez kucia ścian: Shelly 2PM Gen4 w puszce, rolety same o wschodzie i zachodzie słońca, jeden przycisk do wszystkich."
 excerpt: "Rolety, które same otwierają się o wschodzie i zamykają o zachodzie słońca, jeden przycisk do zamknięcia wszystkich naraz i sterowanie z telefonu — bez kucia ścian i bez wymiany łączników."
 # image: /assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/glowne.webp
 # image_alt: "Okno z roletą zamykającą się o zachodzie słońca, w dłoni telefon z aplikacją Shelly"
@@ -12,7 +13,7 @@ cta_tekst: "Montuję Shelly 2PM w istniejących puszkach, konfiguruję harmonogr
 
 Znasz ten poranny rytuał? Chodzisz od okna do okna i trzymasz przycisk, aż roleta dojedzie do góry. Wieczorem to samo w drugą stronę. A gdy wyjeżdżasz na kilka dni, rolety albo są cały czas zamknięte, albo cały czas otwarte — i z ulicy od razu widać, że nikogo nie ma.
 
-U mnie w domu rolety robią to same. Te od strony ulicy rano otwierają się o wschodzie słońca, a wieczorem zamykają o zachodzie. Gdy chcę zamknąć wszystkie naraz — naciskam jeden bezprzewodowy przycisk. A z telefonu steruję nimi z dowolnego miejsca. Wszystko to [bez kucia ścian](/#uslugi), bez wymiany łączników i bez nowych przewodów.
+U mnie w domu — we Wrocławiu, na Swojczycach — rolety robią to same. Te od strony ulicy rano otwierają się o wschodzie słońca, a wieczorem zamykają o zachodzie. Gdy chcę zamknąć wszystkie naraz — naciskam jeden bezprzewodowy przycisk. A z telefonu steruję nimi z dowolnego miejsca. Wszystko to [bez kucia ścian](/#uslugi), bez wymiany łączników i bez nowych przewodów.
 
 <!-- ZDJĘCIE 1: dom / okna z roletami w połowie zamknięte o zachodzie słońca -->
 
