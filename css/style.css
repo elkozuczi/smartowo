@@ -1294,6 +1294,11 @@ p { text-wrap: pretty; }
 
 .post-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 
+/* Przyciski w treści wpisu (zachęty, karty produktów) — bez stylu zwykłego linku */
+.post-content .btn { text-decoration: none; }
+.post-content .btn-primary { color: var(--bg); }
+.post-content .btn-ghost { color: var(--text); }
+
 .post-content p { margin: 0 0 20px; }
 
 .post-content ul, .post-content ol { margin: 0 0 20px; padding-left: 22px; }
