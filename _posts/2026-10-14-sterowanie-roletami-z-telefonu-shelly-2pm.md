@@ -1,12 +1,12 @@
 ---
-published: false
+published: true
 layout: post
 title: "Sterowanie roletami z telefonu bez kucia — Shelly 2PM"
 location: "Wrocław, Swojczyce"
 description: "Sterowanie roletami z telefonu bez kucia ścian: Shelly 2PM Gen4 w puszce, rolety same o wschodzie i zachodzie słońca, jeden przycisk do wszystkich."
 excerpt: "Rolety, które same otwierają się o wschodzie i zamykają o zachodzie słońca, jeden przycisk do zamknięcia wszystkich naraz i sterowanie z telefonu — bez kucia ścian i bez wymiany łączników."
-# image: /assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/glowne.webp
-# image_alt: "Okno z roletą zamykającą się o zachodzie słońca, w dłoni telefon z aplikacją Shelly"
+image: /assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/glowne.webp
+image_alt: "Roleta w drzwiach tarasowych zatrzymana w połowie, w dłoni telefon z aplikacją Shelly pokazującą jej położenie"
 cta_tytul: "Chcesz takie rolety u siebie? Zrobię to za Ciebie"
 cta_tekst: "Montuję Shelly 2PM w istniejących puszkach, konfiguruję harmonogramy, przyciski i Home Assistant. Zostaw numer — oddzwonię i powiem, ile to będzie kosztować w Twoim domu."
 ---
@@ -15,7 +15,7 @@ Znasz ten poranny rytuał? Chodzisz od okna do okna i trzymasz przycisk, aż rol
 
 U mnie w domu — we Wrocławiu, na Swojczycach — rolety robią to same. Te od strony ulicy rano otwierają się o wschodzie słońca, a wieczorem zamykają o zachodzie. Gdy chcę zamknąć wszystkie naraz — naciskam jeden bezprzewodowy przycisk. A z telefonu steruję nimi z dowolnego miejsca. Wszystko to [bez kucia ścian](/#uslugi), bez wymiany łączników i bez nowych przewodów.
 
-<!-- ZDJĘCIE 1: dom / okna z roletami w połowie zamknięte o zachodzie słońca -->
+![Dwa okna z roletami opuszczonymi do połowy, za oknem nisko świecące słońce](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/rolety-o-zachodzie.webp){: width="1200" height="900" loading="lazy"}
 
 W tym wpisie pokazuję, jak to zrobiłem, jakiego sprzętu użyłem i jak go skonfigurować — krok po kroku.
 
@@ -24,8 +24,8 @@ W tym wpisie pokazuję, jak to zrobiłem, jakiego sprzętu użyłem i jak go sko
 - **Każda roleta** dostała moduł Shelly 2PM schowany w puszce za istniejącym łącznikiem. Łącznik działa dalej tak jak wcześniej.
 - **Harmonogramy** otwierają rolety od strony ulicy o wschodzie i zamykają je o zachodzie słońca — godziny same przesuwają się z porami roku.
 - **Automatyzacja „upał”** zamyka rolety, gdy na zewnątrz jest gorąco i mocno świeci słońce.
-- **Przycisk Shelly BLU RC Button 4** w przedpokoju otwiera lub zamyka wszystkie rolety jednocześnie.
-- **Home Assistant** wykrywa wszystkie moduły automatycznie i steruje nimi lokalnie, bez chmury — u mnie to w nim są zdefiniowane wszystkie automatyzacje rolet.
+- **Przycisk Shelly BLU RC Button 4** w przedpokoju otwiera lub zamyka wszystkie rolety jednocześnie — to dwie sceny w aplikacji Shelly.
+- **Home Assistant** wykrywa wszystkie moduły automatycznie i steruje nimi lokalnie, bez chmury — u mnie działają w nim automatyzacje wschodu, zachodu i upału.
 - **Aplikacja Shelly** to druga droga sterowania każdą roletą z telefonu.
 
 ![Schemat: łącznik roletowy (przewodowo) i przycisk Shelly BLU RC Button 4 (Bluetooth) sterują modułem Shelly 2PM Gen4, który zasila silnik rolety; Home Assistant i telefon łączą się z modułem przez Wi-Fi](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/schemat-systemu.webp){: width="1200" height="680" loading="lazy"}
@@ -34,7 +34,7 @@ W tym wpisie pokazuję, jak to zrobiłem, jakiego sprzętu użyłem i jak go sko
 
 ## Sprzęt, którego użyłem
 
-Sercem całego systemu jest moduł do sterowania roletami. Montuje się go w puszce elektrycznej, za łącznikiem, którym dotąd sterowałeś roletą. Przez dwa lata używałem Shelly 2PM drugiej generacji, a teraz mam w domu najnowszą, czwartą:
+Sercem całego systemu jest moduł do sterowania roletami. Montuje się go w puszce elektrycznej, za łącznikiem, którym dotąd sterowałeś roletą. Przez dwa lata używałem Shelly 2PM drugiej generacji, a teraz większość rolet działa już na najnowszej, czwartej:
 
 {% include produkt.html id="shelly-2pm-gen4" opis="Jeden moduł na jedną roletę. Mieści się w puszce za łącznikiem, mierzy pobór prądu silnika, dzięki czemu zna dokładną pozycję rolety." %}
 
@@ -56,8 +56,6 @@ Najważniejsza zaleta 2PM to **pomiar mocy**. Moduł „czuje”, kiedy silnik d
 
 > **Uwaga:** montaż wymaga pracy przy instalacji 230 V. Jeśli nie masz uprawnień elektrycznych, zleć go elektrykowi — albo [napisz do mnie](#kontakt), zrobię to za Ciebie.
 
-<!-- ZDJĘCIE 2: Shelly 2PM w dłoni, widać zaciski i opisy -->
-
 **1. Wyłącz zasilanie.** Wyłącz bezpiecznik obwodu rolet i sprawdź próbnikiem, że w puszce nie ma napięcia.
 
 **2. Sprawdź puszkę.** Wykręć łącznik i zobacz, co jest w środku. Potrzebujesz przewodu fazowego (L), neutralnego (N) i dwóch przewodów do silnika rolety (góra/dół). Shelly 2PM **wymaga przewodu neutralnego**. Zmierz też głębokość puszki: **jeśli ma co najmniej 6 cm, moduł zmieści się razem ze standardowym łącznikiem roletowym.** W płytszych puszkach zamiast zwykłego łącznika stosuję płaski przełącznik Shelly — moduł montuje się w jego uchwycie i wszystko się mieści:
@@ -68,9 +66,9 @@ Najważniejsza zaleta 2PM to **pomiar mocy**. Moduł „czuje”, kiedy silnik d
 
 Do przełącznika potrzebna jest ramka — ja używam {% include link.html id="shelly-wall-frame-1" tekst="pojedynczej ramki Shelly Wall Frame 1" %}.
 
-<!-- ZDJĘCIE 3: otwarta puszka z podłączonym modułem, przed wsunięciem łącznika (zasilanie wyłączone!) -->
+![Otwarta puszka podtynkowa z podłączonym modułem Shelly 2PM Gen4 (zaciski O1, L, L, O2, S1, S2, N), przed nią wysunięty osprzęt ścienny](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/puszka-z-modulem-gen4.webp){: width="1200" height="900" loading="lazy"}
 
-**3. Podłącz moduł.** Moduł ma dwa zaciski L — oba podłączasz do fazy, a zacisk N do przewodu neutralnego. Wspólny przewód silnika rolety też łączysz z N, a przewody kierunków (góra/dół) z wyjściami O1 i O2. Łącznik roletowy podłączasz do wejść S1 i S2, a jego wspólny zacisk zasilasz z fazy. Przewód ochronny PE silnika łączysz z PE instalacji — nie z modułem. Zawsze sprawdź schemat w instrukcji modułu i opis przewodów silnika.
+**3. Podłącz moduł.** Moduł ma dwa zaciski L — oba podłączasz do fazy, a zacisk N do przewodu neutralnego. Wspólny przewód silnika rolety też łączysz z N, a przewody kierunków (góra/dół) z wyjściami O1 i O2. Łącznik roletowy podłączasz do wejść S1 i S2, a jego wspólny zacisk zasilasz z fazy. Przewód ochronny PE silnika łączysz z PE instalacji — nie z modułem. Zawsze sprawdź schemat w instrukcji modułu i opis przewodów silnika. Uwaga przy starszych modułach: Shelly Plus 2PM (Gen2) ma te same zaciski, ale w innej kolejności (N, O1, L, L, O2, S1, S2) — podłączaj według opisów na obudowie, nie według położenia.
 
 ![Schemat podłączenia Shelly 2PM Gen4 w trybie rolety: zaciski O1, L, L, O2, S1, S2, N; oba L do fazy, N i wspólny przewód silnika do neutralnego, kierunki silnika do O1 i O2, łącznik roletowy między fazą a S1 i S2](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/schemat-podlaczenia.webp){: width="1200" height="720" loading="lazy"}
 
@@ -78,7 +76,7 @@ Do przełącznika potrzebna jest ramka — ja używam {% include link.html id="s
 
 **5. Skalibruj roletę.** Uruchamiasz kalibrację w aplikacji — roleta sama przejedzie w górę i w dół, a moduł zapamięta czas przejazdu. Od tej chwili widzisz położenie rolety w procentach.
 
-<!-- ZDJĘCIE 4: zrzut ekranu z aplikacji Shelly — kalibracja lub suwak pozycji rolety -->
+![Aplikacja Shelly: roleta w salonie ze suwakiem położenia, otwarta w 100%, przyciski Open i Close](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/aplikacja-shelly-suwak.webp){: width="300" height="570" loading="lazy"}
 
 **6. Złóż wszystko z powrotem.** Wsuwasz moduł do puszki, przykręcasz łącznik. Z zewnątrz nie widać żadnej różnicy.
 
@@ -90,8 +88,6 @@ To funkcja, której używam najczęściej — a właściwie nie używam, bo dzia
 
 W ustawieniach każdego modułu Shelly można dodać **harmonogram**, który zamiast konkretnej godziny korzysta ze wschodu lub zachodu słońca dla Twojej lokalizacji. Zimą rolety zamykają się więc około 16:00, latem około 21:00 — bez przestawiania czegokolwiek.
 
-<!-- ZDJĘCIE 5: zrzut ekranu harmonogramu „o zachodzie słońca” w aplikacji Shelly -->
-
 Kilka ustawień, które polecam:
 
 - **Przesunięcie względem wschodu/zachodu.** Możesz ustawić np. zamykanie 15 minut po zachodzie, żeby w pokoju nie zrobiło się ciemno za wcześnie.
@@ -102,17 +98,19 @@ Ważne: harmonogramy zapisane w samym module działają **lokalnie** — nawet g
 
 U mnie harmonogram mają **rolety od strony ulicy**: o zachodzie słońca same się zamykają, a o wschodzie — otwierają. Wieczorem nikt z ulicy nie zagląda do środka, a rano nie muszę o nich pamiętać. Mam to ustawione jako automatyzację w Home Assistant (o tym niżej), ale ten sam efekt da się uzyskać samym harmonogramem w aplikacji Shelly.
 
+![Automatyzacja „Wschód” w Home Assistant: wyzwalacz „Kiedy słońce wschodzi”, akcje otwierają rolety Blat, Kuchnia, Schody i Wejście](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/home-assistant-automatyzacja-wschod.webp){: width="400" height="583" loading="lazy"}
+
 ## Jeden przycisk do wszystkich rolet
 
 Harmonogram to podstawa, ale czasem trzeba coś zmienić ręcznie — np. zamknąć wszystkie rolety naraz przed wyjściem z domu albo gdy zaczyna się burza.
 
 Do tego służy przycisk **Shelly BLU RC Button 4 ZB**. Nie wymaga żadnych przewodów: działa na baterii i komunikuje się przez Bluetooth (ma też Zigbee). Trzyma się na magnesie, więc w każdej chwili można go zdjąć ze ściany i użyć jak pilota. Shelly 2PM Gen4 (i Gen3) można z nim sparować bezpośrednio (funkcja BTHome Components), więc nie potrzebujesz dodatkowej centralki.
 
-<!-- ZDJĘCIE 6: przycisk BLU na ścianie, w miejscu, w którym naprawdę wisi -->
+![Przycisk Shelly BLU RC Button 4 na magnetycznym uchwycie na ścianie w przedpokoju](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/przycisk-blu-na-scianie.webp){: width="1200" height="900" loading="lazy"}
 
-Ma cztery przyciski, a każdy rozpoznaje wielokrotne kliknięcia — razem można im przypisać do 16 różnych akcji. U mnie przycisk wisi w przedpokoju: **jedno kliknięcie zamyka wszystkie rolety, dwa kliknięcia — otwierają**. Te akcje również mam zdefiniowane w Home Assistant.
+Ma cztery przyciski, a każdy rozpoznaje wielokrotne kliknięcia — razem można im przypisać do 16 różnych akcji. U mnie przycisk wisi w przedpokoju: **jedno kliknięcie prawego górnego przycisku otwiera wszystkie rolety, dwa kliknięcia — zamykają**. Te akcje to dwie proste sceny w aplikacji Shelly.
 
-<!-- ZDJĘCIE 7: zrzut ekranu automatyzacji przycisku w Home Assistant -->
+![Dwie sceny w aplikacji Shelly: „Otwórz wszystkie rolety” — jedno kliknięcie prawego górnego przycisku otwiera rolety; „Zamknij wszystkie rolety” — podwójne kliknięcie je zamyka](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/aplikacja-shelly-sceny-przycisku.webp){: width="1200" height="442" loading="lazy"}
 
 ## Bez Home Assistant: reguły i sceny w aplikacji Shelly
 
@@ -123,22 +121,21 @@ Jeśli nie masz Home Assistant, sporo zrobisz w samej aplikacji Shelly. Poza har
 - otwórz rolety w salonie do połowy w weekendowe poranki.
 
 Dobrze wiedzieć: sceny w aplikacji Shelly działają przez chmurę, więc wymagają internetu. Harmonogramy zapisane w samym module — nie.
-
-<!-- ZDJĘCIE 8: zrzut ekranu listy scen / reguł w aplikacji Shelly -->
-
 ## Integracja z Home Assistant
 
 Jeśli korzystasz z Home Assistant, Shelly to jeden z najwygodniejszych wyborów. Moduły pojawiają się w Home Assistant same — system wykrywa je w sieci i proponuje dodanie. Każda roleta to osobna encja z położeniem w procentach, którą widzisz na pulpicie i możesz użyć w automatyzacjach.
 
 Komunikacja odbywa się **lokalnie**, bez pośrednictwa chmury, więc działa szybko i niezależnie od internetu.
 
-U mnie Home Assistant to centrum sterowania roletami: są w nim zdefiniowane wszystkie sceny i automatyzacje — harmonogram rolet od ulicy i akcje przycisku w przedpokoju — i z jego pulpitu mogę też sterować każdą roletą bezpośrednio. Aplikacja Shelly zostaje jako druga droga sterowania z telefonu.
+U mnie Home Assistant odpowiada za automatyzacje zależne od pory dnia — otwieranie rolet od ulicy o wschodzie i zamykanie o zachodzie słońca — i z jego pulpitu mogę też sterować każdą roletą bezpośrednio. Akcje przycisku w przedpokoju zostawiłem w aplikacji Shelly.
 
 Mam tam też automatyzację zależną od pogody: **rolety zamykają się same, gdy na zewnątrz robi się gorąco i mocno świeci słońce.** Home Assistant bierze pod uwagę temperaturę zewnętrzną i nasłonecznienie, więc w upalne dni słońce nie nagrzewa pokoi, zanim ktokolwiek zdąży o tym pomyśleć.
 
-![Oś dnia: o wschodzie słońca rolety od ulicy się otwierają, przy upale i mocnym słońcu rolety się zamykają, o zachodzie rolety od ulicy się zamykają; o każdej porze przycisk w przedpokoju zamyka (1×) lub otwiera (2×) wszystkie rolety](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/automatyzacje-dzien.webp){: width="1200" height="640" loading="lazy"}
+![Oś dnia: o wschodzie słońca rolety od ulicy się otwierają, przy upale i mocnym słońcu rolety się zamykają, o zachodzie rolety od ulicy się zamykają; o każdej porze przycisk w przedpokoju otwiera (1×) lub zamyka (2×) wszystkie rolety](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/automatyzacje-dzien.webp){: width="1200" height="640" loading="lazy"}
 
-<!-- ZDJĘCIE 9: zrzut ekranu pulpitu Home Assistant z roletami -->
+Tak wygląda karta rolet na moim pulpicie. Rolety z pokojów dzieci ukryłem na zrzucie, bo w nazwach mają ich imiona.
+
+![Pulpit Home Assistant z kartą „Rolety”: każda roleta z przyciskami w górę, stop i w dół](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/home-assistant-pulpit-rolety.webp){: width="400" height="467" loading="lazy"}
 
 Dzięki Home Assistant możesz połączyć rolety z resztą domu, np.:
 
@@ -167,7 +164,7 @@ Wolisz gotowe rozwiązanie z montażem? Zobacz [pakiety w cenniku](/#cennik) —
 
 ## Efekt po dwóch latach użytkowania
 
-Rolety mam zautomatyzowane od dwóch lat. Zaczynałem na modułach Shelly 2PM drugiej generacji (Shelly Plus 2PM), a niedawno wymieniłem je na Gen4, żeby mieć dodatkowe funkcje: **Matter** oraz **bezpośrednie parowanie z przyciskiem Shelly BLU**, bez pośredników.
+Rolety mam zautomatyzowane od dwóch lat. Zaczynałem na modułach Shelly 2PM drugiej generacji (Shelly Plus 2PM), a niedawno większość wymieniłem na Gen4, żeby mieć dodatkowe funkcje: **Matter** oraz **bezpośrednie parowanie z przyciskiem Shelly BLU**, bez pośredników. Kilka rolet wciąż działa na Gen2 — i nie przeszkadza to: **różne generacje Shelly bez problemu współpracują ze sobą**, a w aplikacji Shelly i w Home Assistant obsługuję je dokładnie tak samo.
 
 Najlepsze w tym rozwiązaniu jest to, że o roletach po prostu przestałem myśleć. Otwierają się i zamykają same, a gdy potrzebuję czegoś innego — mam przycisk na ścianie, przycisk BLU albo telefon.
 
@@ -176,6 +173,8 @@ Co zmieniło się na co dzień:
 - **W domu jest chłodniej** — rolety zamykają się, zanim słońce nagrzeje pokoje.
 - **Czujemy się bezpieczniej po zmroku** — rolety od ulicy zamykają się same o zachodzie słońca.
 - **Wszystko obsługujemy z telefonu** albo dedykowanym przyciskiem w przedpokoju.
+
+![Przesuwne drzwi na taras z roletami opuszczonymi do połowy](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/rolety-taras.webp){: width="1200" height="900" loading="lazy"}
 
 I najważniejsze: przez dwa lata **nie było żadnych kłopotów**.
 
@@ -188,7 +187,7 @@ Tak. Bez przewodu neutralnego w puszce moduł nie zadziała. W większości inst
 Tak. Łącznik podłącza się do wejść modułu, więc roletę otwierasz i zamykasz tak samo jak wcześniej.
 
 **Czy rolety działają bez internetu?**
-Tak. Łącznik, przycisk BLU, harmonogramy zapisane w module i Home Assistant działają lokalnie. Bez internetu nie zadziałają tylko sceny z chmury Shelly i sterowanie spoza domu.
+Tak. Łącznik, harmonogramy zapisane w module i Home Assistant działają lokalnie. Bez internetu nie zadziałają tylko sceny z chmury Shelly — u mnie to akcje przycisku BLU — i sterowanie spoza domu.
 
 **Czy można sterować roletami głosem?**
 Tak — przez Home Assistant albo bezpośrednio przez Matter (Shelly 2PM Gen4) w Google Home, Alexie lub Apple Home.

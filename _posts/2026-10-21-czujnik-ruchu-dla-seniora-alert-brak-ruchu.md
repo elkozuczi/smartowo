@@ -1,9 +1,9 @@
 ---
-published: false
+published: true
 layout: post
 title: "Czujnik ruchu dla seniora: alert, gdy rano brak ruchu"
 location: "Wrocław, Olimpia Port"
-description: "Powiadomienie na telefon, gdy mama rano się nie poruszyła. Czujnik ruchu Shelly BLU i aplikacja Shelly — bez kamer, bez abonamentu, bez Home Assistant."
+description: "Czujnik ruchu dla seniora: powiadomienie na telefon, gdy mama rano się nie poruszy. Shelly BLU i aplikacja Shelly — bez kamer i bez abonamentu."
 excerpt: "Rodzina martwiła się o mamę w podeszłym wieku. Teraz, jeśli rano do 10:00 nie było w mieszkaniu ruchu, dzieci dostają powiadomienie na telefon. Bez kamer, montaż w godzinę."
 image: /assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/glowne.webp
 image_alt: "Czujnik ruchu Shelly BLU Motion na ścianie, obok telefon z powiadomieniem z aplikacji Shelly"
