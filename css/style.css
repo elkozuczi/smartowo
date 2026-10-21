@@ -1310,6 +1310,59 @@ p { text-wrap: pretty; }
   margin: 24px 0;
 }
 
+/* Powiększanie grafik we wpisach (js/script.js) */
+.zoom-wrap { position: relative; display: block; margin: 24px 0; }
+.zoom-wrap img { margin: 0; }
+.post-content img.zoomable { cursor: zoom-in; transition: box-shadow 0.2s ease; }
+.post-content img.zoomable:hover,
+.post-content img.zoomable:focus-visible { box-shadow: 0 0 0 2px var(--accent); outline: none; }
+.zoom-badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(11, 17, 32, 0.85);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.8rem;
+  cursor: zoom-in;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 16px 16px;
+  background: rgba(5, 8, 16, 0.94);
+  cursor: zoom-out;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img {
+  width: min(100%, 1600px);
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+html.lightbox-open { overflow: hidden; }
+
 .post-content code {
   background: var(--surface);
   border: 1px solid var(--border);

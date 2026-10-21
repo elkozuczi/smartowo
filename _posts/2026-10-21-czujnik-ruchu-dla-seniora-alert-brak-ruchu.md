@@ -49,7 +49,7 @@ Czujniki BLU wysyłają sygnał przez Bluetooth, więc w ich zasięgu musi być 
 
 {% include produkt.html id="shelly-1pm-mini-gen4" opis="Mini moduł z Wi-Fi i Bluetooth. Tutaj pracuje jako odbiornik sygnałów z czujników BLU i to na nim działa skrypt alertu braku ruchu. Wymaga zasilania 230 V (L i N)." %}
 
-Potrzebny jest też internet w mieszkaniu — zwykły router Wi-Fi wystarczy. Mama nie potrzebuje smartfona: aplikację i powiadomienia mają dzieci.
+**Warunek konieczny: w mieszkaniu musi być internet z Wi-Fi.** Zwykły router wystarczy — ale bez niego powiadomienia nie dotrą na telefony rodziny, bo wysyła je aplikacja Shelly przez chmurę Shelly. Jeśli rodzice nie mają internetu, wystarczy prosty router z kartą SIM albo internet od dowolnego dostawcy. Mama nie potrzebuje za to smartfona: aplikację i powiadomienia mają dzieci.
 
 ## Gdzie powiesić czujnik ruchu
 
@@ -181,6 +181,9 @@ Nie. W tej instalacji regułę liczy krótki skrypt na module Shelly 1PM Mini Ge
 
 **Czy rodzice muszą mieć smartfon?**
 Nie. Smartfon z aplikacją mają osoby, które dostają powiadomienia. W mieszkaniu rodziców potrzebny jest tylko domowy internet (router Wi-Fi).
+
+**Czy do powiadomień potrzebny jest internet?**
+Tak. W mieszkaniu musi działać internet z Wi-Fi — powiadomienia wysyła aplikacja Shelly przez chmurę. Gdy internet przestanie działać, powiadomienia nie dotrą (brzęczyk czujnika zalania alarmuje na miejscu niezależnie od internetu). Jeśli w mieszkaniu nie ma internetu, wystarczy router z kartą SIM albo internet od dowolnego dostawcy.
 
 **Czy czujnik ruchu nagrywa obraz?**
 Nie. Czujnik ruchu nie ma kamery ani mikrofonu — wysyła tylko informację, że w jego polu widzenia ktoś się poruszył, oraz poziom oświetlenia.

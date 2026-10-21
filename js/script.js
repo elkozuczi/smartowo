@@ -206,3 +206,60 @@ if (contactForm) {
     }
   });
 }
+
+// Powiększanie grafik we wpisach — kliknięcie otwiera obraz na całym ekranie
+const postImages = [...document.querySelectorAll(".post-content img")].filter((img) => !img.closest(".produkt"));
+
+if (postImages.length) {
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.hidden = true;
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Powiększona grafika");
+  lightbox.innerHTML = '<button type="button" class="lightbox-close" aria-label="Zamknij powiększenie">×</button><img alt="">';
+  document.body.appendChild(lightbox);
+
+  const bigImage = lightbox.querySelector("img");
+  const closeButton = lightbox.querySelector(".lightbox-close");
+  let opener = null;
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    document.documentElement.classList.remove("lightbox-open");
+    if (opener) opener.focus();
+  };
+
+  const openLightbox = (img) => {
+    opener = img;
+    bigImage.src = img.currentSrc || img.src;
+    bigImage.alt = img.alt;
+    lightbox.hidden = false;
+    document.documentElement.classList.add("lightbox-open");
+    closeButton.focus();
+  };
+
+  postImages.forEach((img) => {
+    const wrap = document.createElement("span");
+    wrap.className = "zoom-wrap";
+    img.parentNode.insertBefore(wrap, img);
+    wrap.appendChild(img);
+    wrap.insertAdjacentHTML("beforeend", '<span class="zoom-badge" aria-hidden="true">🔍 Powiększ</span>');
+    wrap.querySelector(".zoom-badge").addEventListener("click", () => openLightbox(img));
+    img.classList.add("zoomable");
+    img.tabIndex = 0;
+    img.title = "Kliknij, aby powiększyć";
+    img.addEventListener("click", () => openLightbox(img));
+    img.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(img);
+      }
+    });
+  });
+
+  lightbox.addEventListener("click", closeLightbox);
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.hidden && e.key === "Escape") closeLightbox();
+  });
+}
