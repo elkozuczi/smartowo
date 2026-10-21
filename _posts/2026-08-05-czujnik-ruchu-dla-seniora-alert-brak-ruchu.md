@@ -2,184 +2,194 @@
 published: false
 layout: post
 title: "Czujnik ruchu dla seniora: alert, gdy rano nie było ruchu"
-description: "Jak dostać powiadomienie na telefon, gdy mama lub tata rano się nie poruszyli. Czujnik ruchu Shelly BLU, Home Assistant, bez kamer i bez abonamentu."
-excerpt: "Rano telefon sam daje znać, że u mamy wszystko w porządku — a jeśli do 9:00 nie było ruchu, dostajesz wiadomość, że warto zadzwonić. Bez kamer i bez abonamentu."
+description: "Powiadomienie na telefon, gdy mama rano się nie poruszyła. Czujnik ruchu Shelly BLU i aplikacja Shelly — bez kamer, bez abonamentu, bez Home Assistant."
+excerpt: "Rodzina martwiła się o mamę w podeszłym wieku. Teraz, jeśli rano do 10:00 nie było w mieszkaniu ruchu, dzieci dostają powiadomienie na telefon. Bez kamer, montaż w godzinę."
 # image: /assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/glowne.webp
-# image_alt: "Czujnik ruchu na ścianie w kuchni, obok telefon z powiadomieniem „ruch wykryty — wszystko OK”"
+# image_alt: "Czujnik ruchu Shelly BLU Motion na ścianie w przedpokoju"
 cta_tytul: "Chcesz takiego spokoju o rodziców? Zamontuję to"
 cta_tekst: "Montuję czujniki w mieszkaniu rodziców i konfiguruję powiadomienia na Twoim telefonie i telefonach rodzeństwa. Zostaw numer — oddzwonię i doradzę, od czego zacząć."
 ---
 
 Dzwonisz do mamy codziennie rano, „żeby tylko sprawdzić”? A gdy nie odbiera, od razu robi się nerwowo — może jest w łazience, może wyszła po bułki, a może coś się stało.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja z realizacji — kto (np. „syn pani Ireny z Krzyków”), dlaczego się zgłosił, co go martwiło. Jeśli to nie była realizacja, tylko pomysł z oferty — napisać wstęp jako poradnik.]
+Z taką sytuacją zgłosiła się do mnie rodzina, która martwiła się o swoją mamę ze względu na jej podeszły wiek. Dzieci chciały po prostu wiedzieć, że rano wszystko jest w porządku — bez kamer i bez dzwonienia co rano.
 
-Rozwiązanie, które montuję w takich sytuacjach, jest proste: czujnik ruchu w kuchni albo w przedpokoju i jedna reguła. Jeśli do ustalonej godziny nikt się w mieszkaniu nie poruszył, na Twój telefon przychodzi wiadomość. Bez kamer, bez nagrywania, bez abonamentu — i bez żadnej obsługi po stronie rodziców.
+Zamontowałem czujnik ruchu w przedpokoju i ustawiłem jedną regułę: jeśli rano do 10:00 nikt się w mieszkaniu nie poruszył, na telefony dzieci przychodzi powiadomienie. Do tego czujnik zalania w kuchni i czujniki otwarcia drzwi wejściowych i balkonowych. Regułę liczy mały skrypt na module Shelly, a powiadomienia wysyła aplikacja Shelly — **Home Assistant nie był potrzebny**.
 
-<!-- ZDJĘCIE 1: czujnik ruchu na ścianie w kuchni lub przedpokoju (dyskretnie, na wysokości ok. 2 m) -->
+<!-- ZDJĘCIE 1: czujnik ruchu na ścianie w przedpokoju (dyskretnie, na wysokości ok. 2 m) -->
 
 ## W skrócie
 
-- **Czujnik ruchu Shelly BLU Motion** wisi w miejscu, przez które rodzic przechodzi każdego ranka — w kuchni albo w przedpokoju.
-- **O 6:00** system zaczyna „czekać” na pierwszy ruch.
-- **O 9:00** sprawdza, czy ruch był. Jeśli nie — dostajesz wiadomość: „Brak ruchu od 6:00. Warto zadzwonić”.
-- **Gdy mama wstanie później**, przychodzi druga wiadomość: „Ruch wykryty — wszystko OK”.
-- Godziny dopasowujesz do rytmu dnia rodziców, a na czas wyjazdu alert wstrzymujesz jednym przełącznikiem.
+- **Czujnik ruchu Shelly BLU Motion** wisi w przedpokoju — mama przechodzi tamtędy każdego ranka.
+- **Między 6:00 a 10:00** system czeka na pierwszy ruch.
+- **Jeśli do 10:00 ruchu nie było**, dzieci dostają powiadomienie na telefon i mogą od razu zadzwonić.
+- Do tego **czujnik zalania w kuchni** i **czujniki otwarcia drzwi** wejściowych i balkonowych.
+- Regułę liczy **skrypt na module Shelly 1PM Mini Gen4**, a powiadomienia wysyła **aplikacja Shelly** — bez Home Assistant, bez kamer i bez abonamentu.
+- **Montaż: ok. 1 godziny.**
 
 {% include zacheta.html miejsce="po-skrocie" tytul="Rodzice mieszkają we Wrocławiu lub okolicach?" tekst="Zamontuję czujniki, skonfiguruję powiadomienia na telefonach całej rodziny i wytłumaczę wszystko rodzicom. Bez kamer i bez abonamentu." przycisk="Chcę taki alert" %}
 
-![Schemat: czujnik ruchu Shelly BLU Motion w mieszkaniu rodziców wysyła sygnał przez moduł Shelly do Home Assistant, który o 9:00 sprawdza, czy był ruch, i wysyła powiadomienie na telefony rodziny](/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/schemat-systemu.webp){: width="1200" height="620" loading="lazy"}
+![Schemat: czujnik ruchu i dwa czujniki drzwi łączą się przez Bluetooth z modułem Shelly 1PM Mini Gen4, na którym skrypt między 6:00 a 10:00 czeka na ruch i przy jego braku włącza przełącznik; scena w aplikacji Shelly wysyła wtedy powiadomienie na telefony dzieci; czujnik zalania Flood S Gen4 łączy się przez Wi-Fi](/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/schemat-systemu.webp){: width="1200" height="640" loading="lazy"}
 
-## Sprzęt
+## Sprzęt, który zamontowałem
 
-Najważniejszy jest czujnik ruchu. Wystarczy model na baterię, bez żadnych przewodów — przykleja się go albo przykręca do ściany:
+Najważniejszy jest czujnik ruchu. Działa na baterii, bez żadnych przewodów — przykleja się go albo przykręca do ściany:
 
 {% include produkt.html id="shelly-blu-motion" opis="Czujnik ruchu na Bluetooth z czujnikiem natężenia światła. Zasilany jedną baterią CR2477 — według producenta wystarcza do 5 lat. Zasięg w pomieszczeniu do ok. 10 m." %}
 
-Czujnik wysyła sygnał przez Bluetooth, więc w jego zasięgu musi być urządzenie, które przekaże go dalej do sieci Wi-Fi. Może to być dowolny moduł Shelly nowszej generacji zamontowany w mieszkaniu (np. za włącznikiem światła) albo osobna bramka:
+Na drzwiach wejściowych i balkonowych — dwa czujniki otwarcia:
 
-{% include produkt.html id="shelly-blu-gateway" opis="Bramka Bluetooth–Wi-Fi zasilana z gniazdka USB. Potrzebna tylko wtedy, gdy w mieszkaniu nie ma innego modułu Shelly w zasięgu czujnika." %}
+{% include produkt.html id="shelly-blu-door-window" opis="Czujnik otwarcia drzwi i okien na Bluetooth, na baterii CR2032. W tej instalacji: jeden na drzwiach wejściowych, drugi na balkonowych." %}
 
-Do tego potrzebny jest internet w mieszkaniu rodziców — zwykły router Wi-Fi wystarczy. Rodzice nie potrzebują smartfona: aplikację i powiadomienia masz Ty.
+W kuchni — czujnik zalania:
 
-[DO UZUPEŁNIENIA: co zamontowałeś w tej realizacji poza czujnikiem ruchu — np. czujnik zalania, czujka dymu, czujnik drzwi, Home Assistant na jakim sprzęcie (Raspberry Pi, Home Assistant Green itp.).]
+{% include produkt.html id="shelly-flood-s-gen4" opis="Płaski czujnik zalania kładziony na podłodze, ze stalowymi stykami i brzęczykiem. Wi-Fi, bateria CR123A na ok. 2 lata (wg producenta), obudowa IP67. Alarmuje na miejscu i wysyła powiadomienie na telefon." %}
 
-## Gdzie powiesić czujnik
+Czujniki BLU wysyłają sygnał przez Bluetooth, więc w ich zasięgu musi być urządzenie, które przekaże go do sieci Wi-Fi. W tej instalacji robi to mały moduł Shelly — i to na nim działa skrypt z regułą „brak ruchu rano”:
 
-To najważniejsza decyzja w całym montażu. Czujnik musi „widzieć” miejsce, przez które rodzic **na pewno** przechodzi rano:
+{% include produkt.html id="shelly-1pm-mini-gen4" opis="Mini moduł z Wi-Fi i Bluetooth. Tutaj pracuje jako odbiornik sygnałów z czujników BLU i to na nim działa skrypt alertu braku ruchu. Wymaga zasilania 230 V (L i N)." %}
 
-- **kuchnia** — śniadanie, herbata, leki: najpewniejsze miejsce,
-- **przedpokój między sypialnią a łazienką** — dobry, jeśli łazienka jest pierwszym punktem dnia,
-- **nie sypialnia** — czujnik wykryje przewracanie się na łóżku i alert straci sens.
+Potrzebny jest też internet w mieszkaniu — zwykły router Wi-Fi wystarczy. Mama nie potrzebuje smartfona: aplikację i powiadomienia mają dzieci.
 
-Unikaj miejsc, w których ruch zrobi ktoś inny: okna z firanką poruszaną przez kaloryfer, legowiska psa czy kota. [DO UZUPEŁNIENIA: gdzie powiesiłeś czujnik w tej realizacji i dlaczego; czy w mieszkaniu jest zwierzę.]
+## Gdzie powiesić czujnik ruchu
 
-<!-- ZDJĘCIE 2: rzut mieszkania albo zdjęcie miejsca montażu z zaznaczonym polem widzenia czujnika -->
+To najważniejsza decyzja w całym montażu. Czujnik musi „widzieć” miejsce, przez które rodzic **na pewno** przechodzi rano. W tym mieszkaniu czujnik zawisł w **przedpokoju**. To centralne miejsce małego, 45-metrowego mieszkania — mama zawsze rano przez nie przechodzi.
+
+Ogólne zasady:
+
+- **przedpokój albo kuchnia** — miejsca, przez które przechodzi się każdego ranka,
+- **nie sypialnia** — czujnik wykryje przewracanie się na łóżku i alert straci sens,
+- **uwaga na zwierzęta** — pies czy kot w polu widzenia czujnika „zrobią” ruch za domownika. W tym mieszkaniu zwierząt nie ma, więc problem nie wystąpił.
+
+<!-- ZDJĘCIE 2: czujnik w przedpokoju z zaznaczonym polem widzenia -->
 
 ## Jak działa reguła „brak ruchu rano”
 
-Czujnik sam z siebie wysyła tylko informację „jest ruch” albo „nie ma ruchu”. Całą logikę — od której godziny liczymy, kiedy sprawdzamy i komu wysyłamy wiadomość — ustawiam w Home Assistant. Działa to w trzech krokach:
+Czujnik sam z siebie wysyła tylko informację „jest ruch” albo „nie ma ruchu”. Logika — od której godziny czekamy i kiedy podnosimy alarm — działa w krótkim skrypcie na module Shelly 1PM Mini Gen4. Powiadomienie wysyła scena w aplikacji Shelly:
 
-1. **6:00** — system kasuje wczorajszy ruch i zaczyna czekać na pierwszy dzisiejszy.
-2. **Pierwszy ruch po 6:00** — system zapamiętuje, że rano był ruch.
-3. **9:00** — jeśli ruchu nie było (a alert nie jest wstrzymany), wysyła powiadomienie. Gdy ruch pojawi się później, wysyła drugie: „wszystko OK”.
+1. **Od 6:00** system czeka na pierwszy ruch w przedpokoju.
+2. **Jeśli ruch się pojawi** — nic się nie dzieje, żadnych wiadomości.
+3. **Jeśli do 10:00 ruchu nie było** — na telefony dzieci przychodzi powiadomienie, że warto zadzwonić.
 
-Stan „był ruch” jest zapisywany w Home Assistant, więc krótki zanik prądu albo restart systemu go nie kasuje.
+Skrypt zapamiętuje godzinę ostatniego ruchu także po zaniku prądu. Gdy alarm jest aktywny, włącza w module przełącznik wirtualny „Brak ruchu rano” — a scena w aplikacji Shelly, która go obserwuje, wysyła powiadomienie. Gdy ruch pojawi się później, skrypt sam wyłącza przełącznik.
 
-![Oś czasu poranka: od 6:00 system czeka na ruch; w zwykły dzień ruch o 7:10 i brak wiadomości; gdy mama śpi dłużej, o 9:00 alert, a po ruchu o 9:14 wiadomość wszystko OK](/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/os-poranka.webp){: width="1200" height="600" loading="lazy"}
+Rodzina dostaje powiadomienia, bo urządzenie jest **udostępnione w aplikacji Shelly** każdej osobie z osobna. Na czas wyjazdu mamy alert wstrzymuje się, **wyłączając scenę** w aplikacji.
 
-<!-- ZDJĘCIE 3: zrzut ekranu powiadomienia na telefonie -->
+Nie potrzeba do tego ani Home Assistant, ani żadnego serwera w domu.
 
-### Konfiguracja w Home Assistant krok po kroku
+<!-- ZDJĘCIE 3: zrzut ekranu sceny w aplikacji Shelly albo powiadomienia na telefonie -->
 
-Jeśli chcesz zrobić to sam, potrzebujesz trzech pomocników typu **przełącznik** (Ustawienia → Urządzenia i usługi → Pomocnicy → Utwórz pomocnika → Przełącznik):
+![Oś czasu poranka: od 6:00 system czeka na ruch; w zwykły dzień ruch rano i brak wiadomości; gdy do 10:00 nie było ruchu, na telefony dzieci przychodzi alert](/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/os-poranka.webp){: width="1200" height="600" loading="lazy"}
 
-- `input_boolean.ruch_rano` — czy dziś rano był ruch,
-- `input_boolean.alert_wyslany` — czy wysłaliśmy już alert,
-- `input_boolean.alert_wstrzymany` — włączasz go na czas wyjazdu rodziców.
+## Skrypt krok po kroku
 
-Potem trzy automatyzacje. Poniżej wersja w YAML — nazwę czujnika (`binary_sensor.czujnik_ruchu_kuchnia_motion`) i usługę powiadomień (`notify.mobile_app_twoj_telefon`) zmień na swoje:
+Jeśli chcesz zrobić to sam, poniżej jest skrypt, którego używam w tej instalacji — z kontrolą ustawioną na 10:00.
 
-```yaml
-- alias: "Senior – nowy dzień o 6:00"
-  triggers:
-    - trigger: time
-      at: "06:00:00"
-  actions:
-    - action: input_boolean.turn_off
-      target:
-        entity_id:
-          - input_boolean.ruch_rano
-          - input_boolean.alert_wyslany
+<p><a href="/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/senior-brak-ruchu.js" download class="btn btn-ghost">Pobierz skrypt senior-brak-ruchu.js</a></p>
 
-- alias: "Senior – ruch w mieszkaniu"
-  triggers:
-    - trigger: state
-      entity_id: binary_sensor.czujnik_ruchu_kuchnia_motion
-      to: "on"
-  conditions:
-    - condition: time
-      after: "06:00:00"
-  actions:
-    - action: input_boolean.turn_on
-      target:
-        entity_id: input_boolean.ruch_rano
-    - if:
-        - condition: state
-          entity_id: input_boolean.alert_wyslany
-          state: "on"
-      then:
-        - action: notify.mobile_app_twoj_telefon
-          data:
-            title: "Mama"
-            message: "Ruch wykryty — wszystko OK."
-        - action: input_boolean.turn_off
-          target:
-            entity_id: input_boolean.alert_wyslany
+Na początku skryptu jest blok ustawień — tylko tu trzeba coś zmieniać:
 
-- alias: "Senior – kontrola o 9:00"
-  triggers:
-    - trigger: time
-      at: "09:00:00"
-  conditions:
-    - condition: state
-      entity_id: input_boolean.ruch_rano
-      state: "off"
-    - condition: state
-      entity_id: input_boolean.alert_wstrzymany
-      state: "off"
-  actions:
-    - action: notify.mobile_app_twoj_telefon
-      data:
-        title: "Mama"
-        message: "Brak ruchu od 6:00. Warto zadzwonić."
-    - action: input_boolean.turn_on
-      target:
-        entity_id: input_boolean.alert_wyslany
+```javascript
+let CONFIG = {
+  BLU_MAC: "",              // MAC czujnika BLU Motion, małe litery, np. "7c:c6:b6:aa:bb:cc".
+                            // Puste = skrypt wypisuje w konsoli wszystkie czujniki BLU w zasięgu.
+  WINDOW_START: "06:00",    // od której godziny liczymy poranny ruch
+  CHECK_TIME: "10:00",      // o której sprawdzamy (format GG:MM)
+  NAME: "Mama",             // nazwa w treści powiadomienia
+  VIRTUAL_NAME: "Brak ruchu rano", // nazwa przełącznika wirtualnego — skrypt sam go utworzy,
+                                   // jeśli jeszcze nie istnieje (ON = alert, OFF = wszystko OK)
+  NTFY_TOPIC: "",           // opcjonalnie: temat w aplikacji ntfy — puste = nie wysyłaj
+  DEBUG: true               // wypisuj komunikaty w konsoli skryptu
+};
 ```
 
-Żeby wiadomość trafiła do kilku osób naraz (np. do Ciebie i rodzeństwa), zamiast jednego telefonu użyj grupy powiadomień — każdy instaluje aplikację Home Assistant na swoim telefonie.
+**1. Przygotuj czujnik.** W ustawieniach Shelly BLU Motion **wyłącz szyfrowanie** — skrypt odczytuje tylko niezaszyfrowane dane (jeśli szyfrowanie jest włączone, wypisze o tym komunikat w konsoli).
 
-## Jak dobrać godziny
+**2. Wgraj skrypt.** Otwórz w przeglądarce interfejs modułu Shelly 1PM Mini Gen4 (jego adres IP w sieci domowej), przejdź do sekcji skryptów, utwórz nowy skrypt, wklej zawartość pliku, zapisz i uruchom.
 
-Godziny to jedyna rzecz, którą naprawdę trzeba przemyśleć. Za wczesna kontrola — i dostajesz fałszywe alarmy w każdą sobotę. Za późna — i alert traci sens.
+**3. Znajdź adres MAC czujnika.** Przy pustym `BLU_MAC` skrypt wypisuje w konsoli wszystkie czujniki BLU w zasięgu. Poruszaj ręką przed czujnikiem, skopiuj jego adres MAC (małymi literami) do `BLU_MAC`, zapisz i uruchom skrypt ponownie.
 
-Dobra zasada: **godzina kontroli to najpóźniejsza godzina, o której rodzic zwykle już jest na nogach, plus zapas**. Jeśli mama wstaje między 6:30 a 7:30, kontrola o 9:00 daje półtorej godziny marginesu.
+**4. Włącz uruchamianie przy starcie** („Run on startup”), żeby skrypt działał także po zaniku prądu. Sprawdź też, czy moduł ma ustawioną właściwą strefę czasową — skrypt porównuje godzinę z zegara modułu (bez synchronizacji czasu wypisze „BRAK SYNCHRONIZACJI”).
 
-[DO UZUPEŁNIENIA: jakie godziny ustawiliście w tej realizacji i czy trzeba je było po kilku dniach zmieniać.]
+**5. Przełącznik wirtualny.** Skrypt sam tworzy w module przełącznik „Brak ruchu rano” (ON = alert). Żeby był widoczny w warunkach scen w aplikacji Shelly, dodaj go do grupy komponentów wirtualnych i wyeksportuj tę grupę jako urządzenie.
 
-{% include zacheta.html miejsce="po-konfiguracji" tytul="Nie chcesz konfigurować Home Assistant sam?" tekst="Zrobię to za Ciebie: dobiorę czujniki, zamontuję je, ustawię godziny pod rytm dnia rodziców i powiadomienia na telefonach całej rodziny." %}
+**6. Scena w aplikacji Shelly:** gdy „Brak ruchu rano” zmieni się na włączony — wyślij powiadomienie.
+
+**7. Udostępnij urządzenie** w aplikacji Shelly osobom, które mają dostawać powiadomienia (np. rodzeństwu).
+
+Opcjonalnie skrypt może też wysyłać wiadomości przez darmową aplikację ntfy — wystarczy wpisać nazwę tematu w `NTFY_TOPIC`. W tej instalacji nie było to potrzebne: wystarczyły powiadomienia z aplikacji Shelly.
+
+## Jak dobrać godziny — czego się nauczyłem
+
+Godziny to jedyna rzecz, którą naprawdę trzeba przemyśleć. Za wczesna kontrola — i fałszywe alarmy. Za późna — i alert traci sens.
+
+Na początku ustawiłem okno **6:00–9:00**. Po jakimś czasie przeanalizowaliśmy, o której mama faktycznie wstaje — i **po konsultacji z rodziną przesunąłem kontrolę na 10:00**, bo zdarzało się, że mama po prostu dłużej spała. Zmianę zrobiłem zdalnie, bez wizyty w mieszkaniu.
+
+Dobra zasada: **godzina kontroli to najpóźniejsza godzina, o której rodzic zwykle już jest na nogach, plus zapas**. I warto ją zweryfikować po pewnym czasie razem z rodziną.
+
+## Zdalna pomoc po montażu
+
+To, że ustawienia można zmieniać zdalnie, okazało się w tej instalacji bardzo ważne. Rytm dnia rodziców poznaje się dopiero po jakimś czasie, a potrzeby rodziny się zmieniają. Po ustaleniu z rodziną tymczasowego zdalnego dostępu mogę:
+
+- **przesunąć godziny** alertu — jak tutaj, z 9:00 na 10:00,
+- **dodać kolejną osobę** do powiadomień, np. rodzeństwo,
+- **dodać lub zmienić reguły** — np. dla czujników drzwi czy zalania.
+
+Bez przyjazdu i bez angażowania rodziców.
+
+{% include zacheta.html miejsce="po-konfiguracji" tytul="Nie chcesz konfigurować tego sam?" tekst="Zrobię to za Ciebie: dobiorę czujniki, zamontuję je w godzinę, ustawię powiadomienia na telefonach całej rodziny — a gdy trzeba coś zmienić, pomogę zdalnie." %}
 
 ## Rozmowa z rodzicami
 
-To bywa trudniejsze niż sam montaż. Rodzice często boją się, że będą „podglądani”. Warto od razu powiedzieć wprost:
+To bywa trudniejsze niż sam montaż. W tej rodzinie rodzice zrozumieli, że **dzieci po prostu się o nich martwią**. A przekonały ich dwie rzeczy:
 
-- czujnik ruchu **nie nagrywa obrazu ani dźwięku** — wysyła tylko informację „ktoś się poruszył”,
-- w domu **nic się nie zmienia** — żadnych nowych przycisków ani aplikacji,
-- to ma uspokoić Ciebie, żebyś **nie musiał dzwonić co rano**.
+- **nikt ich nie podgląda** — czujnik ruchu nie ma kamery ani mikrofonu, wysyła tylko informację „ktoś się poruszył”,
+- **nowe urządzenia praktycznie nie rzucają się w oczy** — są małe i działają bez kabli.
 
-[DO UZUPEŁNIENIA: jak zareagowali rodzice w tej realizacji — czy były obawy i co przekonało.]
+W domu nic się nie zmienia: żadnych nowych przycisków ani aplikacji do obsługi.
 
-## Ile to kosztuje i ile trwa
+## Ile to trwało i ile kosztuje
 
-[DO UZUPEŁNIENIA: koszt sprzętu w tej realizacji (bez cen z Amazona — podaj, ile zapłaciłeś), czas montażu i konfiguracji.]
+**Montaż zajął ok. 1 godziny.** Konfigurację — reguły i powiadomienia — zrobiłem później u siebie, po ustaleniu z rodziną tymczasowego zdalnego dostępu. Dzięki temu nie trzeba było siedzieć u mamy, aż wszystko zostanie ustawione.
+
+Sprzęt z tej instalacji:
+
+| Urządzenie | Ilość | Cena | Razem |
+|---|---|---|---|
+| Shelly BLU Motion (czujnik ruchu) | 1 | 95 zł | 95 zł |
+| Shelly BLU Door/Window (czujnik otwarcia) | 2 | 77 zł | 154 zł |
+| Shelly Flood S Gen4 (czujnik zalania) | 1 | 86 zł | 86 zł |
+| Shelly 1PM Mini Gen4 (odbiornik + skrypt) | 1 | 100 zł | 100 zł |
+| **Razem** | | | **ok. 435 zł** |
+
+Ceny ze sklepu producenta (shelly.com) z października 2026 — w innych sklepach mogą się różnić. Bez abonamentu: po montażu nie ma żadnych opłat miesięcznych.
 
 Jeśli wolisz rozwiązanie z montażem, zobacz pakiet [Bezpieczny Senior](/senior/) — obok alertu braku ruchu są w nim czujniki zalania, czujka dymu i czujnik drzwi wejściowych.
 
-## Efekt po kilku tygodniach
+## Efekt po dwóch miesiącach
 
-[DO UZUPEŁNIENIA: ile czasu działa, ile było fałszywych alarmów, czy alert kiedyś „zadziałał naprawdę”, co mówi rodzina.]
+Wiadomość przychodzi tylko wtedy, gdy rano nie było ruchu. Po przesunięciu kontroli na 10:00 — uzgodnionym z rodziną i zrobionym zdalnie — alert nie budzi już niepokoju, gdy mama po prostu dłużej śpi.
+
+System działa od **dwóch miesięcy**. Do tej pory przydał się raz — i to nie czujnik ruchu, tylko czujnik drzwi. Późnym wieczorem rodzina dostała powiadomienie, że **drzwi balkonowe są otwarte**. Okazało się, że mama po prostu zapomniała ich zamknąć przed snem.
+
+To dobrze pokazuje, po co obok czujnika ruchu są czujniki drzwi: drobne sytuacje, o których nikt by się nie dowiedział, a które w nocy mogą mieć znaczenie.
 
 ## Najczęstsze pytania
 
+**Czy do alertu braku ruchu potrzebny jest Home Assistant?**
+Nie. W tej instalacji regułę liczy krótki skrypt na module Shelly 1PM Mini Gen4, a powiadomienia wysyła scena w aplikacji Shelly. Home Assistant nie był potrzebny.
+
 **Czy rodzice muszą mieć smartfon?**
-Nie. Smartfon z aplikacją ma osoba, która dostaje powiadomienia. W mieszkaniu rodziców potrzebny jest tylko domowy internet (router Wi-Fi).
+Nie. Smartfon z aplikacją mają osoby, które dostają powiadomienia. W mieszkaniu rodziców potrzebny jest tylko domowy internet (router Wi-Fi).
 
 **Czy czujnik ruchu nagrywa obraz?**
 Nie. Czujnik ruchu nie ma kamery ani mikrofonu — wysyła tylko informację, że w jego polu widzenia ktoś się poruszył, oraz poziom oświetlenia.
 
-**Co, jeśli mama wyjedzie albo dłużej pośpi?**
-Na czas wyjazdu włączasz przełącznik „alert wstrzymany”. A gdy mama wstanie później niż zwykle, po alercie dostajesz od razu drugą wiadomość: „ruch wykryty — wszystko OK”.
+**Co, jeśli mama dłużej pośpi?**
+Dlatego godzinę kontroli warto ustawić z zapasem. W tej instalacji po konsultacji z rodziną przesunąłem ją zdalnie z 9:00 na 10:00, bo mama czasem dłużej spała.
+
+**Czy po montażu można zmienić ustawienia?**
+Tak. Po ustaleniu z rodziną tymczasowego zdalnego dostępu zmieniam godziny, osoby dostające powiadomienia i reguły bez przyjazdu do mieszkania.
 
 **Jak często trzeba wymieniać baterię w czujniku?**
 Według producenta bateria CR2477 w Shelly BLU Motion wystarcza do 5 lat. Poziom baterii widać w aplikacji, więc wymianę można zaplanować z wyprzedzeniem.
