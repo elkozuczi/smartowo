@@ -5,8 +5,8 @@ title: "Czujnik ruchu dla seniora: alert, gdy rano brak ruchu"
 location: "Wrocław, Olimpia Port"
 description: "Powiadomienie na telefon, gdy mama rano się nie poruszyła. Czujnik ruchu Shelly BLU i aplikacja Shelly — bez kamer, bez abonamentu, bez Home Assistant."
 excerpt: "Rodzina martwiła się o mamę w podeszłym wieku. Teraz, jeśli rano do 10:00 nie było w mieszkaniu ruchu, dzieci dostają powiadomienie na telefon. Bez kamer, montaż w godzinę."
-# image: /assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/glowne.webp
-# image_alt: "Czujnik ruchu Shelly BLU Motion na ścianie w przedpokoju"
+image: /assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/glowne.webp
+image_alt: "Czujnik ruchu Shelly BLU Motion na ścianie, obok telefon z powiadomieniem z aplikacji Shelly"
 cta_tytul: "Chcesz takiego spokoju o rodziców? Zamontuję to"
 cta_tekst: "Montuję czujniki w mieszkaniu rodziców i konfiguruję powiadomienia na Twoim telefonie i telefonach rodzeństwa. Zostaw numer — oddzwonię i doradzę, od czego zacząć."
 ---
@@ -17,7 +17,7 @@ Z taką sytuacją zgłosiła się do mnie rodzina z Wrocławia, która martwiła
 
 Zamontowałem czujnik ruchu w przedpokoju i ustawiłem jedną regułę: jeśli rano do 10:00 nikt się w mieszkaniu nie poruszył, na telefony dzieci przychodzi powiadomienie. Do tego czujnik zalania w kuchni i czujniki otwarcia drzwi wejściowych i balkonowych. Regułę liczy mały skrypt na module Shelly, a powiadomienia wysyła aplikacja Shelly — **Home Assistant nie był potrzebny**.
 
-<!-- ZDJĘCIE 1: czujnik ruchu na ścianie w przedpokoju (dyskretnie, na wysokości ok. 2 m) -->
+![Czujnik ruchu Shelly BLU Motion przyklejony do ściany w przedpokoju — mała, biała kostka, która nie rzuca się w oczy](/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/czujnik-na-scianie.webp){: width="1200" height="900" loading="lazy"}
 
 ## W skrócie
 
@@ -62,7 +62,7 @@ Ogólne zasady:
 - **nie sypialnia** — czujnik wykryje przewracanie się na łóżku i alert straci sens,
 - **uwaga na zwierzęta** — pies czy kot w polu widzenia czujnika „zrobią” ruch za domownika. W tym mieszkaniu zwierząt nie ma, więc problem nie wystąpił.
 
-<!-- ZDJĘCIE 2: czujnik w przedpokoju z zaznaczonym polem widzenia -->
+![Czujnik ruchu nad framugą drzwi w przedpokoju — z tej wysokości obejmuje całe przejście](/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/czujnik-nad-drzwiami.webp){: width="1200" height="900" loading="lazy"}
 
 ## Jak działa reguła „brak ruchu rano”
 
@@ -78,7 +78,7 @@ Rodzina dostaje powiadomienia, bo urządzenie jest **udostępnione w aplikacji S
 
 Nie potrzeba do tego ani Home Assistant, ani żadnego serwera w domu.
 
-<!-- ZDJĘCIE 3: zrzut ekranu sceny w aplikacji Shelly albo powiadomienia na telefonie -->
+![Scena „Brak ruchu” w aplikacji Shelly: gdy przełącznik wirtualny „Brak ruchu rano” zmieni się na włączony, aplikacja wysyła powiadomienie na telefon o treści „Brak ruchu rano”](/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/scena-brak-ruchu.webp){: width="570" height="480" loading="lazy"}
 
 ![Oś czasu poranka: od 6:00 system czeka na ruch; w zwykły dzień ruch rano i brak wiadomości; gdy do 10:00 nie było ruchu, na telefony dzieci przychodzi alert](/assets/blog/czujnik-ruchu-dla-seniora-alert-brak-ruchu/os-poranka.webp){: width="1200" height="600" loading="lazy"}
 
