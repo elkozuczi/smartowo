@@ -99,16 +99,19 @@ let CONFIG = {
   NAME: "Mama",             // nazwa w treści powiadomienia
   VIRTUAL_NAME: "Brak ruchu rano", // nazwa przełącznika wirtualnego — skrypt sam go utworzy,
                                    // jeśli jeszcze nie istnieje (ON = alert, OFF = wszystko OK)
+  MOTION_END_COUNTS: false, // true = pakiet „koniec ruchu” (ruch=0) też liczy się jako ruch.
+                            // NIE włączaj dla BLU Motion ZB — wysyła okresowe pakiety ruch=0 bez
+                            // ruchu i alert nigdy by nie zadziałał (sprawdzone 2026-10-25).
   NTFY_TOPIC: "",           // opcjonalnie: temat w aplikacji ntfy — puste = nie wysyłaj
   DEBUG: true               // wypisuj komunikaty w konsoli skryptu
 };
 ```
 
-**1. Przygotuj czujnik.** W ustawieniach Shelly BLU Motion **wyłącz szyfrowanie** — skrypt odczytuje tylko niezaszyfrowane dane (jeśli szyfrowanie jest włączone, wypisze o tym komunikat w konsoli).
+**1. Sparuj czujnik z modułem.** W aplikacji Shelly dodaj BLU Motion do urządzeń Bluetooth **tego samego modułu**, na którym będzie działał skrypt (tu: Shelly 1PM Mini Gen4). Skrypt sam znajdzie sparowany czujnik i czyta ruch prosto z niego — szyfrowanie w czujniku może zostać włączone, a pole `BLU_MAC` może zostać puste.
 
-**2. Wgraj skrypt.** Otwórz w przeglądarce interfejs modułu Shelly 1PM Mini Gen4 (jego adres IP w sieci domowej), przejdź do sekcji skryptów, utwórz nowy skrypt, wklej zawartość pliku, zapisz i uruchom.
+**2. Wgraj skrypt.** Otwórz w przeglądarce interfejs modułu Shelly 1PM Mini Gen4 (jego adres IP w sieci domowej), przejdź do sekcji skryptów, utwórz nowy skrypt, wklej zawartość pliku, zapisz i uruchom. W konsoli powinien pojawić się komunikat „Czujnik sparowany z tym Shelly … — ruch czytany z komponentu”.
 
-**3. Znajdź adres MAC czujnika.** Przy pustym `BLU_MAC` skrypt wypisuje w konsoli wszystkie czujniki BLU w zasięgu. Poruszaj ręką przed czujnikiem, skopiuj jego adres MAC (małymi literami) do `BLU_MAC`, zapisz i uruchom skrypt ponownie.
+**3. Bez parowania: wpisz adres MAC czujnika.** Jeśli czujnik nie jest sparowany z modułem, skrypt odczytuje surowe pakiety Bluetooth. Wtedy **wyłącz szyfrowanie** w ustawieniach BLU Motion i **koniecznie wpisz `BLU_MAC`** — przy pustym polu skrypt działa tylko w trybie wyszukiwania: wypisuje w konsoli czujniki BLU w zasięgu, ale nie zapisuje ruchu, więc alert przychodziłby codziennie. Poruszaj ręką przed czujnikiem, skopiuj jego adres MAC (małymi literami) do `BLU_MAC`, zapisz i uruchom skrypt ponownie.
 
 **4. Włącz uruchamianie przy starcie** („Run on startup”), żeby skrypt działał także po zaniku prądu. Sprawdź też, czy moduł ma ustawioną właściwą strefę czasową — skrypt porównuje godzinę z zegara modułu (bez synchronizacji czasu wypisze „BRAK SYNCHRONIZACJI”).
 
@@ -117,6 +120,8 @@ let CONFIG = {
 **6. Scena w aplikacji Shelly:** gdy „Brak ruchu rano” zmieni się na włączony — wyślij powiadomienie.
 
 **7. Udostępnij urządzenie** w aplikacji Shelly osobom, które mają dostawać powiadomienia (np. rodzeństwu).
+
+**Gdy coś nie działa.** O godzinie kontroli skrypt zapisuje w konsoli i w pamięci modułu (KVS, klucz `sm_last_check`) godzinę ostatniego ruchu, ostatniego sygnału z czujnika i stan przełącznika. Jeśli od początku okna czujnik nie wysłał żadnego sygnału, wiadomość dostaje dopisek, żeby sprawdzić baterię albo zasięg.
 
 Opcjonalnie skrypt może też wysyłać wiadomości przez darmową aplikację ntfy — wystarczy wpisać nazwę tematu w `NTFY_TOPIC`. W tej instalacji nie było to potrzebne: wystarczyły powiadomienia z aplikacji Shelly.
 
