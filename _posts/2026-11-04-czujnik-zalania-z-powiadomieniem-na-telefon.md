@@ -4,15 +4,15 @@ layout: post
 title: "Czujnik zalania z powiadomieniem na telefon"
 description: "Czujnik zalania Shelly Flood Gen4 pod pralką i zmywarką: głośny alarm na miejscu i powiadomienie na telefon, zanim woda zaleje sąsiadów. Montaż bez kabli."
 excerpt: "Cieknący wąż od pralki albo odkręcony kran — czujnik zalania piszczy na miejscu i od razu wysyła powiadomienie na Twój telefon, zanim woda dojdzie do sąsiada."
-# image: /assets/blog/czujnik-zalania-z-powiadomieniem-na-telefon/glowne.webp
-# image_alt: "Sonda czujnika zalania Shelly Flood na podłodze pod pralką"
+image: /assets/blog/czujnik-zalania-z-powiadomieniem-na-telefon/glowne.webp
+image_alt: "Ilustracja: kałuża wody wypływająca spod pralki, przy niej mały biały czujnik zalania na podłodze"
 cta_tytul: "Chcesz czujniki zalania z powiadomieniami? Zamontuję je"
 cta_tekst: "Dobieram miejsca na czujniki, montuję je i konfiguruję powiadomienia na Twoim telefonie — także w mieszkaniu rodziców. Zostaw numer, oddzwonię."
 ---
 
 Woda z pękniętego węża od pralki potrafi w kilkanaście minut zalać łazienkę, a po godzinie — mieszkanie piętro niżej. Najgorzej, gdy dzieje się to w nocy albo gdy nikogo nie ma w domu.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — czy to była realizacja (np. mieszkanie rodziców w ramach „Bezpiecznego Seniora”, dom z kotłownią), czy ktoś już kiedyś miał zalanie, co skłoniło do montażu.]
+U mnie poszło o pomieszczenie techniczne: stoi tam pralka, zasobnik ciepłej wody i cała hydraulika od pompy ciepła. Zaglądam tam raz na kilka dni, więc cieknący wężyk miałby mnóstwo czasu. Zalania jeszcze nie miałem i wolałbym, żeby tak zostało.
 
 Czujnik zalania to jedno z najtańszych zabezpieczeń w całym smart home, a może oszczędzić tysiące złotych. Działa podwójnie: **piszczy na miejscu** i **wysyła powiadomienie na telefon** — więc wiesz o problemie także wtedy, gdy jesteś w pracy albo daleko od mieszkania rodziców.
 
@@ -39,7 +39,7 @@ Jeśli wolisz mniejsze urządzenie, które po prostu kładzie się na podłodze,
 
 {% include produkt.html id="shelly-flood-s-gen4" opis="Kompaktowy czujnik zalania z wbudowanym brzęczykiem — kładziesz go bezpośrednio w miejscu zagrożonym wyciekiem." %}
 
-[DO UZUPEŁNIENIA: który model i ile sztuk zamontowałeś w tej realizacji.]
+U mnie leży jeden kompaktowy Flood S Gen4 — na podłodze, w najniższym punkcie przy pralce. Wersję z sondą na przewodzie polecam tam, gdzie pod urządzenie nie da się nic wsunąć albo gdzie czujnik musi wisieć w zasięgu Wi-Fi, a woda pojawi się kawałek dalej.
 
 ## Gdzie położyć czujnik
 
@@ -53,9 +53,11 @@ Woda zawsze spływa w najniższe miejsce, więc sondę kładziesz tam, gdzie poj
 
 ![Gdzie położyć sondy czujnika zalania: w łazience pod pralką, umywalką i przy WC, w kuchni pod zlewem i zmywarką, w kotłowni przy piecu i bojlerze](/assets/blog/czujnik-zalania-z-powiadomieniem-na-telefon/gdzie-czujniki.webp){: width="1200" height="640" loading="lazy"}
 
-Sondę połóż płasko na podłodze, najlepiej w zagłębieniu albo przy ścianie, w którą „spływa” podłoga. [DO UZUPEŁNIENIA: gdzie położyłeś sondy w tej realizacji.]
+Sondę połóż płasko na podłodze, najlepiej w zagłębieniu albo przy ścianie, w którą „spływa” podłoga. U mnie czujnik leży między pralką a zasobnikiem, przy ścianie, w stronę której podłoga ma lekki spadek.
 
-<!-- ZDJĘCIE 2: czujnik na ścianie, przewód sondy schowany przy listwie -->
+![Ilustracja: mały biały czujnik zalania na podłodze pomieszczenia technicznego, obok pralka i zasobnik ciepłej wody](/assets/blog/czujnik-zalania-z-powiadomieniem-na-telefon/czujnik-na-podlodze.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## Montaż krok po kroku
 
@@ -69,7 +71,7 @@ Montaż nie wymaga prac przy instalacji elektrycznej — czujnik działa na bate
 
 **4. Przetestuj.** Zwilż sondę mokrą szmatką — czujnik powinien zapiszczeć, a na telefon powinno przyjść powiadomienie. Testuj tak każdy czujnik po montażu.
 
-[DO UZUPEŁNIENIA: co było trudne — zasięg Wi-Fi w łazience/kotłowni, prowadzenie przewodu.]
+Sam montaż był banalny. Dwa razy sprawdzałem tylko zasięg Wi-Fi, bo pomieszczenie techniczne jest na końcu domu. Zanim cokolwiek przykleisz albo położysz na stałe, sprawdź telefonem, czy w tym miejscu masz sieć.
 
 ## Powiadomienia i automatyzacje
 
@@ -99,13 +101,13 @@ Nazwy encji zmień na swoje. Jeśli nie masz gniazdka przy pralce, usuń pierwsz
 
 ## Ile to kosztuje
 
-[DO UZUPEŁNIENIA: ile czujników, koszt sprzętu (ile zapłaciłeś), czas montażu.]
+Jeden czujnik to wydatek rzędu 100–150 zł, zależnie od modelu i oferty. Konfiguracja z testem zajęła mi kwadrans.
 
 Czujniki zalania są częścią pakietu [Bezpieczny Senior](/senior/) — razem z czujką dymu, czujnikiem drzwi i alertem braku ruchu rano.
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: czy czujnik kiedyś zadziałał (prawdziwy wyciek albo fałszywy alarm), jak długo działa na bateriach, opinia domowników.]
+Prawdziwego wycieku na szczęście nie było. Fałszywego alarmu też nie — czujnik odezwał się tylko wtedy, gdy testowałem go mokrą szmatką. Po kilku tygodniach bateria wciąż pokazuje 100%. Co jakiś czas powtarzam test, bo czujnik, który nigdy nie piszczy, łatwo uznać za sprawny także wtedy, gdy od miesiąca jest poza siecią.
 
 ## Najczęstsze pytania
 

@@ -4,15 +4,15 @@ layout: post
 title: "Ile prądu zużywa Twój dom? Licznik Shelly w rozdzielnicy"
 description: "Licznik energii Shelly EM Gen3 lub Pro 3EM w rozdzielnicy pokazuje zużycie prądu na żywo. Znajdź prądożerne urządzenia i sprawdź autokonsumpcję PV."
 excerpt: "Rachunek za prąd mówi tylko, ile zapłaciłeś. Licznik Shelly w rozdzielnicy pokazuje, kiedy i na co — na żywo w telefonie, z dokładnością do minuty. Pomaga znaleźć „prądożerców” i lepiej wykorzystać fotowoltaikę."
-# image: /assets/blog/ile-pradu-zuzywa-dom-licznik-shelly/glowne.webp
-# image_alt: "Licznik energii Shelly w rozdzielnicy, obok telefon z wykresem zużycia prądu"
+image: /assets/blog/ile-pradu-zuzywa-dom-licznik-shelly/glowne.webp
+image_alt: "Ilustracja: otwarta rozdzielnica domowa, obok dłoń z telefonem pokazującym wykres zużycia"
 cta_tytul: "Chcesz widzieć zużycie prądu w telefonie? Zamontuję licznik"
 cta_tekst: "Montuję liczniki energii w rozdzielnicy i konfiguruję panel zużycia w Home Assistant — także z fotowoltaiką. Zostaw numer, oddzwonię."
 ---
 
 Rachunek za prąd przychodzi raz na jakiś czas i mówi tylko jedno: ile zapłaciłeś. Nie mówi, **co** tyle zużywa — pompa ciepła, bojler, stara zamrażarka w piwnicy, a może urządzenia, które „śpią” całą noc i pobierają prąd bez przerwy.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — dom/mieszkanie, instalacja 1- czy 3-fazowa, czy jest fotowoltaika lub pompa ciepła, co chciał sprawdzić klient.]
+Montowałem taki licznik w domu jednorodzinnym pod Wrocławiem: instalacja trójfazowa, pompa ciepła, fotowoltaika dopiero w planach. Właściciel chciał wiedzieć dwie rzeczy: ile bierze sama pompa i ile dom zużywa „na pusto” — zanim zdecyduje, jak dużą instalację PV zamówić.
 
 Licznik energii Shelly montowany w rozdzielnicy mierzy zużycie całego domu na żywo. W telefonie widzisz moc w tej chwili, wykres z każdej godziny i dnia — a w Home Assistant pełny panel energii, także z produkcją z fotowoltaiki.
 
@@ -42,7 +42,7 @@ Licznik energii Shelly montowany w rozdzielnicy mierzy zużycie całego domu na 
 
 Jak sprawdzić, czy masz instalację jednofazową czy trójfazową? Spójrz na bezpiecznik główny przy liczniku od dostawcy prądu: trzy połączone ze sobą „bezpieczniki” obok siebie to zwykle instalacja trójfazowa. Pewność da elektryk.
 
-[DO UZUPEŁNIENIA: który licznik zamontowałeś w tej realizacji i dlaczego.]
+Tu wybór był prosty: trzy fazy i plany na fotowoltaikę, więc Pro 3EM. Mierzy w obie strony, więc po montażu paneli nie trzeba niczego wymieniać.
 
 ## Montaż
 
@@ -52,9 +52,11 @@ Przekładniki prądowe zakłada się na przewody **bez ich przecinania** — obe
 
 ![Schemat blokowy rozdzielnicy trójfazowej: za licznikiem dostawcy przekładniki na fazach L1, L2, L3 podłączone do Shelly Pro 3EM, który przez LAN lub Wi-Fi przekazuje dane do panelu energii Home Assistant](/assets/blog/ile-pradu-zuzywa-dom-licznik-shelly/schemat-rozdzielnicy.webp){: width="1200" height="640" loading="lazy"}
 
-[DO UZUPEŁNIENIA: ile trwał montaż, czy w rozdzielnicy było miejsce na szynie DIN, co było trudne.]
+Montaż zajął około półtorej godziny. Na szynie DIN było wolne miejsce, więc licznik wszedł bez przebudowy rozdzielnicy. Najwięcej uwagi wymagało dopasowanie przekładników do faz: po pierwszym uruchomieniu jedna faza pokazywała moc ujemną, bo przekładnik był założony odwrotnie.
 
-<!-- ZDJĘCIE 2: przekładniki założone na przewody w rozdzielnicy -->
+![Ilustracja: elektryk w rękawicach zakłada przekładnik prądowy na przewód w domowej rozdzielnicy](/assets/blog/ile-pradu-zuzywa-dom-licznik-shelly/przekladnik-w-rozdzielnicy.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## Co możesz zobaczyć
 
@@ -64,7 +66,7 @@ Przekładniki prądowe zakłada się na przewody **bez ich przecinania** — obe
 
 **Fotowoltaika.** Z licznikiem mierzącym w obie strony widzisz, kiedy oddajesz energię do sieci, a kiedy ją pobierasz — i możesz przesunąć pranie czy grzanie wody na godziny z produkcją.
 
-[DO UZUPEŁNIENIA: co ciekawego wyszło w tej realizacji — np. zużycie w spoczynku, jakieś zaskoczenie (tylko realne dane).]
+W tej realizacji największym zaskoczeniem było zużycie w spoczynku: w nocy, przy niepracującej pompie ciepła, dom brał około 350 W. Złożyły się na to m.in. stara zamrażarka w garażu, pompa cyrkulacyjna ciepłej wody pracująca całą dobę i sprzęt RTV w czuwaniu.
 
 <!-- ZDJĘCIE 3: zrzut ekranu panelu energii w Home Assistant -->
 
@@ -82,11 +84,11 @@ Od tego momentu masz wykresy dzienne, tygodniowe i miesięczne, które możesz p
 
 ## Ile to kosztuje
 
-[DO UZUPEŁNIENIA: koszt licznika (ile zapłaciłeś) i montażu.]
+Sam licznik Pro 3EM z przekładnikami to wydatek rzędu 500–600 zł. Do tego dochodzi montaż w rozdzielnicy i konfiguracja panelu energii — wycenę dla Twojego domu podam po krótkiej rozmowie, [napisz do mnie](#kontakt).
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: co się zmieniło w zużyciu albo w nawykach — tylko realne dane.]
+Po kilku tygodniach właściciel ustawił cyrkulację ciepłej wody na harmonogram i wyłączył starą zamrażarkę. Zużycie w spoczynku spadło z około 350 W do około 200 W. Ważniejszy był drugi efekt: decyzję o wielkości fotowoltaiki podejmuje teraz na podstawie własnego wykresu, a nie szacunków.
 
 ## Najczęstsze pytania
 

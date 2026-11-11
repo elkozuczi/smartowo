@@ -4,15 +4,15 @@ layout: post
 title: "Inteligentny włącznik bez przewodu neutralnego"
 description: "W puszce włącznika nie ma przewodu N? Shelly 1L Gen4 i 2L Gen4 sterują światłem z telefonu bez neutralnego. Jak to sprawdzić, co to jest Bypass i jak podłączyć."
 excerpt: "W starszych mieszkaniach w puszce pod włącznikiem są tylko dwa przewody — i większość modułów smart odpada. Shelly 1L i 2L działają bez przewodu neutralnego. Pokazuję, jak to sprawdzić i na co uważać."
-# image: /assets/blog/inteligentny-wlacznik-bez-przewodu-neutralnego/glowne.webp
-# image_alt: "Otwarta puszka włącznika z dwoma przewodami i modułem Shelly 1L"
+image: /assets/blog/inteligentny-wlacznik-bez-przewodu-neutralnego/glowne.webp
+image_alt: "Ilustracja: otwarta puszka podtynkowa z dwoma przewodami, dłoń przykłada próbnik napięcia do przewodu fazowego"
 cta_tytul: "Nie masz przewodu N w puszce? Zrobię to za Ciebie"
 cta_tekst: "Sprawdzę instalację, dobiorę moduł i zamontuję go bez kucia ścian — także tam, gdzie nie ma przewodu neutralnego. Zostaw numer, oddzwonię."
 ---
 
 Kupujesz moduł do sterowania światłem z telefonu, odkręcasz włącznik… a w puszce są tylko dwa przewody. Instrukcja modułu wymaga przewodu neutralnego „N”, którego po prostu nie ma.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — mieszkanie w bloku z lat …, dom po remoncie? Ile punktów świetlnych, jakie oświetlenie (LED, żyrandol, świecznikowy włącznik)?]
+Tak było w mieszkaniu w bloku z lat 80., w którym robiłem sterowanie światłem: cztery punkty do zrobienia — przedpokój, łazienka, kuchnia i żyrandol w salonie na włączniku świecznikowym. Wszędzie żarówki LED.
 
 To bardzo częsta sytuacja w starszych instalacjach: do puszki włącznika doprowadzona jest tylko faza i przewód do lampy. Na szczęście są moduły zaprojektowane właśnie do takich instalacji — **Shelly 1L Gen4** (jeden obwód) i **Shelly 2L Gen4** (dwa obwody, np. pod włącznik świecznikowy).
 
@@ -40,7 +40,7 @@ Kolory przewodów w starych instalacjach bywają przypadkowe, dlatego ostateczni
 
 ![Porównanie puszek włącznika: dwa przewody, faza i przewód do lampy, oznaczają brak N i moduł Shelly 1L lub 2L Gen4; dodatkowy przewód N pozwala użyć Shelly 1PM Mini Gen4](/assets/blog/inteligentny-wlacznik-bez-przewodu-neutralnego/puszka-z-n-bez-n.webp){: width="1200" height="620" loading="lazy"}
 
-[DO UZUPEŁNIENIA: co było w puszkach w tej realizacji.]
+W tym mieszkaniu w trzech puszkach były po dwa przewody, a pod włącznikiem świecznikowym trzy. Przewodu neutralnego nie było w żadnej — potwierdził to pomiar.
 
 ## Sprzęt
 
@@ -62,7 +62,9 @@ Moduł bez przewodu neutralnego musi się z czegoś zasilać — robi to przez o
 
 ![Schemat blokowy: faza z rozdzielnicy idzie do Shelly 1L Gen4 w puszce włącznika, przewód do lampy prowadzi do lampy LED, a Bypass jest podłączony równolegle do lampy; przewód N dochodzi tylko do lampy](/assets/blog/inteligentny-wlacznik-bez-przewodu-neutralnego/schemat-bypass.webp){: width="1200" height="620" loading="lazy"}
 
-<!-- ZDJĘCIE 2: Bypass zamontowany w rozecie lampy -->
+![Ilustracja: dłoń układa mały element Bypass obok kostki elektrycznej pod zsuniętą rozetą żyrandola](/assets/blog/inteligentny-wlacznik-bez-przewodu-neutralnego/bypass-w-rozecie.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## Montaż krok po kroku
 
@@ -78,7 +80,7 @@ Moduł bez przewodu neutralnego musi się z czegoś zasilać — robi to przez o
 
 **5. Złóż włącznik.** Z zewnątrz nic się nie zmienia.
 
-[DO UZUPEŁNIENIA: co było trudne — miejsce w puszce, dostęp do lampy przy montażu Bypassa, migotanie LED przed założeniem Bypassa?]
+Najwięcej zachodu było z Bypassem w żyrandolu: rozeta była płytka i trzeba go było ułożyć płasko obok kostki. W przedpokoju przed założeniem Bypassa żarówka LED po wyłączeniu lekko się żarzyła — po założeniu przestała. W starych, płytkich puszkach było ciasno; moduł mieścił się za włącznikiem dopiero po uporządkowaniu przewodów.
 
 {% include zacheta.html miejsce="po-montazu" tytul="Nie chcesz robić tego sam?" tekst="Montaż bez przewodu neutralnego wymaga pracy przy 230 V i w dwóch miejscach: w puszce włącznika i przy lampie. Zrobię to za Ciebie, bez kucia ścian." %}
 
@@ -86,17 +88,17 @@ Moduł bez przewodu neutralnego musi się z czegoś zasilać — robi to przez o
 
 Po dodaniu do aplikacji Shelly sterujesz światłem z telefonu, ustawiasz harmonogramy i sceny. Moduły obsługują też **Matter**, więc możesz je dodać bezpośrednio do Apple Home, Google Home czy Alexy, a w Home Assistant pojawiają się jako zwykłe światła.
 
-[DO UZUPEŁNIENIA: jakie automatyzacje ustawiłeś w tej realizacji — np. wyłączanie wszystkich świateł przy wyjściu, światło o zmierzchu.]
+W tej realizacji ustawiliśmy dwie rzeczy: przycisk „wychodzę” w aplikacji, który gasi wszystkie cztery obwody, i automatyczne wyłączanie światła w łazience po 30 minutach — na wypadek, gdyby ktoś zapomniał.
 
 ## Ile to kosztuje
 
-[DO UZUPEŁNIENIA: ile modułów, koszt sprzętu (ile zapłaciłeś), czas montażu.]
+Trzy moduły 1L i jeden 2L to około 400–450 zł za sprzęt. Montaż z konfiguracją zajął jedno popołudnie — najdłużej trwało dojście do lamp przy zakładaniu Bypassów.
 
 Sterowanie oświetleniem jest w pakiecie Start — zobacz [cennik](/#cennik).
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: czy LED-y nie migają, jak działa włącznik, co mówią domownicy.]
+Po kilku tygodniach nic nie miga ani się nie żarzy. Włączniki działają tak jak przed montażem, więc domownicy nie musieli się niczego uczyć. Z telefonu najczęściej używają jednego przycisku: gaszenia wszystkiego przy wyjściu.
 
 ## Najczęstsze pytania
 

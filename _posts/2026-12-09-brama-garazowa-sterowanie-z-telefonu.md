@@ -4,15 +4,17 @@ layout: post
 title: "Jak otwierać bramę garażową telefonem — Shelly 1 Gen3"
 description: "Brama garażowa lub wjazdowa z telefonu: moduł Shelly 1 Gen3 podłączony do sterownika napędu i czujnik, który pokazuje, czy brama jest zamknięta."
 excerpt: "Pilot został w drugim aucie, a kurier stoi pod bramą? Moduł Shelly podłączony do sterownika napędu otwiera bramę z telefonu, a czujnik na skrzydle pokazuje, czy na pewno się zamknęła."
-# image: /assets/blog/brama-garazowa-sterowanie-z-telefonu/glowne.webp
-# image_alt: "Brama garażowa, w dłoni telefon z przyciskiem „otwórz bramę”"
+image: /assets/blog/brama-garazowa-sterowanie-z-telefonu/glowne.webp
+image_alt: "Ilustracja: dłoń ze smartfonem z panelem Home Assistant na tle uchylonej segmentowej bramy garażowej"
 cta_tytul: "Chcesz otwierać bramę telefonem? Podłączę to"
 cta_tekst: "Podłączam moduł do sterownika napędu bramy, montuję czujnik położenia i ustawiam przycisk w telefonie dla całej rodziny. Zostaw numer, oddzwonię."
 ---
 
 Pilot do bramy zawsze jest tam, gdzie go akurat nie ma: w drugim samochodzie, w kurtce, u dziecka, które wyszło z domu. A czasem po prostu chcesz otworzyć bramę kurierowi albo sprawdzić z pracy, czy na pewno się zamknęła.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — brama garażowa czy wjazdowa, jaki napęd (producent, model sterownika), co przeszkadzało.]
+Robiłem to przy segmentowej bramie garażowej z typowym napędem sufitowym. Problem był prozaiczny: dwa samochody, jeden sprawny pilot i regularne pytanie na rodzinnym czacie, czy ktoś zamknął garaż.
+
+U siebie bramę wjazdową otwieram inaczej — sama otwiera się, gdy podjeżdżam pod dom. To opisałem w [osobnym wpisie](/blog/brama-otwiera-sie-sama-home-assistant/).
 
 Większość napędów bram ma w sterowniku wejście na dodatkowy przycisk ścienny. Wystarczy podłączyć do niego mały moduł Shelly — i ten moduł „naciska przycisk” na polecenie z telefonu. Do tego czujnik na bramie, żeby widzieć, czy jest otwarta, czy zamknięta.
 
@@ -37,7 +39,7 @@ Do sprawdzania, czy brama jest zamknięta — czujnik otwarcia na baterię:
 
 Czujnik BLU łączy się przez Bluetooth z modułem Shelly 1 Gen3, który przekazuje jego stan do sieci — pod warunkiem, że jest w zasięgu (w pomieszczeniu do ok. 10 m, metalowa brama może go skracać).
 
-[DO UZUPEŁNIENIA: co zamontowałeś w tej realizacji, czy czujnik był BLU, czy kontaktron podłączony przewodowo.]
+W tej realizacji zamontowałem Shelly 1 Gen3 w obudowie napędu i czujnik BLU Door/Window na bramie.
 
 ## Zanim zaczniesz: sprawdź sterownik bramy
 
@@ -48,9 +50,11 @@ Sprawdź też w instrukcji:
 - **zasilanie akcesoriów** (np. 12 V lub 24 V) — jeśli jest, moduł można zasilić bezpośrednio ze sterownika,
 - czy wejście działa w trybie **„krok po kroku”** (otwórz → stop → zamknij) — wtedy jeden impuls robi to samo co przycisk na pilocie.
 
-[DO UZUPEŁNIENIA: jaki sterownik był w tej realizacji i jakie wejście wykorzystałeś.]
+Tutaj sterownik miał wejście przycisku ściennego w trybie krok po kroku i wyjście 24 V na akcesoria — z niego zasiliłem moduł.
 
-<!-- ZDJĘCIE 2: sterownik bramy z podłączonym modułem -->
+![Ilustracja: otwarty napęd bramy garażowej z płytką sterownika, obok mały moduł przekaźnikowy podłączony przewodami do zacisków](/assets/blog/brama-garazowa-sterowanie-z-telefonu/sterownik-bramy.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ![Schemat blokowy: styk bezpotencjałowy Shelly 1 Gen3 podłączony równolegle do wejścia START/PP i COM sterownika bramy, moduł zasilany z wyjścia akcesoriów; czujnik BLU na bramie i telefon łączą się z modułem](/assets/blog/brama-garazowa-sterowanie-z-telefonu/schemat-podlaczenia.webp){: width="1200" height="640" loading="lazy"}
 
@@ -74,7 +78,7 @@ Sprawdź też w instrukcji:
 
 **7. Przetestuj** kilka razy z bramą w zasięgu wzroku.
 
-[DO UZUPEŁNIENIA: co było trudne — miejsce w obudowie sterownika, zasięg Wi-Fi w garażu, metalowa brama a Bluetooth.]
+Najtrudniejszy okazał się zasięg. Metalowa brama tłumiła Bluetooth czujnika na tyle, że przy pierwszym ułożeniu stan odświeżał się z opóźnieniem. Pomogło przesunięcie czujnika na krawędź bramy bliżej napędu. W obudowie sterownika miejsca było na styk, więc przewody trzeba było przyciąć na wymiar.
 
 ## Bezpieczeństwo
 
@@ -108,11 +112,11 @@ Nazwę `binary_sensor.brama_garazowa` zmień na swoją encję czujnika otwarcia.
 
 ## Ile to kosztuje
 
-[DO UZUPEŁNIENIA: koszt sprzętu (ile zapłaciłeś), czas montażu.]
+Moduł i czujnik to razem około 170–200 zł. Podłączenie, konfiguracja i testy zajęły mi około półtorej godziny.
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: jak działa na co dzień, czy domownicy używają telefonu zamiast pilota, czy były problemy z zasięgiem.]
+Po kilku tygodniach pilot leży w szufladzie jako zapas. Domownicy otwierają garaż z telefonu, a najczęściej używaną funkcją okazało się nie otwieranie, tylko powiadomienie „brama otwarta od 10 minut” — przyszło kilka razy i za każdym razem słusznie.
 
 ## Najczęstsze pytania
 

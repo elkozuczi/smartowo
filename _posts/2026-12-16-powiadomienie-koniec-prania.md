@@ -4,19 +4,21 @@ layout: post
 title: "Powiadomienie, gdy pralka skończy prać"
 description: "Inteligentne gniazdko Shelly Plug M Gen3 mierzy pobór prądu pralki i wysyła powiadomienie na telefon, gdy pranie się skończy. Bez prac elektrycznych."
 excerpt: "Pranie skończyło się godzinę temu i leży mokre w bębnie? Gniazdko z pomiarem prądu „widzi”, kiedy pralka przestaje pracować, i wysyła powiadomienie na telefon."
-# image: /assets/blog/powiadomienie-koniec-prania/glowne.webp
-# image_alt: "Pralka podłączona przez gniazdko Shelly Plug M, na telefonie powiadomienie „pranie skończone”"
+image: /assets/blog/powiadomienie-koniec-prania/glowne.webp
+image_alt: "Ilustracja: pralka z otwartymi drzwiczkami po praniu, wtyczka wpięta przez inteligentne gniazdko"
 cta_tytul: "Chcesz więcej takich udogodnień w domu?"
 cta_tekst: "Montuję smart home we Wrocławiu i okolicach — od gniazdek i oświetlenia po rolety i ogrzewanie. Zostaw numer, oddzwonię i doradzę, od czego zacząć."
 ---
 
 Pralka w łazience albo w piwnicy, a Ty w drugim końcu domu. Sygnał końca prania słychać tylko, gdy stoisz obok — więc pranie leży mokre w bębnie godzinę albo dwie, zanim ktoś sobie o nim przypomni.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — u Ciebie czy u klienta, gdzie stoi pralka, co przeszkadzało. Ewentualnie także suszarka/zmywarka.]
+U mnie pralka stoi w pomieszczeniu technicznym na końcu domu. Sygnału końca prania nie słychać ani w salonie, ani w biurze, więc pranie regularnie czekało w bębnie do wieczora.
 
 Rozwiązanie kosztuje tyle co jedno gniazdko i zajmuje kilka minut: pralkę podłączasz przez **inteligentne gniazdko z pomiarem energii**. Gniazdko widzi, ile prądu pobiera pralka — a gdy pobór spada do zera i tak zostaje, wysyła powiadomienie: „pranie skończone”.
 
-<!-- ZDJĘCIE 1: gniazdko Shelly Plug M z wtyczką pralki -->
+![Ilustracja: inteligentne gniazdko wpięte w gniazdko ścienne przy pralce](/assets/blog/powiadomienie-koniec-prania/gniazdko-przy-pralce.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## W skrócie
 
@@ -35,7 +37,7 @@ Dlaczego ten model? Pralka podczas grzania wody pobiera sporo mocy, więc gniazd
 
 Sprawdź moc swojej pralki na tabliczce znamionowej albo w instrukcji — musi mieścić się w parametrach gniazdka.
 
-[DO UZUPEŁNIENIA: jaką pralkę i jakie gniazdko masz/zamontowałeś.]
+U mnie między pralką a ścianą siedzi gniazdko Shelly z pomiarem mocy. Pralka ma na tabliczce około 2,2 kW, więc mieści się z zapasem.
 
 ## Jak „rozpoznać” koniec prania
 
@@ -79,23 +81,23 @@ Progi 10 W i 3 W to przykład — dopasuj je do wykresu swojej pralki. Nazwę `s
 
 Tę samą automatyzację możesz skopiować dla suszarki albo zmywarki.
 
-[DO UZUPEŁNIENIA: jakie progi i czasy sprawdziły się u Ciebie.]
+U mnie próg startu został jak w przykładzie: powyżej 10 W przez 2 minuty. Czas końca wydłużyłem z 3 do 5 minut — dlaczego, piszę niżej. W czuwaniu moja pralka bierze około 1 W.
 
 ## Bonus: ile prądu zużywa pralka
 
 Gniazdko liczy zużytą energię, więc po kilku praniach wiesz, ile kosztuje jedno pranie w danym programie — i czy program „eko” naprawdę oszczędza.
 
-[DO UZUPEŁNIENIA: ile kWh zużywa jedno pranie u Ciebie (tylko jeśli masz realne dane).]
+Tu jeszcze zbieram dane — dopiszę liczby, kiedy uzbiera się kilkanaście prań w tych samych programach.
 
 {% include zacheta.html miejsce="po-konfiguracji" tytul="Chcesz więcej takich udogodnień w domu?" tekst="Montuję smart home we Wrocławiu i okolicach: oświetlenie, rolety, ogrzewanie i automatyzacje, które oszczędzają czas. Bez kucia ścian." przycisk="Zapytaj o montaż" %}
 
 ## Ile to kosztuje
 
-Jedno gniazdko z pomiarem energii — i tyle. [DO UZUPEŁNIENIA: ile zapłaciłeś, ile trwała konfiguracja.]
+Jedno gniazdko z pomiarem energii — i tyle. Mnie kosztowało około 110 zł. Wpięcie i dodanie do Home Assistant to kilka minut, a automatyzację napisałem po obejrzeniu wykresu z jednego prania — razem może pół godziny.
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: czy powiadomienia przychodzą we właściwym momencie, czy były fałszywe.]
+Powiadomienie przychodzi kilka minut po zakończeniu programu — tyle, ile wynosi ustawione opóźnienie. Fałszywy alarm zdarzył się raz, przy programie z długim namaczaniem: pralka stała bez poboru ponad 3 minuty i automatyzacja uznała, że to koniec. Po wydłużeniu czasu do 5 minut problem zniknął.
 
 ## Najczęstsze pytania
 

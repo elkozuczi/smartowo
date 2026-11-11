@@ -4,19 +4,21 @@ layout: post
 title: "Nocne światło z czujnikiem ruchu do łazienki i korytarza"
 description: "Delikatne światło zapala się samo, gdy wstajesz w nocy, i gaśnie po chwili. Czujnik ruchu Shelly BLU, ściemniacz i Home Assistant — bez kucia ścian."
 excerpt: "Wstajesz w nocy do łazienki, a w korytarzu samo zapala się przygaszone światło — na tyle jasne, żeby się nie potknąć, i na tyle słabe, żeby nikogo nie obudzić. Po chwili gaśnie."
-# image: /assets/blog/nocne-swiatlo-z-czujnikiem-ruchu/glowne.webp
-# image_alt: "Korytarz nocą oświetlony przygaszonym światłem, na ścianie czujnik ruchu"
+image: /assets/blog/nocne-swiatlo-z-czujnikiem-ruchu/glowne.webp
+image_alt: "Ilustracja: korytarz nocą oświetlony przygaszonym światłem przy podłodze, na ścianie czujnik ruchu"
 cta_tytul: "Chcesz nocne światło z czujnikiem ruchu? Zamontuję je"
 cta_tekst: "Dobieram czujniki i oświetlenie, montuję je bez kucia ścian i ustawiam tak, żeby światło było jasne dokładnie tyle, ile trzeba. Zostaw numer, oddzwonię."
 ---
 
 Nocne wyjście do łazienki po ciemku to dla wielu osób codzienność — i jedno z najczęstszych miejsc potknięć, zwłaszcza u seniorów. Zapalenie górnego światła z kolei oślepia i budzi resztę domowników.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — czyje mieszkanie (np. rodzice w ramach „Bezpiecznego Seniora”), jaka trasa: sypialnia → korytarz → łazienka, co przeszkadzało.]
+Robiłem to w mieszkaniu starszej pani we Wrocławiu. Trasa była typowa: sypialnia, sześć metrów korytarza, łazienka. Górne światło w korytarzu oślepiało, więc w nocy chodziła po ciemku, trzymając się ściany.
 
 Rozwiązanie: czujnik ruchu w korytarzu i przygaszone światło, które zapala się samo tylko w nocy. Po kilku minutach bez ruchu gaśnie. W dzień czujnik nic nie robi — światło działa normalnie z włącznika.
 
-<!-- ZDJĘCIE 1: korytarz nocą z przygaszonym światłem -->
+![Ilustracja: starsza kobieta idzie nocą korytarzem oświetlonym przygaszonym, ciepłym światłem](/assets/blog/nocne-swiatlo-z-czujnikiem-ruchu/korytarz-noca.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## W skrócie
 
@@ -43,7 +45,7 @@ Alternatywa, jeśli nie chcesz używać górnego światła: taśma LED przy pod�
 
 Czujnik BLU wysyła sygnał przez Bluetooth — Shelly Dimmer Gen4 działa jako bramka Bluetooth, więc odbiera go i przekazuje do sieci Wi-Fi. Ściemniacz może pracować także bez przewodu neutralnego, ale wtedy według producenta minimalne obciążenie to 20 W (chyba że zamontujesz Bypass) — przy jednej żarówce LED to za mało.
 
-[DO UZUPEŁNIENIA: co zamontowałeś w tej realizacji — ściemniacz na istniejącą lampę czy taśmę LED; czy żarówki były ściemnialne.]
+W tej realizacji ściemniacz trafił za włącznik istniejącej lampy w korytarzu. Żarówki trzeba było wymienić na ściemnialne — stare przy 10% migały.
 
 ## Gdzie powiesić czujnik
 
@@ -53,9 +55,11 @@ Czujnik BLU wysyła sygnał przez Bluetooth — Shelly Dimmer Gen4 działa jako 
 
 ![Rzut nocnej trasy z sypialni przez korytarz do łazienki: czujnik ruchu w korytarzu, przygaszone światło 10 procent, czujnik nie w sypialni](/assets/blog/nocne-swiatlo-z-czujnikiem-ruchu/trasa-nocna.webp){: width="1200" height="620" loading="lazy"}
 
-[DO UZUPEŁNIENIA: gdzie zawisł czujnik w tej realizacji.]
+Tutaj czujnik zawisł na ścianie korytarza naprzeciwko drzwi sypialni, na wysokości około 2 m.
 
-<!-- ZDJĘCIE 2: czujnik ruchu na ścianie w korytarzu -->
+![Ilustracja: mały biały czujnik ruchu na ścianie korytarza naprzeciwko drzwi sypialni](/assets/blog/nocne-swiatlo-z-czujnikiem-ruchu/czujnik-na-scianie.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## Montaż
 
@@ -63,7 +67,7 @@ Czujnik montujesz bez narzędzi elektrycznych: wkładasz baterię, dodajesz go w
 
 Ściemniacz montuje się w puszce za włącznikiem — to **praca przy instalacji 230 V**. Jeśli nie masz uprawnień elektrycznych, zleć ją elektrykowi albo [napisz do mnie](#kontakt). Dokładny schemat podłączenia jest w instrukcji ściemniacza. Sprawdź też, czy Twoje żarówki LED są **ściemnialne** — informacja jest na opakowaniu.
 
-[DO UZUPEŁNIENIA: co było trudne przy montażu.]
+Najwięcej czasu zajęło dobranie żarówek. Nie każda „ściemnialna” żarówka dobrze świeci na kilku procentach — część gaśnie poniżej 15–20%. Sprawdź to przed złożeniem włącznika i w razie potrzeby ustaw w ściemniaczu minimalną jasność.
 
 ## Automatyzacja w Home Assistant
 
@@ -102,19 +106,19 @@ Nazwy encji zmień na swoje. Dobrze wiedzieć: Shelly BLU Motion po wykryciu ruc
 
 Zamiast stałych godzin możesz użyć czujnika światła wbudowanego w BLU Motion — np. zapalaj światło tylko wtedy, gdy w korytarzu jest ciemno.
 
-[DO UZUPEŁNIENIA: jakie godziny, jasność i czas świecenia ustawiliście w tej realizacji.]
+W tej realizacji skończyło się na 22:00–6:30, 10% jasności i gaszeniu po 2 minutach bez ruchu. Zaczynaliśmy od 20%, ale w środku nocy to wciąż było za jasno.
 
 {% include zacheta.html miejsce="po-konfiguracji" tytul="Nie chcesz ustawiać tego sam?" tekst="Zamontuję czujnik i ściemniacz, dobiorę jasność i godziny tak, żeby światło pomagało, a nie budziło." %}
 
 ## Ile to kosztuje
 
-[DO UZUPEŁNIENIA: koszt sprzętu (ile zapłaciłeś), czas montażu.]
+Czujnik ruchu, ściemniacz i dwie ściemnialne żarówki to około 300 zł. Montaż z ustawieniem automatyzacji zajął mi około dwóch godzin.
 
 Nocne światło jest jedną z funkcji pakietu [Bezpieczny Senior](/senior/).
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: jak działa w praktyce, czy jasność jest dobra, opinia domowników.]
+Po kilku tygodniach światło zapala się, zanim domowniczka zrobi drugi krok za drzwiami sypialni, i gaśnie samo po powrocie do łóżka. Włącznika na ścianie nikt w nocy nie dotyka. Jasność 10% została — wystarcza, żeby widzieć podłogę, i nie wybija ze snu.
 
 ## Najczęstsze pytania
 

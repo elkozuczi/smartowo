@@ -495,6 +495,14 @@ shelly-pro-1:
     - sklep: "Amazon"
       asin: "B0B4HMM362"   # Morele
 
+shelly-pro-1pm:
+  nazwa: "Shelly Pro 1PM"
+  kategoria: pro-din
+  opis: "Przekaźnik 1-kanałowy na szynę DIN z pomiarem energii, Wi-Fi, LAN i Bluetooth."
+  linki:
+    - sklep: "Amazon"
+      asin: "B0B4HL537H"   # znaleziony 2026-11-10 w wyszukiwarce amazon.pl; brak ceny na liście — sprawdzić dostępność i sprzedawcę
+
 shelly-pro-2:
   nazwa: "Shelly Pro 2"
   kategoria: pro-din

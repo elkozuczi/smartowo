@@ -4,15 +4,15 @@ layout: post
 title: "Czujnik dymu z powiadomieniem na telefon"
 description: "Czujka dymu Shelly Plus Smoke (EN 14604): głośny alarm na miejscu i powiadomienie na telefon, gdy nikt nie słyszy syreny. Bateria na 5 lat, bez kabli."
 excerpt: "Zwykła czujka dymu piszczy tylko w mieszkaniu. Czujka z Wi-Fi dodatkowo wysyła powiadomienie na telefon — więc wiesz o alarmie także wtedy, gdy nikogo nie ma w domu albo rodzice go nie słyszą."
-# image: /assets/blog/czujnik-dymu-z-powiadomieniem-na-telefon/glowne.webp
-# image_alt: "Czujka dymu Shelly Plus Smoke na suficie w korytarzu"
+image: /assets/blog/czujnik-dymu-z-powiadomieniem-na-telefon/glowne.webp
+image_alt: "Ilustracja: biała czujka dymu na suficie korytarza, pod sufitem unosi się smuga dymu"
 cta_tytul: "Chcesz czujki dymu z powiadomieniami? Zamontuję je"
 cta_tekst: "Dobieram miejsca na czujki, montuję je i konfiguruję powiadomienia na Twoim telefonie — także w mieszkaniu rodziców. Zostaw numer, oddzwonię."
 ---
 
 Zwykła czujka dymu ma jedną wadę: alarmuje tylko tam, gdzie wisi. Jeśli nikogo nie ma w domu — nikt jej nie usłyszy. Jeśli w mieszkaniu jest starsza osoba, która słabo słyszy albo mocno śpi — syrena może nie wystarczyć.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — czyj dom/mieszkanie, dlaczego czujka z powiadomieniem (rodzice mieszkający sami, dom z kominkiem, wyjazdy), ile czujek.]
+Montowałem takie czujki w mieszkaniu starszego małżeństwa we Wrocławiu, na zlecenie ich syna: dwa pokoje, oboje śpią przy zamkniętych drzwiach, a zwykła czujka wisiała tam od lat i nikt nie pamiętał, kiedy ostatnio wymieniano w niej baterię. Chodziło o to, żeby o alarmie wiedział także ktoś spoza mieszkania.
 
 Czujka dymu z Wi-Fi robi to samo co zwykła — **głośno alarmuje na miejscu** — ale dodatkowo **wysyła powiadomienie na telefon**. Możesz od razu zadzwonić do rodziców albo sąsiada, zanim zrobi się naprawdę groźnie.
 
@@ -33,7 +33,7 @@ Czujka dymu z Wi-Fi robi to samo co zwykła — **głośno alarmuje na miejscu**
 
 {% include produkt.html id="shelly-plus-smoke" opis="Czujka dymu zgodna z EN 14604, z syreną i Wi-Fi. Bateria CR123A — według producenta na 5 lat. Przycisk do testu i wyciszania alarmu." %}
 
-[DO UZUPEŁNIENIA: ile czujek i w jakich pomieszczeniach zamontowałeś w tej realizacji.]
+W tej realizacji zawisły dwie czujki: jedna w korytarzu przy sypialni, druga w salonie.
 
 Ważne: to **czujka dymu, nie czujnik czadu**. Jeśli w domu jest piec gazowy, kominek albo piecyk, potrzebny jest też osobny czujnik tlenku węgla (czadu).
 
@@ -50,9 +50,11 @@ Szczegółowe zasady rozmieszczenia zawsze podaje instrukcja czujki — trzymaj 
 
 Czujka łączy się z Wi-Fi, więc w miejscu montażu musi być zasięg domowej sieci.
 
-[DO UZUPEŁNIENIA: gdzie zawisły czujki w tej realizacji.]
+Tutaj: korytarz przy drzwiach sypialni i środek sufitu w salonie. Kuchnię celowo pominąłem — dym z kuchni i tak najpierw trafi do korytarza, a fałszywych alarmów przy smażeniu nikt nie chce.
 
-<!-- ZDJĘCIE 2: czujka w korytarzu przy sypialniach -->
+![Ilustracja: mężczyzna na drabince naciska przycisk testu na czujce dymu pod sufitem korytarza](/assets/blog/czujnik-dymu-z-powiadomieniem-na-telefon/test-czujki.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## Montaż krok po kroku
 
@@ -64,7 +66,7 @@ Czujka łączy się z Wi-Fi, więc w miejscu montażu musi być zasięg domowej 
 
 **4. Wyciszanie.** Krótkie naciśnięcie przycisku wycisza trwający alarm — przydatne, gdy wiesz, że to tylko przypalona grzanka.
 
-[DO UZUPEŁNIENIA: co było trudne — zasięg Wi-Fi, wysoki sufit, przekonanie domowników.]
+Sam montaż to dwa kołki na czujkę. Trudniejsze było Wi-Fi: router stał w salonie i w korytarzu sygnał był na granicy, więc przed wierceniem przyłożyłem czujkę do sufitu i sprawdziłem siłę sygnału w aplikacji. Druga rzecz to test — syrena jest naprawdę głośna, więc uprzedź domowników.
 
 ## Powiadomienia i automatyzacje
 
@@ -94,13 +96,13 @@ Nazwy encji zmień na swoje. Jeśli masz rolety sterowane przez Home Assistant, 
 
 ## Ile to kosztuje
 
-[DO UZUPEŁNIENIA: ile czujek, koszt sprzętu (ile zapłaciłeś), czas montażu.]
+Dwie czujki to około 400–450 zł. Montaż i konfiguracja obu, razem z testami, zajęły mi niecałą godzinę.
 
 Czujka dymu jest częścią pakietu [Bezpieczny Senior](/senior/) — razem z czujnikami zalania, czujnikiem drzwi i alertem braku ruchu rano.
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: czy były fałszywe alarmy (kuchnia, para), czy powiadomienia docierają, opinia domowników.]
+Przez pierwsze tygodnie nie było ani jednego fałszywego alarmu. Powiadomienie testowe dochodzi na telefon syna po kilku sekundach — umówiliśmy się, że sprawdza to raz w miesiącu. Domownicy mówią, że największa zmiana to spokój: wiedzą, że jeśli coś się stanie w nocy, sygnał dostanie jeszcze ktoś.
 
 ## Najczęstsze pytania
 

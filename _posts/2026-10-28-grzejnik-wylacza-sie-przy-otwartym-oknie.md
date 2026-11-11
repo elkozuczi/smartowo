@@ -4,15 +4,15 @@ layout: post
 title: "Grzejnik sam się wyłącza, gdy otworzysz okno"
 description: "Inteligentne głowice Shelly BLU TRV i czujnik okna: grzejnik przestaje grzać przy wietrzeniu i wraca do temperatury po zamknięciu okna. Montaż bez narzędzi."
 excerpt: "Otwierasz okno, żeby przewietrzyć — grzejnik sam przestaje grzać. Zamykasz — wraca do ustawionej temperatury. Do tego harmonogram ogrzewania dla każdego pokoju z osobna."
-# image: /assets/blog/grzejnik-wylacza-sie-przy-otwartym-oknie/glowne.webp
-# image_alt: "Grzejnik z inteligentną głowicą Shelly pod uchylonym oknem z czujnikiem otwarcia"
+image: /assets/blog/grzejnik-wylacza-sie-przy-otwartym-oknie/glowne.webp
+image_alt: "Ilustracja: grzejnik z elektroniczną głowicą termostatyczną pod uchylonym oknem, za oknem śnieg"
 cta_tytul: "Chcesz takie ogrzewanie u siebie? Zamontuję je"
 cta_tekst: "Montuję inteligentne głowice i czujniki okien, ustawiam harmonogramy dla każdego pokoju i Home Assistant. Zostaw numer — oddzwonię i powiem, ile to będzie kosztować."
 ---
 
 Klasyka sezonu grzewczego: otwierasz okno, żeby przewietrzyć pokój, a termostat na grzejniku „czuje” zimne powietrze i odkręca grzanie na maksimum. Ciepło ucieka przez okno, a Ty za nie płacisz.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — czyje mieszkanie/dom, ile grzejników, jakie ogrzewanie (gaz, miejskie, pompa ciepła), co przeszkadzało: wietrzenie, grzanie pustego mieszkania w ciągu dnia, zimna łazienka rano?]
+U mnie dom grzeje pompa ciepła z podłogówką, więc głowic na grzejnikach prawie nie potrzebuję. Wyjątkiem jest garaż: jeden zwykły grzejnik, a obok drzwi, które przy noszeniu zakupów, rowerów i narzędzi potrafią stać otworem przez kwadrans. Zwykła głowica robiła wtedy dokładnie to, co opisałem wyżej — grzała na pełną moc w otwarte drzwi. Zacząłem więc od tego jednego grzejnika. Ta sama logika działa w mieszkaniu z grzejnikami pod oknami i tak ją tu opisuję.
 
 Rozwiązanie składa się z dwóch elementów: inteligentnej głowicy termostatycznej zamiast zwykłej i małego czujnika na oknie. Gdy okno się otwiera, grzejnik przestaje grzać. Gdy się zamyka — wraca do ustawionej temperatury. Przy okazji każdy pokój dostaje własny harmonogram: cieplej, gdy jesteś w domu, chłodniej w nocy i gdy wychodzisz.
 
@@ -39,7 +39,7 @@ Na okno — mały czujnik otwarcia na baterię, przyklejany do ramy i skrzydła:
 
 {% include produkt.html id="shelly-blu-door-window-mini-zb" opis="Miniaturowy czujnik otwarcia okna na Bluetooth i Zigbee. Głowice BLU TRV współpracują z czujnikami okien z serii Shelly BLU ZB." %}
 
-[DO UZUPEŁNIENIA: ile głowic i czujników zamontowałeś w tej realizacji, ile bramek, czy były czujniki temperatury w pokojach (np. Shelly BLU H&T ZB).]
+U mnie to jedna głowica, jedna bramka i jeden czujnik otwarcia na drzwiach garażu. Osobnego czujnika temperatury nie dokładałem — w tak małym pomieszczeniu wystarcza pomiar w samej głowicy. W mieszkaniu licz tak: jedna głowica na grzejnik, jeden czujnik na każde okno, które otwierasz do wietrzenia, i jedna bramka na maksymalnie 5 głowic.
 
 ## Czy głowica pasuje do Twojego grzejnika?
 
@@ -49,9 +49,11 @@ To pierwsza rzecz do sprawdzenia przed zakupem. Shelly BLU TRV ma gwint **M30 ×
 
 Jak to sprawdzić: odkręć obecne pokrętło termostatyczne i zobacz, co jest pod spodem — producent i oznaczenie często są wybite na korpusie zaworu. Jeśli masz wątpliwości, zrób zdjęcie i porównaj z listą zgodności w instrukcji głowicy.
 
-[DO UZUPEŁNIENIA: jakie zawory były w tej realizacji i czy któryś wymagał adaptera.]
+Mój grzejnik miał zawór z gwintem M30 × 1,5, więc głowica weszła bez adaptera.
 
-<!-- ZDJĘCIE 2: zawór grzejnika po zdjęciu starej głowicy, z widocznym gwintem / adapterem -->
+![Ilustracja: dłoń przykręca elektroniczną głowicę termostatyczną do grzejnika w garażu](/assets/blog/grzejnik-wylacza-sie-przy-otwartym-oknie/glowica-na-grzejniku.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## Montaż krok po kroku
 
@@ -67,15 +69,17 @@ Montaż głowicy **nie wymaga spuszczania wody z instalacji** — wymieniasz tyl
 
 **5. Przyklej czujnik na okno.** Większa część na ramie, magnes na skrzydle — tak, żeby przy zamkniętym oknie były blisko siebie.
 
-[DO UZUPEŁNIENIA: co było trudne — np. zasięg bramki przez ściany, ciasno przy zaworze, zapieczona stara głowica.]
+U mnie najwięcej czasu zajęło znalezienie miejsca na bramkę. Garaż jest za grubą ścianą i z gniazdka w korytarzu głowica raz była widoczna, a raz nie. Pomogło przeniesienie bramki do gniazdka w samym garażu — od tej pory połączenie jest stabilne.
 
-<!-- ZDJĘCIE 3: czujnik otwarcia przyklejony do okna -->
+![Ilustracja: mały biały czujnik otwarcia z magnesem przyklejony do ramy plastikowego okna w garażu, za szybą śnieg](/assets/blog/grzejnik-wylacza-sie-przy-otwartym-oknie/czujnik-na-oknie.webp){: width="1200" height="800" loading="lazy"}
+
+*Ilustracja wygenerowana przez AI.*
 
 ## Wyłączanie grzania przy otwartym oknie
 
 Producent podaje, że głowice BLU TRV współpracują z czujnikami okien z serii Shelly BLU ZB — sposób ich powiązania znajdziesz w instrukcji głowicy.
 
-Pełną kontrolę daje reguła w Home Assistant: łatwo w niej dodać opóźnienie i przywracanie poprzedniej temperatury. [DO UZUPEŁNIENIA: potwierdź, że w tej realizacji reguła była w Home Assistant — wtedy zmienię na „U mnie…”.] Logika jest taka:
+Pełną kontrolę daje reguła w Home Assistant: łatwo w niej dodać opóźnienie i przywracanie poprzedniej temperatury. U mnie robi to właśnie Home Assistant. Logika jest taka:
 
 1. Okno jest otwarte **dłużej niż minutę** (żeby krótkie uchylenie nie przestawiało ogrzewania).
 2. Home Assistant zapamiętuje aktualne ustawienie głowicy i obniża temperaturę do minimum.
@@ -123,19 +127,19 @@ Wyłączanie przy wietrzeniu to jedno, ale w praktyce równie ważny jest harmon
 - **salon** — cieplej rano i wieczorem, chłodniej w ciągu dnia, gdy wszyscy są w pracy,
 - **łazienka** — cieplej rano przed prysznicem.
 
-[DO UZUPEŁNIENIA: jakie harmonogramy i temperatury ustawiliście w tej realizacji.]
+U mnie harmonogram jest prosty, bo to garaż: 16 °C w dzień, kiedy się tam kręcę, i 10 °C w nocy. W mieszkaniu warto zacząć od 21 °C rano i wieczorem, 19 °C w ciągu dnia i 18 °C w nocy, a po tygodniu poprawić według tego, co mówią domownicy.
 
 {% include zacheta.html miejsce="po-konfiguracji" tytul="Nie chcesz ustawiać tego sam?" tekst="Zamontuję głowice i czujniki, ustawię harmonogramy dla każdego pokoju i wyłączanie grzania przy wietrzeniu. Montaż zwykle zajmuje jeden dzień." %}
 
 ## Ile to kosztuje
 
-[DO UZUPEŁNIENIA: liczba grzejników i okien, koszt sprzętu (ile zapłaciłeś), czas montażu.]
+Mój zestaw to głowica z bramką i jeden czujnik otwarcia — razem około 500 zł. Montaż z konfiguracją zajął niecałą godzinę, z czego większość to szukanie miejsca na bramkę i pisanie automatyzacji. Każdy kolejny grzejnik to następna głowica i czujnik; bramka wystarcza na pięć głowic.
 
 Inteligentne głowice z czujnikami są w pakiecie Komfort — zobacz [cennik](/#cennik).
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: co się zmieniło — komfort, rachunki (tylko jeśli są realne dane, bez szacunków „z sufitu”), czy domownicy zauważyli różnicę, czy coś nie działało.]
+Po kilku tygodniach wygląda to tak: głowica zamyka zawór mniej więcej minutę po otwarciu drzwi i otwiera go zaraz po ich zamknięciu — widzę to na wykresie położenia zaworu w Home Assistant. Rachunków nie porównuję, bo jeden grzejnik w garażu ginie w zużyciu całego domu, a nie będę udawał, że mam tu twarde liczby. Jedną rzecz musiałem poprawić: na początku nie miałem minuty opóźnienia i grzejnik przestawiał się przy każdym wejściu do garażu.
 
 ## Najczęstsze pytania
 

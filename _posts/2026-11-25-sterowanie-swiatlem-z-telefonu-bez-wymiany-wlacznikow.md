@@ -4,19 +4,21 @@ layout: post
 title: "Sterowanie światłem z telefonu bez wymiany włączników"
 description: "Moduł Shelly 1PM Mini Gen4 za zwykłym włącznikiem: światło z telefonu, harmonogramy i sceny, a włącznik na ścianie działa jak dotąd. Bez kucia ścian."
 excerpt: "Zostawiasz swoje włączniki, a za nimi chowasz mały moduł. Światło włączasz jak dotąd ręką — albo z telefonu, głosem, o zmierzchu czy jednym przyciskiem „wyłącz wszystko” przy wyjściu."
-# image: /assets/blog/sterowanie-swiatlem-z-telefonu-bez-wymiany-wlacznikow/glowne.webp
-# image_alt: "Moduł Shelly 1PM Mini w dłoni na tle zwykłego włącznika światła"
+image: /assets/blog/sterowanie-swiatlem-z-telefonu-bez-wymiany-wlacznikow/glowne.webp
+image_alt: "Ilustracja: dłoń ze smartfonem w salonie wieczorem, w tle zapalone lampy i zwykły włącznik na ścianie"
 cta_tytul: "Chcesz sterować światłem z telefonu? Zamontuję to"
 cta_tekst: "Montuję moduły za Twoimi włącznikami, bez kucia i bez wymiany osprzętu, i konfiguruję sceny oraz harmonogramy. Zostaw numer — oddzwonię."
 ---
 
 Wychodzisz z domu i w połowie drogi zastanawiasz się, czy zgasiło się światło w łazience. Albo wieczorem obchodzisz cały dom, żeby wszystko powyłączać. Albo po prostu chcesz, żeby lampa w przedpokoju zapalała się sama o zmierzchu.
 
-[DO UZUPEŁNIENIA: konkretna sytuacja — czyje mieszkanie/dom, ile punktów świetlnych, co przeszkadzało.]
+U siebie zacząłem od sypialni: jeden obwód światła i odwieczny problem, że włącznik jest przy drzwiach, a nie przy łóżku.
 
 Nie trzeba do tego wymieniać włączników na „smart” ani kuć ścian. Za każdym zwykłym włącznikiem, w tej samej puszce, chowa się mały moduł. Włącznik działa jak dotąd, a dodatkowo światłem sterujesz z telefonu i automatyzacjami.
 
-<!-- ZDJĘCIE 1: moduł w dłoni na tle włącznika -->
+![Otwarta puszka podtynkowa z modułem Shelly Gen4 podłączonym przewodami, przed nią wysunięty osprzęt ścienny](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/puszka-z-modulem-gen4.webp){: width="1200" height="900" loading="lazy"}
+
+*Tak wygląda moduł w puszce. Na zdjęciu większy Shelly 2PM Gen4 z mojego [montażu rolet](/blog/sterowanie-roletami-z-telefonu-shelly-2pm/) — 1PM Mini do światła jest jeszcze mniejszy.*
 
 ## W skrócie
 
@@ -40,7 +42,7 @@ Jeśli po podłączeniu żarówki LED lekko migają albo żarzą się po wyłąc
 
 {% include produkt.html id="shelly-rc-snubber" opis="Mały tłumik RC montowany równolegle do lampy — pomaga, gdy żarówki LED migają lub żarzą się po wyłączeniu." %}
 
-[DO UZUPEŁNIENIA: ile modułów zamontowałeś, czy był potrzebny snubber.]
+W sypialni mam jeden moduł za włącznikiem. Tłumik nie był potrzebny — lampy LED nie migały ani się nie żarzyły.
 
 ## Montaż krok po kroku
 
@@ -58,9 +60,11 @@ Jeśli po podłączeniu żarówki LED lekko migają albo żarzą się po wyłąc
 
 **5. Wsuń moduł do puszki i przykręć włącznik.**
 
-[DO UZUPEŁNIENIA: co było trudne — miejsce w puszce, brak N w części puszek, migotanie LED.]
+U mnie przewód N był w puszce, więc obyło się bez niespodzianek. Jedyna trudność to miejsce: w puszce 60 mm z modułem, złączkami i włącznikiem robi się ciasno, więc użyłem płaskich złączek i ułożyłem przewody za modułem. Jeśli masz płytką puszkę, zmierz ją przed zakupem.
 
-<!-- ZDJĘCIE 2: moduł podłączony w puszce przed wsunięciem włącznika (zasilanie wyłączone!) -->
+![Przekrój puszki podtynkowej: w puszce o głębokości co najmniej 6 cm moduł mieści się za standardowym łącznikiem, w płytszej montuje się go w uchwycie płaskiego przełącznika Shelly](/assets/blog/sterowanie-roletami-z-telefonu-shelly-2pm/puszka-glebokosc.webp){: width="1200" height="660" loading="lazy"}
+
+*Rysunek z wpisu o roletach, dla modułu 2PM Gen4. 1PM Mini ma tę samą grubość (16 mm), więc próg 6 cm głębokości puszki jest ten sam.*
 
 {% include zacheta.html miejsce="po-montazu" tytul="Nie chcesz robić tego sam?" tekst="Sprawdzę puszki, zamontuję moduły za włącznikami i skonfiguruję wszystko w aplikacji. Z zewnątrz nic się nie zmienia." %}
 
@@ -90,7 +94,7 @@ W Home Assistant przykład „gaś wszystko przy wyjściu” wygląda tak:
 
 `input_button.wychodze` to pomocnik typu „przycisk” — możesz go podpiąć pod przycisk na pulpicie albo pod bezprzewodowy przycisk przy drzwiach. Moduł Shelly może pojawić się w Home Assistant jako przełącznik (`switch`) — wtedy w ustawieniach encji zmień „Pokaż jako” na „Światło” albo dodaj `switch.turn_off` z listą przełączników.
 
-[DO UZUPEŁNIENIA: jakie sceny i automatyzacje ustawiłeś w tej realizacji.]
+U mnie działa to tak: światło w sypialni gaszę z telefonu, bez wstawania z łóżka. Rolety podnoszą się o wschodzie słońca i opuszczają o zachodzie. Oświetlenie elewacji zapala się o zachodzie i gaśnie o 23:00 — to opisałem w [osobnym wpisie](/blog/oswietlenie-elewacji-o-zachodzie-slonca/).
 
 ## Pomiar energii — bonus, o którym mało kto wie
 
@@ -98,13 +102,13 @@ Wersja „PM” mierzy, ile energii zużywa podłączone światło. Przy oświet
 
 ## Ile to kosztuje
 
-[DO UZUPEŁNIENIA: ile modułów, koszt sprzętu (ile zapłaciłeś), czas montażu.]
+Jeden moduł to wydatek poniżej 100 zł. Montaż w jednej puszce zajmuje mi około pół godziny razem z dodaniem do aplikacji. Przy całym mieszkaniu licz jeden moduł na każdy obwód, którym chcesz sterować.
 
 Sterowanie oświetleniem jest w pakiecie Start — zobacz [cennik](/#cennik).
 
 ## Efekt po kilku tygodniach
 
-[DO UZUPEŁNIENIA: z czego domownicy korzystają najczęściej, czy coś nie działało.]
+Na co dzień i tak najczęściej używamy zwykłego włącznika — i o to chodzi, bo nic nie trzeba zmieniać w przyzwyczajeniach. Telefon przydaje się wieczorem i wtedy, gdy nikogo nie ma w domu. Najwięcej roboty wykonują automatyzacje, o których po tygodniu się zapomina: światło o zachodzie i gaszenie o stałej godzinie.
 
 ## Najczęstsze pytania
 
