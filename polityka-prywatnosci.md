@@ -3,14 +3,14 @@ layout: page
 title: "Polityka prywatności"
 permalink: /polityka-prywatnosci/
 description: "Informacje o przetwarzaniu danych osobowych na stronie smartowo.pl."
-updated: 2026-10-20
+updated: 2026-11-11
 ---
 
 Szanuję Twoją prywatność. Poniżej znajdziesz informacje o tym, jakie dane osobowe zbieram za pośrednictwem strony smartowo.pl, w jakim celu i jakie masz prawa. Dokument spełnia obowiązek informacyjny z art. 13 RODO (Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679).
 
 ## 1. Administrator danych
 
-Administratorem Twoich danych osobowych jest **Patryk Zwierz**, działający pod marką **Smartowo**, Wrocław.
+Administratorem Twoich danych osobowych jest **Patryk Zwierz**, działający pod marką **Smartowo**, ul. Swojczycka 113, 51-502 Wrocław, NIP 8321909439.
 
 W sprawach dotyczących danych osobowych możesz się ze mną skontaktować:
 
